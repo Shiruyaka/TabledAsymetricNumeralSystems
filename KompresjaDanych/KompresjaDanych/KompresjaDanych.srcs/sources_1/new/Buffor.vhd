@@ -49,10 +49,10 @@ end Buffor;
 
 architecture use_bits of Buffor is
 
-type state_type is (IDLE, IN_PROGRESS, CHECKING_BUFFOR, EMPTY_BUFF1, EMPTY_BUFF2, OUT_END_STATE);
+type state_type is (IDLE, IN_PROGRESS, CHECKING_BUFFOR, EMPTY_BUFF1, EMPTY_BUFF2, ADD_AMOUNT_DISJOINT_BYTES, OUT_END_STATE);
 signal current_state, next_state : state_type;
 
-signal buffor: std_logic_vector(31 downto 0):= "00000000000000000000000000000000";
+signal buffor: std_logic_vector(0 to 31):= x"00000000";
 
 begin
     
@@ -72,7 +72,7 @@ begin
     variable bits: std_logic_vector(7 downto 0);
     variable bits_shifted: std_logic_vector(31 downto 0) := x"00000000";
     variable counter: integer:= 0;
-    variable mask: std_logic_vector(7 downto 0);
+    variable mask, disjoint_bytes: std_logic_vector(7 downto 0);
     variable nbBitsInt: integer;
     
     begin
@@ -108,39 +108,64 @@ begin
                 
                     if(counter >= 8) then
                         
-                        --stream <= buffor(counter - 1 downto counter - 8);
-                        stream <= buffor(31 downto 24); 
-                        buffor <= (7 downto 0 => '0') & buffor(24 downto 0);
+                        stream <= buffor(24 to 31); 
+                        buffor <= (0 to 7 => '0') & buffor(0 to 23);
+                                  
                         counter := counter - 8;
                 
                     end if;
                     
                     if(end_data = '1') then
                        
-                       next_state <= EMPTY_BUFF1;
+                       if(counter = 0) then
+                         disjoint_bytes := x"00";
+                         next_state <= ADD_AMOUNT_DISJOINT_BYTES;
+                       else 
+                           next_state <= EMPTY_BUFF1;
+                       end if;
+                              
                     else
+                    
                        next_state <= IDLE;               
+                    
                     end if;
                     
                when EMPTY_BUFF1 =>
                
                    if(counter <= 5) then
-                    stream <= std_logic_vector(to_unsigned(counter, 3)) & (4 - counter downto 0 => '0') & buffor(counter - 1 downto 0); 
-                    next_state <= OUT_END_STATE;                   
+                    
+                        stream <= std_logic_vector(to_unsigned(counter, 3)) & (4 - counter downto 0 => '0') & buffor(31 downto 32 - counter); 
+                        disjoint_bytes := x"01";
+                        next_state <= OUT_END_STATE;
+                                      
                    else
-                    stream <= std_logic_vector(to_unsigned(5, 3)) & buffor(4 downto 0);
-                    buffor <= (4 downto 0 => '0') & buffor(31 downto 5);
-                    counter := counter - 5;
-                    next_state <= EMPTY_BUFF2;
+                    
+                        stream <= std_logic_vector(to_unsigned(5, 3)) & buffor(27 to 31);
+                        disjoint_bytes := "00000010";
+                        buffor <= (4 downto 0 => '0') & buffor(0 to 26);
+                        counter := counter - 5;
+                        
+                        next_state <= EMPTY_BUFF2;
+                    
                    end if;
                   
                when EMPTY_BUFF2 =>
-                    stream <= std_logic_vector(to_unsigned(counter, 3)) & (4 - counter downto 0 => '0') & buffor(counter - 1 downto 0);
-                    next_state <= OUT_END_STATE;
                     
+                    stream <= std_logic_vector(to_unsigned(counter, 3)) & (0 to 4 - counter => '0') & buffor(32 - counter to 31);
+                    
+                    next_state <= ADD_AMOUNT_DISJOINT_BYTES;
+               
+               when ADD_AMOUNT_DISJOINT_BYTES =>
+                    
+                    stream <= std_logic_vector(unsigned(disjoint_bytes));
+                    next_state <= OUT_END_STATE;
+               
+                
                when OUT_END_STATE =>
+                    
                     stream <= end_state;
                     ready <= '1';             
+                    
                     next_state <= IDLE;
                
       end case;

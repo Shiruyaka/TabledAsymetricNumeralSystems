@@ -37,22 +37,21 @@ entity Decoder is
             start : in STD_LOGIC;
             clk : in STD_LOGIC;
                        
-            stream : out STD_LOGIC_VECTOR(7 to 0);
+            stream : out STD_LOGIC_VECTOR(0 to 7);
             ready : out STD_LOGIC;
             
             new_symbol : in STD_LOGIC;
-            data_in : in STD_LOGIC_VECTOR(7 to 0);
-            symbolsToDecode : in STD_LOGIC_VECTOR (7 to 0)
+            data_in : in STD_LOGIC_VECTOR(0 to 7)
           );
 end Decoder;
 
 architecture decode of Decoder is
 
-type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, GET_SYMBOL, DECODING_DATA, MERGING_LAST_BYTE, CHECKING_BUFFOR);
+type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE); -- DECODING_DATA, CHECKING_BUFFOR);
 signal current_state, next_state : state_type;
-signal buffor : STD_LOGIC_VECTOR(31 to 0);
-signal nbBits: STD_LOGIC_VECTOR(7 to 0);
-signal newX: STD_LOGIC_VECTOR(7 to 0);
+signal buffor : STD_LOGIC_VECTOR(0 to 31);
+signal nbBits: STD_LOGIC_VECTOR(0 to 7);
+signal newX: STD_LOGIC_VECTOR(0 to 7);
 
 begin
 
@@ -68,8 +67,8 @@ state_machine: process(CLK)
     end process;
 
  main_process: process(current_state, start)
-    variable state : STD_LOGIC_VECTOR(7 to 0);
-    variable decoded_symbol : STD_LOGIC_VECTOR(7 to 0);
+    variable state : STD_LOGIC_VECTOR(0 to 7);
+    variable decoded_symbol : STD_LOGIC_VECTOR(0 to 7);
     variable length, bytes : integer;
     begin
     current_state <= next_state;
@@ -95,31 +94,31 @@ state_machine: process(CLK)
         bytes := to_integer(unsigned(data_in));
         
         if(bytes = 0) then
-            next_state <= GET_SYMBOL;
+            --next_state <= GET_SYMBOL;
         else
             next_state <= MERGING_LAST_BYTE;
         end if;
         
     when MERGING_LAST_BYTE =>
     
-       decoded_symbol := decoded_symbol(7 - length to 7) & (length - 1 to 0 => '0');      
+       decoded_symbol := decoded_symbol(7 - length to 7) & (0 to length - 1 => '0');      
        length := to_integer(unsigned(data_in(0 to 2)));
-       decoded_symbol := decoded_symbol or (length - 1 to 0 => '0') & data_in(7 - length + 1 to 7);
+       decoded_symbol := decoded_symbol or (length - 1 to 0 => '0') & data_in(8 - length to 7);
        
        if(bytes = 2) then
         next_state <= MERGING_LAST_BYTE; 
        else
-        next_state <= DECODING_DATA;
+        --next_state <= DECODING_DATA;
        end if;
        
-    when GET_SYMBOL =>
-         ready <= '1';
+   -- when GET_SYMBOL =>
+     --    ready <= '1';
          
-         if(new_symbol = '1') then
+       -- if(new_symbol = '1') then
             
-         end if;
+        -- end if;
          
-    when DECODING_DATA =>
+   -- when DECODING_DATA =>
        
     end case;
     end process;

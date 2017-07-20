@@ -1,15 +1,15 @@
 0.6
-2016.3
-Oct 10 2016
-19:46:48
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd,1500485182,vhdl,,,,buffor_test,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd,1500539117,vhdl,,,,encoder_test,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Main_Test.vhd,1500485182,vhdl,,,,main_test,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/reading_and_writing_to_file.vhd,1500485182,vhdl,,,,reading_and_writing_to_file,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd,1500543293,vhdl,,,,buffor,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Decoder.vhd,1500536583,vhdl,,,,decoder,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd,1500538869,vhdl,,,,encoder,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd,1500485182,vhdl,,,,serializator,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd,1500485182,vhdl,,,,nbrom,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd,1500485182,vhdl,,,,startrom,,,,,,,,
-D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/symbolRom.vhd,1500485182,vhdl,,,,symbolrom,,,,,,,,
+2016.4
+Jan 23 2017
+19:37:30
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd,1500577374,vhdl,,,,buffor_test,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd,1500577374,vhdl,,,,encoder_test,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Main_Test.vhd,1500577374,vhdl,,,,main_test,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/reading_and_writing_to_file.vhd,1500577374,vhdl,,,,reading_and_writing_to_file,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd,1500583680,vhdl,,,,buffor,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Decoder.vhd,1500577374,vhdl,,,,decoder,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd,1500577994,vhdl,,,,encoder,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd,1500577374,vhdl,,,,serializator,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd,1500577374,vhdl,,,,nbrom,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd,1500577374,vhdl,,,,startrom,,,,,,,,
+C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/symbolRom.vhd,1500577374,vhdl,,,,symbolrom,,,,,,,,

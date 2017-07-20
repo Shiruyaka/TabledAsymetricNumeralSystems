@@ -1,5 +1,5 @@
 @echo off
-set xv_path=D:\\Xilinx\\Vivado\\2016.3\\bin
+set xv_path=C:\\Xilinx\\Vivado\\2016.4\\bin
 call %xv_path%/xsim Encoder_Test_behav -key {Behavioral:sim_1:Functional:Encoder_Test} -tclbatch Encoder_Test.tcl -log simulate.log
 if "%errorlevel%"=="0" goto SUCCESS
 if "%errorlevel%"=="1" goto END

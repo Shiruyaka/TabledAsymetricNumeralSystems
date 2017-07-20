@@ -195,9 +195,7 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                 state :=  
                     (to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
                      state(7 - to_integer(unsigned(nb_bits)) downto 0);
-                state := startForSymbol + state;
-                
-                
+                state := startForSymbol + state;              
                 
                 if(counter = amount) then
                    encoderTableState <= state;
