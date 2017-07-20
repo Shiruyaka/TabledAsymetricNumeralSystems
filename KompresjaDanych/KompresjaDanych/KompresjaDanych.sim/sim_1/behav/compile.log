@@ -1,0 +1,22 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity serializator
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Buffor
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity NbRom
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/symbolRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity SymbolRom
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Encoder
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity StartRom
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Decoder
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/reading_and_writing_to_file.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity reading_and_writing_to_file
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Buffor_Test
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Encoder_Test
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/KompresjaDanychv2.0/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Main_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Main_Test

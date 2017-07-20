@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Tue Apr 11 00:52:02 2017
+# Process ID: 8356
+# Current directory: C:/Users/tomas/Desktop/Projekt zespolowy/Compression-on-FPGA/KompresjaDanych
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent1340 C:\Users\tomas\Desktop\Projekt zespolowy\Compression-on-FPGA\KompresjaDanych\KompresjaDanych.xpr
+# Log file: C:/Users/tomas/Desktop/Projekt zespolowy/Compression-on-FPGA/KompresjaDanych/vivado.log
+# Journal file: C:/Users/tomas/Desktop/Projekt zespolowy/Compression-on-FPGA/KompresjaDanych\vivado.jou
+#-----------------------------------------------------------
+start_gui
