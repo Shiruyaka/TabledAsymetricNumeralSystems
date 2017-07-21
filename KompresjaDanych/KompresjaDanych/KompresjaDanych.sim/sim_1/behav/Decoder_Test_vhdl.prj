@@ -10,6 +10,7 @@ vhdl xil_defaultlib  "../../../KompresjaDanych.srcs/sim_1/new/reading_and_writin
 vhdl xil_defaultlib  "../../../KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd"
 vhdl xil_defaultlib  "../../../KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd"
 vhdl xil_defaultlib  "../../../KompresjaDanych.srcs/sim_1/new/Main_Test.vhd"
+vhdl xil_defaultlib  "../../../KompresjaDanych.srcs/sim_1/new/Decoder_Test.vhd"
 
 # Do not sort compile order
 nosort

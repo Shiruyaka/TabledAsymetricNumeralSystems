@@ -36,8 +36,10 @@ entity Decoder_Test is
 end Decoder_Test;
 
 architecture Behavioral of Decoder_Test is
+
 signal Init, Start, Clk, Ready, New_Symbol : STD_LOGIC;
-signal Stream, Data_In, 
+signal Stream, Data_In : STD_LOGIC_VECTOR(0 to 7);
+
 component Decoder is
     Port (
             init : in STD_LOGIC;
@@ -57,13 +59,13 @@ begin
 
 test: Decoder
     port map(
-                init <= Init,
-                start <= Start,
-                clk <= Clk,
-                stream <= Stream,
-                ready <= Ready,
-                new_symbol <= New_Symbol,
-                data_in <= Data_In
+                init => Init,
+                start => Start,
+                clk => Clk,
+                stream => Stream,
+                ready => Ready,
+                new_symbol => New_Symbol,
+                data_in => Data_In
             );
 
 clock_process: process
@@ -74,7 +76,23 @@ begin
       wait for 5 ns;        
 end process;
 
-est_decoder: process(start, new_symbol, current_state)
+test_decoder: process
+begin
+    Init <= '1';
+    wait until rising_edge(Clk);
+    Init <= '0';
+    Start <= '1';
+    wait until rising_edge(Clk);
+    Start <= '0';
+    Data_In <= x"05";
+    wait until rising_edge(Clk);
+    Data_In <= x"02";
+    wait until rising_edge(Clk);
+    Data_In <= "01000011";
+    wait until rising_edge(Clk);
+    Data_In <= "10111010";
+    wait until rising_edge(Clk);
+    wait;
     
 end process;
 

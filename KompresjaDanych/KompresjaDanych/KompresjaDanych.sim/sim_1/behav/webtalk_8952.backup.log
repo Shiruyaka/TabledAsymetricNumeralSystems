@@ -2,11 +2,13 @@
 # Webtalk v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Fri Jul 21 10:29:32 2017
-# Process ID: 8828
+# Start of session at: Fri Jul 21 10:25:45 2017
+# Process ID: 8952
 # Current directory: D:/TabledAsymetricNumeralSystems-master/TabledAsymetricNumeralSystems-master/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav
 # Command line: wbtcv.exe -mode batch -source D:/TabledAsymetricNumeralSystems-master/TabledAsymetricNumeralSystems-master/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/xsim.dir/Decoder_Test_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/TabledAsymetricNumeralSystems-master/TabledAsymetricNumeralSystems-master/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/webtalk.log
 # Journal file: D:/TabledAsymetricNumeralSystems-master/TabledAsymetricNumeralSystems-master/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav\webtalk.jou
 #-----------------------------------------------------------
 source D:/TabledAsymetricNumeralSystems-master/TabledAsymetricNumeralSystems-master/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/xsim.dir/Decoder_Test_behav/webtalk/xsim_webtalk.tcl -notrace
+webtalk_transmit: Time (s): cpu = 00:00:00 ; elapsed = 00:00:15 . Memory (MB): peak = 53.516 ; gain = 0.523
+INFO: [Common 17-206] Exiting Webtalk at Fri Jul 21 10:26:00 2017...

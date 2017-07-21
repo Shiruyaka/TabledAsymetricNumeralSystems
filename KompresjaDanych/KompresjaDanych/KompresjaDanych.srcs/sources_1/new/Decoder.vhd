@@ -47,13 +47,55 @@ end Decoder;
 
 architecture decode of Decoder is
 
-type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE); -- DECODING_DATA, CHECKING_BUFFOR);
+type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE, GET_SYMBOLS, DECODING_DATA, CHECKING_BUFFOR);
 signal current_state, next_state : state_type;
 signal buffor : STD_LOGIC_VECTOR(0 to 31);
 signal nbBits: STD_LOGIC_VECTOR(0 to 7);
 signal newX: STD_LOGIC_VECTOR(0 to 7);
+signal state: STD_LOGIC_VECTOR(0 to 7);
+signal symbol: STD_LOGIC_VECTOR(0 to 7);
+
+component nbBitsRom is
+	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+		clk : in STD_LOGIC;
+		result: out STD_LOGIC_VECTOR (7 downto 0));
+end component;
+
+component symbolRom is
+	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+		clk : in STD_LOGIC;
+		result: out STD_LOGIC_VECTOR (7 downto 0));
+end component;
+
+component newXRom is
+	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+		clk : in STD_LOGIC;
+		result: out STD_LOGIC_VECTOR (7 downto 0));
+end component;
+
 
 begin
+
+newXRm: newXRom
+Port map(
+            symbol => state,
+            clk => clk,
+            result => newX
+        );
+        
+symbolRm: symbolRom
+Port map(
+    symbol => state,
+    clk => clk,
+    result => symbol
+    );   
+    
+nbBitsRm: nbBitsRom
+    Port map(
+        symbol => state,
+        clk => clk,
+        result => nbBits
+        );       
 
 state_machine: process(CLK)
     begin
@@ -66,19 +108,20 @@ state_machine: process(CLK)
       end if;
     end process;
 
- main_process: process(current_state, start)
-    variable state : STD_LOGIC_VECTOR(0 to 7);
+ main_process: process(current_state, start, data_in)
     variable decoded_symbol : STD_LOGIC_VECTOR(0 to 7);
-    variable length, bytes : integer;
+    variable length, bytes, counter, buffor_counter : integer := 0;
     begin
-    current_state <= next_state;
+    
+    next_state <= current_state;
     
     case current_state is
     
     when IDLE =>
         
         decoded_symbol := x"00";
-        buffor <= x"000000";
+        buffor <= x"00000000";
+        
         length := 0;
         
         if(start = '1') then
@@ -86,39 +129,49 @@ state_machine: process(CLK)
         end if;
         
     when GET_STATE =>
-       state := data_in;
+       state <= data_in;
+       stream <= state;
        next_state <= AMOUNT_BYTE_TO_MERGE;
     
     when AMOUNT_BYTE_TO_MERGE =>
     
         bytes := to_integer(unsigned(data_in));
+        stream <= std_logic_vector(to_unsigned(bytes, 8));
         
         if(bytes = 0) then
-            --next_state <= GET_SYMBOL;
+            next_state <= GET_SYMBOLS;
         else
             next_state <= MERGING_LAST_BYTE;
         end if;
         
     when MERGING_LAST_BYTE =>
-    
-       decoded_symbol := decoded_symbol(7 - length to 7) & (0 to length - 1 => '0');      
+       
        length := to_integer(unsigned(data_in(0 to 2)));
-       decoded_symbol := decoded_symbol or (length - 1 to 0 => '0') & data_in(8 - length to 7);
+       buffor_counter := buffor_counter + length;
+       decoded_symbol := decoded_symbol(length to 7) & (0 to length - 1 => '0');    
+       decoded_symbol := decoded_symbol or ((length to 7 => '0') & data_in(8 - length to 7));
+       
+       stream <= decoded_symbol;
        
        if(bytes = 2) then
-        next_state <= MERGING_LAST_BYTE; 
+        next_state <= MERGING_LAST_BYTE;
+        bytes := bytes - 1;
        else
-        --next_state <= DECODING_DATA;
+        buffor <= buffor(0 to 23) & decoded_symbol;
+        next_state <= GET_SYMBOLS;
        end if;
        
-   -- when GET_SYMBOL =>
-     --    ready <= '1';
+      when GET_SYMBOLS =>
+        ready <= '1';
+        if(counter < 3) then
+            buffor <= data_in & buffor(buffor_counter to 31); 
+        end if;
+        if(new_symbol = '1') then
+            buffor <= buffor;
+            next_state <= DECODING_DATA;      
+        end if;
          
-       -- if(new_symbol = '1') then
-            
-        -- end if;
-         
-   -- when DECODING_DATA =>
+      when DECODING_DATA =>
        
     end case;
     end process;
