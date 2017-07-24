@@ -39,9 +39,12 @@ entity Encoder is
            start : in STD_LOGIC;
            ready : out STD_LOGIC;
            clk : in STD_LOGIC;
-
+           end_data : out STD_LOGIC;
+           
+           
            symbol : in STD_LOGIC_VECTOR (7 downto 0);
            data_out : out STD_LOGIC_VECTOR (7 downto 0);
+           produced_symbol : out STD_LOGIC;
            new_symbol : in STD_LOGIC
          );
            
@@ -59,6 +62,9 @@ component Buffor
            nbBits : in STD_LOGIC_VECTOR(3 downto 0);
            stream : out STD_LOGIC_VECTOR(7 downto 0);
            x : in STD_LOGIC_VECTOR(7 downto 0);
+           
+           produce_symbol : out STD_LOGIC;
+                      
            end_data : in STD_LOGIC; --to dispose buffor
            end_state : in STD_LOGIC_VECTOR(7 downto 0)
        );
@@ -101,9 +107,11 @@ Port map(
             init => init_buff,
             ready => ready_buff,
             start => start_buff,
+            
             nbBits => nb_bits_buff,
             x => encoderTableState,
             stream => data_out,
+            produce_symbol => produced_symbol,
             end_data => empty_buff,
             end_state => encoderTableState
         );
@@ -154,6 +162,7 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                 ready <= '0';
                                                   
                 if(start = '1') then
+                   end_data <= '0';
                    init_buff <= '0';
                    next_state <= GET_AMOUNT;
                 end if;
@@ -200,6 +209,7 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                 if(counter = amount) then
                    encoderTableState <= state;
                    empty_buff <= '1';
+                  
                    next_state <= WAIT_FOR_END;
                 else
                     next_state <= GET_SYMBOL;            
@@ -207,6 +217,7 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
             
             when WAIT_FOR_END =>
                  if(ready_buff = '1') then
+                  end_data <= '1';
                   next_state <= IDLE;
                  end if;
         end case;

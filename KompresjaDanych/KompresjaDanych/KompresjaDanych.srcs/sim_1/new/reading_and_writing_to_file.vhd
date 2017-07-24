@@ -150,7 +150,7 @@ begin
 
     end if;
     write(line_to_file, string'(line_str));
-    --writeline(write_file, line_to_file);
+    writeline(write_file, line_to_file);
     file_close(write_file);      
 end process;
 

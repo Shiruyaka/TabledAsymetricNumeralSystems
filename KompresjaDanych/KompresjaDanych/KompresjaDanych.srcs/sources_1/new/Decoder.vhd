@@ -36,18 +36,21 @@ entity Decoder is
             init : in STD_LOGIC;
             start : in STD_LOGIC;
             clk : in STD_LOGIC;
-                       
-            stream : out STD_LOGIC_VECTOR(0 to 7);
-            ready : out STD_LOGIC;
-            
+            end_data : in STD_LOGIC;
             new_symbol : in STD_LOGIC;
+                    
+            ready : out STD_LOGIC;
+                        
+            stream : out STD_LOGIC_VECTOR(0 to 7);
             data_in : in STD_LOGIC_VECTOR(0 to 7)
           );
 end Decoder;
 
 architecture decode of Decoder is
 
-type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE_SECOND, MERGING_LAST_BYTE_FIRST, GET_SYMBOLS, DECODING_DATA, CHECKING_BUFFOR);
+type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE_SECOND, 
+                    MERGING_LAST_BYTE_FIRST, GET_SYMBOLS, DECODING_DATA, COMPUTE_NEXT_STATE);
+                    
 signal current_state, next_state : state_type;
 signal buffor : STD_LOGIC_VECTOR(0 to 31);
 
@@ -110,7 +113,7 @@ state_machine: process(CLK)
     end process;
 
  main_process: process(current_state, start, data_in)
-    variable length, bytes, counter, buffor_counter, nbBitsInt : integer := 0;
+    variable length, bytes, buffor_counter, nbBitsInt : integer := 0;
     variable decoded_sym, mask, shifted_buff : STD_LOGIC_VECTOR(0 to 7);
      
     begin
@@ -172,43 +175,39 @@ state_machine: process(CLK)
         ready <= '1';
         
         if(new_symbol = '1') then
-           
-           counter := counter + 1;
-           
-           buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in & (0 to 23 - buffor_counter => '0')); 
-           buffor_counter := buffor_counter + 8;
-           if(counter < 3) then
-            next_state <= GET_SYMBOLS;
-           else
-            ready <= '0';
-            counter := 0; 
-            next_state <= DECODING_DATA;
-           end if;
-              
-        end if;
          
+               buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in & (0 to 23 - buffor_counter => '0')); 
+               buffor_counter := buffor_counter + 8;
+               ready <= '0';
+               next_state <= DECODING_DATA;
+        end if;
+               
       when DECODING_DATA =>
-      nbBitsInt := to_integer(unsigned(nbBits));
+      
+       nbBitsInt := to_integer(unsigned(nbBits));
       
        if(buffor_counter > nbBitsInt) then
         
-        mask := (
-                   nbBitsInt - 2 to 0 => '1',
-                    others => '0'
-                );
+            stream <= symbol;
+            buffor_counter := buffor_counter - nbBitsInt;
+                   
+            state <=  STD_LOGIC_VECTOR(unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
+            
+            buffor <= (buffor(nbBitsInt to 31) & (0 to nbBitsInt - 1 => '0'));
         
-        stream <= symbol;
-        buffor_counter := buffor_counter - nbBitsInt;
-        shifted_buff := (buffor(buffor_counter to 7) & (0 to buffor_counter - 1 => '0')); -- don't know what it is 
-        state <=  STD_LOGIC_VECTOR(unsigned(newX) + unsigned(shifted_buff));
-        --(0 to to_integer(unsigned(nbBits)) => '1') & (0 to 7 - nbBits =>'0');
-        next_state <= DECODING_DATA;
-        else --do elsif if the data is not ended to get_symbols and if buffor is empty
-            next_state <= GET_SYMBOLS;
+            next_state <= COMPUTE_NEXT_STATE;
+        
+        else
+            if (end_data = '1') then
+                next_state <= IDLE;
+            else
+                next_state <= GET_SYMBOLS;    
+            end if;
        end if;
        
-      when CHECKING_BUFFOR =>
-        NULL;
+    when COMPUTE_NEXT_STATE =>
+            next_state <= DECODING_DATA;
+  
     end case;
     end process;
     

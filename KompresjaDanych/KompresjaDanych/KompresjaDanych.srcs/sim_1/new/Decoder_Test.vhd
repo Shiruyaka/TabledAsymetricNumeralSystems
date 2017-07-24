@@ -37,7 +37,7 @@ end Decoder_Test;
 
 architecture Behavioral of Decoder_Test is
 
-signal Init, Start, Clk, Ready, New_Symbol : STD_LOGIC;
+signal Init, Start, Clk, Ready, New_Symbol, End_Data : STD_LOGIC;
 signal Stream, Data_In : STD_LOGIC_VECTOR(7 downto 0);
 
 component Decoder is
@@ -50,6 +50,7 @@ component Decoder is
             ready : out STD_LOGIC;
             
             new_symbol : in STD_LOGIC;
+            end_data : in STD_LOGIC;
             data_in : in STD_LOGIC_VECTOR(7 downto 0)
           );
 end component;
@@ -65,7 +66,8 @@ test: Decoder
                 stream => Stream,
                 ready => Ready,
                 new_symbol => New_Symbol,
-                data_in => Data_In
+                data_in => Data_In,
+                end_data =>End_Data
             );
 
 clock_process: process
@@ -80,7 +82,7 @@ test_decoder: process
 begin
     Init <= '1';
     New_Symbol <= '0';
-    
+    End_data <= '0';
     wait until rising_edge(Clk);
     Init <= '0';
     Start <= '1';
@@ -103,6 +105,9 @@ begin
     
     wait until rising_edge(Clk) and Ready = '1';
     Data_In <= "01010101";
+    
+    wait until rising_edge(Clk);
+    End_Data <= '1';
     
     wait;
     

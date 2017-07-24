@@ -2,13 +2,11 @@
 # Webtalk v2016.3 (64-bit)
 # SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
 # IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Mon Jul 24 12:52:59 2017
-# Process ID: 8904
+# Start of session at: Mon Jul 24 12:51:40 2017
+# Process ID: 6080
 # Current directory: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav
 # Command line: wbtcv.exe -mode batch -source D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/xsim.dir/Encoder_Test_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/webtalk.log
 # Journal file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav\webtalk.jou
 #-----------------------------------------------------------
 source D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/xsim.dir/Encoder_Test_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.sim/sim_1/behav/xsim.dir/Encoder_Test_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Jul 24 12:53:03 2017. For additional details about this file, please refer to the WebTalk help file at D:/Xilinx/Vivado/2016.3/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Mon Jul 24 12:53:03 2017...

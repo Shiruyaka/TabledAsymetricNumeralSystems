@@ -41,6 +41,8 @@ entity Buffor is
            end_data : in STD_LOGIC;
            end_state : in STD_LOGIC_VECTOR(7 downto 0);
            
+           produce_symbol : out STD_LOGIC;
+           
            nbBits : in STD_LOGIC_VECTOR(3 downto 0); -- change from integer 
            stream : out STD_LOGIC_VECTOR(7 downto 0) := "00000000";
            x : in STD_LOGIC_VECTOR(7 downto 0)
@@ -83,7 +85,8 @@ begin
                 when IDLE =>
                     
                     ready <= '0';
-                    
+                    produce_symbol <= '0';
+                                           
                     if(start = '1')then
                         next_state <= IN_PROGRESS;
                     end if;
@@ -108,7 +111,8 @@ begin
                 
                     if(counter >= 8) then
                         
-                        stream <= buffor(24 to 31); 
+                        stream <= buffor(24 to 31);
+                        produce_symbol  <= '1';
                         buffor <= (0 to 7 => '0') & buffor(0 to 23);
                                   
                         counter := counter - 8;
@@ -116,7 +120,6 @@ begin
                     end if;
                     
                     if(end_data = '1') then
-                       
                        if(counter = 0) then
                          disjoint_bytes := x"00";
                          next_state <= ADD_AMOUNT_DISJOINT_BYTES;
@@ -125,7 +128,6 @@ begin
                        end if;
                               
                     else
-                    
                        next_state <= IDLE;               
                     
                     end if;
@@ -133,9 +135,10 @@ begin
                when EMPTY_BUFF1 =>
                
                    if(counter <= 5) then
-                    
+                        
                         stream <= std_logic_vector(to_unsigned(counter, 3)) & (4 - counter downto 0 => '0') & buffor(31 downto 32 - counter); 
                         disjoint_bytes := x"01";
+                        produce_symbol  <= '1';
                         next_state <= OUT_END_STATE;
                                       
                    else
@@ -144,7 +147,7 @@ begin
                         disjoint_bytes := "00000010";
                         buffor <= (4 downto 0 => '0') & buffor(0 to 26);
                         counter := counter - 5;
-                        
+                        produce_symbol  <= '1';
                         next_state <= EMPTY_BUFF2;
                     
                    end if;
@@ -152,17 +155,17 @@ begin
                when EMPTY_BUFF2 =>
                     
                     stream <= std_logic_vector(to_unsigned(counter, 3)) & (0 to 4 - counter => '0') & buffor(32 - counter to 31);
-                    
+                    produce_symbol  <= '1';
                     next_state <= ADD_AMOUNT_DISJOINT_BYTES;
                
                when ADD_AMOUNT_DISJOINT_BYTES =>
-                    
+                    produce_symbol  <= '1';
                     stream <= std_logic_vector(unsigned(disjoint_bytes));
                     next_state <= OUT_END_STATE;
                
                 
                when OUT_END_STATE =>
-                    
+               
                     stream <= end_state;
                     ready <= '1';             
                     
