@@ -24,7 +24,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use STD.textio.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
+use IEEE.NUMERIC_STD.ALL;
 
 -- Uncomment the following library declaration if instantiating
 -- any Xilinx leaf cells in this code.
@@ -146,7 +146,7 @@ begin
              
           end loop;  
            
-           write(line_to_file, (line_content)); 
+           write(line_to_file, string'(line_content)); 
            writeline(write_to_file, line_to_file);            
    end if;
        

@@ -1,51 +1,9 @@
-Exception at PC 0x00007FF899F612BE
+Exception at PC 0x00007FF861B712BE
 Attemped to read address 0x0000000000000000
 Printing stacktrace...
 
-[0]  [0x00007FF899F612BE]
-[1]  [0x00007FF899F612BE]
-[2] (iki_std_textio_writeline+0xe6) [0x00007FF899FB00F6]
-[3]  [0x00000000004093A9]
+[0]  [0x00007FF861B712BE]
+[1]  [0x00007FF861B712BE]
+[2] (iki_std_textio_writeline+0xe6) [0x00007FF861BC00F6]
+[3]  [0x0000000000409399]
 Done
-Unable to capture context for thread 4696 in process 13304, can not generate back trace
-Exception at PC 0x00007FF8C30C9E08
-Unable to capture context for thread 7464 in process 13304, can not generate back trace
-Unable to capture context for thread 11824 in process 13304, can not generate back trace
-Unable to capture context for thread 4696 in process 13304, can not generate back trace
-Unable to capture context for thread 4364 in process 13304, can not generate back trace
-Exception at PC 0x00007FF86183BB93
-Printing stacktrace...
-
-[0]  [0x00007FF86183BB93]
-[1]  [0x00007FF86183BB93]
-[2]  [0x00007FF86183B4A1]
-[3]  [0x00007FF86183B3EF]
-[4]  [0x00007FF8618219FE]
-[5]  [0x00007FF861820ED1]
-[6]  [0x00007FF861820D76]
-[7]  [0x00007FF8617C79F6]
-[8]  [0x00007FF8617B7AFB]
-[9]  [0x00007FF8618DE90A]
-[10]  [0x00007FF8618F9F87]
-[11]  [0x00007FF8618FA05F]
-[12] (BaseThreadInitThunk+0x14) [0x00007FF8C4652774]
-[13] (RtlUserThreadStart+0x21) [0x00007FF8C69C0D51]
-Done
-Unable to capture context for thread 7464 in process 13304, can not generate back trace
-Unable to capture context for thread 4364 in process 13304, can not generate back trace
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08
-Exception at PC 0x00007FF8C30C9E08

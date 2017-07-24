@@ -1,7 +1,0 @@
-Vivado Simulator 2016.4
-Time resolution is 1 ps
-FATAL_ERROR: Vivado Simulator kernel has discovered an exceptional condition from which it cannot recover. Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support.
-Time: 120 ns  Iteration: 3  Process: /Decoder_Test/write_decoded_symbol
-  File: C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Decoder_Test.vhd
-
-HDL Line: C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Decoder_Test.vhd:150
