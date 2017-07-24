@@ -17,22 +17,22 @@ begin
 		if(rising_edge(clk)) then
 
 			case symbol is
-				when "00000000" => result <= "00000011";
-				when "00000001" => result <= "00000010";
-				when "00000010" => result <= "00000001";
-				when "00000011" => result <= "00000001";
-				when "00000100" => result <= "00000001";
-				when "00000101" => result <= "00000010";
-				when "00000110" => result <= "00000010";
-				when "00000111" => result <= "00000010";
-				when "00001000" => result <= "00000001";
-				when "00001001" => result <= "00000001";
-				when "00001010" => result <= "00000010";
-				when "00001011" => result <= "00000001";
-				when "00001100" => result <= "00000001";
-				when "00001101" => result <= "00000001";
-				when "00001110" => result <= "00000001";
-				when "00001111" => result <= "00000001";
+				when "00010000" => result <= "00000011";
+				when "00010001" => result <= "00000010";
+				when "00010010" => result <= "00000001";
+				when "00010011" => result <= "00000001";
+				when "00010100" => result <= "00000001";
+				when "00010101" => result <= "00000010";
+				when "00010110" => result <= "00000010";
+				when "00010111" => result <= "00000010";
+				when "00011000" => result <= "00000001";
+				when "00011001" => result <= "00000001";
+				when "00011010" => result <= "00000010";
+				when "00011011" => result <= "00000001";
+				when "00011100" => result <= "00000001";
+				when "00011101" => result <= "00000001";
+				when "00011110" => result <= "00000001";
+				when "00011111" => result <= "00000001";
 				when others => NULL; 
 			end case;
 		end if;

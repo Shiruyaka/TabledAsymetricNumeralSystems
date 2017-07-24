@@ -36,9 +36,12 @@ entity Decoder is
             init : in STD_LOGIC;
             start : in STD_LOGIC;
             clk : in STD_LOGIC;
+            
             end_data : in STD_LOGIC;
             new_symbol : in STD_LOGIC;
-                    
+            end_decoded : out STD_LOGIC;
+            
+            produced_symbol : out STD_LOGIC;  
             ready : out STD_LOGIC;
                         
             stream : out STD_LOGIC_VECTOR(0 to 7);
@@ -112,7 +115,7 @@ state_machine: process(CLK)
       end if;
     end process;
 
- main_process: process(current_state, start, data_in)
+ main_process: process(current_state, start, data_in, new_symbol)
     variable length, bytes, buffor_counter, nbBitsInt : integer := 0;
     variable decoded_sym, mask, shifted_buff : STD_LOGIC_VECTOR(0 to 7);
      
@@ -123,59 +126,83 @@ state_machine: process(CLK)
     case current_state is
     
     when IDLE =>
-        
+    
+        end_decoded <= '1';
         buffor <= x"00000000";        
         length := 0;
         ready <= '0';
+        
         if(start = '1') then
+            end_decoded <= '0';
             next_state <= GET_STATE;
         end if;
         
     when GET_STATE =>
-       state <= data_in;
-       bytes := to_integer(unsigned(data_in));
-       stream <= data_in;
-       next_state <= AMOUNT_BYTE_TO_MERGE;
-    
-    when AMOUNT_BYTE_TO_MERGE =>
-    
-        bytes := to_integer(unsigned(data_in));
-        stream <= std_logic_vector(to_unsigned(bytes, 8));
+        ready <= '1';
         
-        case bytes is 
-            when 0 =>
-                next_state <= GET_SYMBOLS;
-            when 1 => 
-                next_state <= MERGING_LAST_BYTE_FIRST;
-            when 2 =>
-                next_state <= MERGING_LAST_BYTE_SECOND;
-            when others =>
-                NULL;
-        end case;
-       
-      when MERGING_LAST_BYTE_SECOND =>
-       
-       length := to_integer(unsigned(data_in(0 to 2)));
-       
-       buffor_counter := buffor_counter + length;
-       buffor <= (data_in(8 - length to 7) & (0 to 31 - length => '0'));
+        if(new_symbol = '1') then
+            state <= data_in;
+            bytes := to_integer(unsigned(data_in));
+            stream <= data_in;
+            next_state <= AMOUNT_BYTE_TO_MERGE;
+        end if;
+
+    when AMOUNT_BYTE_TO_MERGE =>
+        ready <= '1';
+        
+        if(new_symbol = '1') then
+            
+            bytes := to_integer(unsigned(data_in));
+            stream <= std_logic_vector(to_unsigned(bytes, 8));
+            
+            case bytes is 
+                when 0 =>
+                    next_state <= GET_SYMBOLS;
+                when 1 => 
+                    next_state <= MERGING_LAST_BYTE_FIRST;
+                when 2 =>
+                    next_state <= MERGING_LAST_BYTE_SECOND;
+                when others =>
+                    NULL;
+            end case;
+
+        end if;
       
-       next_state <= MERGING_LAST_BYTE_FIRST;
+      when MERGING_LAST_BYTE_SECOND =>
+        ready <= '1';
+       
+       if(new_symbol = '1')then 
+
+          length := to_integer(unsigned(data_in(0 to 2)));
+           
+          buffor_counter := buffor_counter + length;
+          buffor <= (data_in(8 - length to 7) & (0 to 31 - length => '0'));
+
+          next_state <= MERGING_LAST_BYTE_FIRST;
+
+       end if;
+      
       
       when MERGING_LAST_BYTE_FIRST =>
+        ready <= '1';
         
-        length := to_integer(unsigned(data_in(0 to 2)));
+        if(new_symbol = '1') then
         
-        buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(3 to 7) & (0 to 26 - buffor_counter => '0'));   
-        buffor_counter := buffor_counter + length;
-        
-        next_state <= GET_SYMBOLS;
+            length := to_integer(unsigned(data_in(0 to 2)));
+            
+            buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(3 to 7) & (0 to 26 - buffor_counter => '0'));   
+            buffor_counter := buffor_counter + length;
+            
+            next_state <= GET_SYMBOLS;
+                                
+        end if;
         
       when GET_SYMBOLS =>
         ready <= '1';
         
         if(new_symbol = '1') then
-         
+        
+               ready <= '0';
                buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in & (0 to 23 - buffor_counter => '0')); 
                buffor_counter := buffor_counter + 8;
                ready <= '0';
@@ -188,17 +215,18 @@ state_machine: process(CLK)
       
        if(buffor_counter > nbBitsInt) then
         
+            produced_symbol <= '1';
             stream <= symbol;
             buffor_counter := buffor_counter - nbBitsInt;
                    
             state <=  STD_LOGIC_VECTOR(unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
-            
             buffor <= (buffor(nbBitsInt to 31) & (0 to nbBitsInt - 1 => '0'));
         
             next_state <= COMPUTE_NEXT_STATE;
         
         else
             if (end_data = '1') then
+                end_decoded <= '1';
                 next_state <= IDLE;
             else
                 next_state <= GET_SYMBOLS;    
