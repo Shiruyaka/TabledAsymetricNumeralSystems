@@ -38,7 +38,7 @@ end Decoder_Test;
 architecture Behavioral of Decoder_Test is
 
 signal Init, Start, Clk, Ready, New_Symbol : STD_LOGIC;
-signal Stream, Data_In : STD_LOGIC_VECTOR(0 to 7);
+signal Stream, Data_In : STD_LOGIC_VECTOR(7 downto 0);
 
 component Decoder is
     Port (
@@ -46,11 +46,11 @@ component Decoder is
             start : in STD_LOGIC;
             clk : in STD_LOGIC;
                        
-            stream : out STD_LOGIC_VECTOR(0 to 7);
+            stream : out STD_LOGIC_VECTOR(7 downto 0);
             ready : out STD_LOGIC;
             
             new_symbol : in STD_LOGIC;
-            data_in : in STD_LOGIC_VECTOR(0 to 7)
+            data_in : in STD_LOGIC_VECTOR(7 downto 0)
           );
 end component;
 
@@ -79,19 +79,31 @@ end process;
 test_decoder: process
 begin
     Init <= '1';
+    New_Symbol <= '0';
+    
     wait until rising_edge(Clk);
     Init <= '0';
     Start <= '1';
     wait until rising_edge(Clk);
     Start <= '0';
-    Data_In <= x"05";
+    Data_In <= "00000101";
     wait until rising_edge(Clk);
-    Data_In <= x"02";
+    Data_In <= "00000010";
     wait until rising_edge(Clk);
-    Data_In <= "01000011";
+    Data_In <= "01000010";
     wait until rising_edge(Clk);
     Data_In <= "10111010";
-    wait until rising_edge(Clk);
+    wait until rising_edge(Clk) and Ready = '1';
+    
+    New_Symbol <= '1';
+    Data_In <= "11110000";
+    
+    wait until rising_edge(Clk) and Ready = '1';
+    Data_In <= "10101010";
+    
+    wait until rising_edge(Clk) and Ready = '1';
+    Data_In <= "01010101";
+    
     wait;
     
 end process;

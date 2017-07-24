@@ -99,7 +99,7 @@ begin
                     bits := x and mask;
                     bits_shifted :=  (23 - counter downto 0 => '0') & bits & (counter - 1 downto 0 => '0');                                           
                     
-                    buffor <= buffor or bits_shifted;     
+                    buffor <= buffor or bits_shifted;
                     counter := counter + nbBitsInt;
                     
                     next_state <= CHECKING_BUFFOR;
