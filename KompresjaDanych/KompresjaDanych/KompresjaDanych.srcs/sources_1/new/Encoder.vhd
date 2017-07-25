@@ -71,20 +71,24 @@ component Buffor
  end component;
 
 component NbRom
-port(
+    Port(
         symbol : in STD_LOGIC_VECTOR (7 downto 0);
         clk: in STD_LOGIC;
-        nb : out STD_LOGIC_VECTOR (7 downto 0)
-    );
+        nb : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
 component StartRom
-port(
-    symbol : in STD_LOGIC_VECTOR (7 downto 0);
-    clk: in STD_LOGIC;
-    startValue : out STD_LOGIC_VECTOR (7 downto 0)
-    );
+    Port(
+        symbol : in STD_LOGIC_VECTOR (7 downto 0);
+        clk: in STD_LOGIC;
+        startValue : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
+
+component encodingTableRom
+	Port ( symbol : in STD_LOGIC_VECTOR(0 to 7);
+		   clk : in STD_LOGIC;
+		   result: out STD_LOGIC_VECTOR(0 to 7));
+    end component;
 
 signal init_buff, 
        start_buff,
@@ -95,9 +99,10 @@ signal empty_buff : STD_LOGIC := '0';
 signal encoderTableState : STD_LOGIC_VECTOR(7 downto 0);
 signal nb_rom: STD_LOGIC_VECTOR (7 downto 0);
 signal startForSymbol: STD_LOGIC_VECTOR (7 downto 0); 
-
+signal computedState : STD_LOGIC_VECTOR (7 downto 0);
 type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, GET_START_STATE, WAIT_FOR_END);
 signal current_state, next_state : state_type;
+signal state: STD_LOGIC_VECTOR (7 downto 0);
 
 begin 
 
@@ -129,7 +134,13 @@ Port map(
         symbol => symbol,
         startValue => startForSymbol
         );
-
+        
+encRom: encodingTableRom
+Port map(
+        clk => clk,
+        symbol => computedState,
+        result => state
+        );
 state_machine: process(CLK)
     begin
      if(rising_edge(clk)) then
@@ -143,7 +154,7 @@ state_machine: process(CLK)
     
 main_process: process(current_state, symbol, start, new_symbol, ready_buff)
     variable nb_bits: std_logic_vector(7 downto 0) := "00000000";
-    variable state: std_logic_vector(7 downto 0);
+    variable actual_state : std_logic_vector(7 downto 0);
     variable r_value_int, amount: integer;
     variable counter : integer := 0;
     
@@ -176,11 +187,12 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                 next_state <= GET_START_STATE;  
                 
             when GET_START_STATE =>
-                state := symbol;
+                actual_state := symbol;
+                
                 next_state <= GET_SYMBOL;
                 
             when GET_SYMBOL => 
-            
+                 
                  ready <= '1';
                  start_buff <= '0';
                           
@@ -201,10 +213,10 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                          
             when COMPUTE_NEXT_STATE  =>
             
-                state :=  
+                actual_state :=  
                     (to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
-                     state(7 - to_integer(unsigned(nb_bits)) downto 0);
-                state := startForSymbol + state;              
+                     actual_state(7 - to_integer(unsigned(nb_bits)) downto 0);
+                computedState <= startForSymbol + actual_state;              
                 
                 if(counter = amount) then
                    encoderTableState <= state;

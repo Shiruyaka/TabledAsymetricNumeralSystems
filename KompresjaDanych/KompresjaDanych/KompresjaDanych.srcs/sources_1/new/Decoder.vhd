@@ -57,27 +57,27 @@ type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE_SEC
 signal current_state, next_state : state_type;
 signal buffor : STD_LOGIC_VECTOR(0 to 31);
 
-signal nbBits: STD_LOGIC_VECTOR(7 downto 0);
+signal nbBits: STD_LOGIC_VECTOR(0 to 7);
 signal newX: STD_LOGIC_VECTOR(0 to 7);
-signal state: STD_LOGIC_VECTOR(7 downto 0);
-signal symbol: STD_LOGIC_VECTOR(7 downto 0);
+signal state: STD_LOGIC_VECTOR(0 to 7);
+signal symbol: STD_LOGIC_VECTOR(0 to 7);
 
 component nbBitsRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (7 downto 0));
+		result: out STD_LOGIC_VECTOR (0 to 7));
 end component;
 
 component symbolRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (7 downto 0));
+		result: out STD_LOGIC_VECTOR (0 to 7));
 end component;
 
 component newXRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (7 downto 0));
+		result: out STD_LOGIC_VECTOR (0 to 7));
 end component;
 
 
@@ -117,7 +117,7 @@ state_machine: process(CLK)
 
  main_process: process(current_state, start, data_in, new_symbol)
     variable length, bytes, buffor_counter, nbBitsInt : integer := 0;
-    variable decoded_sym, mask, shifted_buff : STD_LOGIC_VECTOR(0 to 7);
+    variable decoded_sym, mask, shifted_buff, sixteen : STD_LOGIC_VECTOR(0 to 7);
      
     begin
     
@@ -131,6 +131,8 @@ state_machine: process(CLK)
         buffor <= x"00000000";        
         length := 0;
         ready <= '0';
+        produced_symbol <= '0';
+        sixteen := "00010000";
         
         if(start = '1') then
             end_decoded <= '0';
@@ -141,9 +143,9 @@ state_machine: process(CLK)
         ready <= '1';
         
         if(new_symbol = '1') then
+            ready <= '0';
             state <= data_in;
             bytes := to_integer(unsigned(data_in));
-            stream <= data_in;
             next_state <= AMOUNT_BYTE_TO_MERGE;
         end if;
 
@@ -153,8 +155,7 @@ state_machine: process(CLK)
         if(new_symbol = '1') then
             
             bytes := to_integer(unsigned(data_in));
-            stream <= std_logic_vector(to_unsigned(bytes, 8));
-            
+            ready <= '0';
             case bytes is 
                 when 0 =>
                     next_state <= GET_SYMBOLS;
@@ -172,7 +173,7 @@ state_machine: process(CLK)
         ready <= '1';
        
        if(new_symbol = '1')then 
-
+          ready <= '0';
           length := to_integer(unsigned(data_in(0 to 2)));
            
           buffor_counter := buffor_counter + length;
@@ -187,19 +188,19 @@ state_machine: process(CLK)
         ready <= '1';
         
         if(new_symbol = '1') then
-        
+            ready <= '0';
             length := to_integer(unsigned(data_in(0 to 2)));
             
             buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(3 to 7) & (0 to 26 - buffor_counter => '0'));   
             buffor_counter := buffor_counter + length;
             
-            next_state <= GET_SYMBOLS;
+            next_state <= DECODING_DATA;
                                 
         end if;
         
       when GET_SYMBOLS =>
         ready <= '1';
-        
+        produced_symbol <= '0';
         if(new_symbol = '1') then
         
                ready <= '0';
@@ -219,7 +220,7 @@ state_machine: process(CLK)
             stream <= symbol;
             buffor_counter := buffor_counter - nbBitsInt;
                    
-            state <=  STD_LOGIC_VECTOR(unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
+            state <=  STD_LOGIC_VECTOR(unsigned(sixteen) + unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
             buffor <= (buffor(nbBitsInt to 31) & (0 to nbBitsInt - 1 => '0'));
         
             next_state <= COMPUTE_NEXT_STATE;
@@ -234,6 +235,7 @@ state_machine: process(CLK)
        end if;
        
     when COMPUTE_NEXT_STATE =>
+            produced_symbol <= '0';
             next_state <= DECODING_DATA;
   
     end case;

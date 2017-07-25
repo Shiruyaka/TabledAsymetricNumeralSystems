@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity symbolRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (7 downto 0);
+	Port ( symbol : in STD_LOGIC_VECTOR(0 to 7);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (7 downto 0));
+		result: out STD_LOGIC_VECTOR(0 to 7));
 end symbolRom;
 
 architecture behavioral of symbolRom is
