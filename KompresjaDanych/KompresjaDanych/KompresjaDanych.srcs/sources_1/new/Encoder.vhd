@@ -163,6 +163,7 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
         case current_state is
             when IDLE =>
             
+                end_data <= '0';
                 r_value_int := 0;
                 amount := 0;
                 counter := 0;
@@ -225,10 +226,11 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             
             when WAIT_FOR_END =>
                  start_buff <= '0';
+                 end_data <= '1';
                  
-                 if(ready_buff = '1') then
-                  end_data <= '1';
+                 if(ready_buff = '1') then              
                   next_state <= IDLE;
+                  end_data <= '0';
                  end if;
                  
         end case;

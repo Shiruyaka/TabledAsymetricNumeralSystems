@@ -87,7 +87,7 @@ read_and_encode: process
     
 begin
     
-  file_open(read_file, "C:\Users\Ola\Desktop\test.txt", READ_MODE);
+  file_open(read_file, "C:\Users\tomas\Desktop\test.txt", READ_MODE);
    
   Init <= '1';
   New_symbol <= '0';
@@ -131,8 +131,8 @@ begin
   wait;
 end process;
 
-write_encoded_data: process(Produced_Symbol, End_Data, Data_Out)
-file write_file: text open write_mode is "C:\Users\Ola\Desktop\out.txt";
+write_encoded_data: process(End_Data, Produced_Symbol, Data_Out)
+file write_file: text open write_mode is "C:\Users\tomas\Desktop\out.txt";
 variable line_to_file : line;
 variable line_str: string(1 to 8);
 variable line_content: string(1 to 8);
@@ -140,6 +140,7 @@ variable i : integer := 0;
 
 begin
     --while End_Data = '0' loop
+    --if(rising_edge(Clk)) then
         if(Produced_Symbol = '1' and End_Data = '0') then      
             for i in 0 to 7 loop
                 
@@ -154,11 +155,13 @@ begin
             write(line_to_file, string'(line_content)); 
             writeline(write_file, line_to_file);            
         end if;
-    --end loop;
-    
-    if(End_Data = '1') then
         
-        file_close(write_file);
-    end if; 
+        
+        if(End_Data = '1') then     
+           file_close(write_file);
+        end if;
+         
+   -- end if;
+    
 end process;
 end enc_test;

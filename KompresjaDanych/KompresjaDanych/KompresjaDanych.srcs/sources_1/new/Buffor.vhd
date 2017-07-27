@@ -81,10 +81,10 @@ begin
             when "001" =>
             
                 if(buffor_fill + bits >= 8) then
-                
-                    stream <= encoded_symbol(0 to 7 - buffor_fill) & buffor(32 - buffor_fill to 31);
+                    -- tutej duzo ?le oprocz buffor(32 - buffor_fill to 31)
+                    stream <= encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
                     produce_symbol <= '1';
-                    buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - buffor_fill to bits - 1 );
+                    buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - bits to buffor_fill - 1);
                     buffor_fill <= bits - 8 + buffor_fill;
                     
                 else
@@ -116,20 +116,23 @@ begin
                                               buffor(32 - buffor_fill to 31); 
                     buffor_fill <= 0;
                     buffor <= x"00000000";
+              
                 
                 else        
                 
                     disjointed_bytes <= 0;
-                
+                    produce_symbol <= '1';
+                    
                 end if;
             
             when "011" =>
                 
                 stream <= std_logic_vector(to_unsigned(disjointed_bytes, 8));
+                produce_symbol <= '1';
                 
             when "100" =>
                 
-                stream <= end_state;
+                stream <= x;
                 produce_symbol <= '0';
                 
             when others =>
@@ -196,7 +199,9 @@ begin
         when OUT_STATE =>
         
             action <= "111";
+            ready <= '1';
             next_state <= IDLE;
+            
                 
         end case;   
     end process;
