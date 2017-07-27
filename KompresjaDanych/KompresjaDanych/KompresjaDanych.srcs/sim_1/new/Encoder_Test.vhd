@@ -46,7 +46,7 @@ port(
         
         produced_symbol : out STD_LOGIC;
         end_data : out STD_LOGIC;
-        symbol : in STD_LOGIC_VECTOR (7 downto 0);
+        data_in : in STD_LOGIC_VECTOR (7 downto 0);
         data_out : out STD_LOGIC_VECTOR (7 downto 0);                    
         new_symbol : in STD_LOGIC
 );
@@ -63,7 +63,7 @@ test: Encoder
                 start => Start,
                 ready => Ready,
                 clk => Clk,
-                symbol => Symbol,
+                data_in => Symbol,
                 data_out => Data_out,
                 new_symbol => New_symbol,
                 produced_symbol => Produced_Symbol,
@@ -87,21 +87,20 @@ read_and_encode: process
     
 begin
     
-  file_open(read_file, "C:\Users\Ola\Desktop\test.txt", READ_MODE);
+  file_open(read_file, "C:\Users\tomas\Desktop\test.txt", READ_MODE);
    
   Init <= '1';
+  New_symbol <= '0';
+  
     wait until rising_edge(Clk);
   Init <= '0';
   Start <= '1';
     wait until rising_edge(Clk);
   Start <= '0';
-  symbol <= "00010000";
+  symbol <= "00001100";
     wait until rising_edge(Clk);
   symbol <= "00000100";
-    wait until rising_edge(Clk);
-  symbol <= "00010000";   
-   wait until rising_edge(Clk);
-  
+
   while not endfile(read_file) loop
     
     readline(read_file, line_enum);
@@ -133,7 +132,7 @@ begin
 end process;
 
 write_encoded_data: process(Produced_Symbol, End_Data, Data_Out)
-file write_file: text open write_mode is "C:\Users\Ola\Desktop\out.txt";
+file write_file: text open write_mode is "C:\Users\tomas\Desktop\out.txt";
 variable line_to_file : line;
 variable line_str: string(1 to 8);
 variable line_content: string(1 to 8);

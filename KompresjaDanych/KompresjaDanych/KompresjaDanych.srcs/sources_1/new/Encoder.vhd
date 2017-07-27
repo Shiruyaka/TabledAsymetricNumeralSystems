@@ -42,7 +42,7 @@ entity Encoder is
            end_data : out STD_LOGIC;
            
            
-           symbol : in STD_LOGIC_VECTOR (7 downto 0);
+           data_in : in STD_LOGIC_VECTOR (7 downto 0);
            data_out : out STD_LOGIC_VECTOR (7 downto 0);
            produced_symbol : out STD_LOGIC;
            new_symbol : in STD_LOGIC
@@ -65,8 +65,7 @@ component Buffor
            
            produce_symbol : out STD_LOGIC;
                       
-           end_data : in STD_LOGIC; --to dispose buffor
-           end_state : in STD_LOGIC_VECTOR(7 downto 0)
+           end_data : in STD_LOGIC --to dispose buffor
        );
  end component;
 
@@ -74,14 +73,14 @@ component NbRom
     Port(
         symbol : in STD_LOGIC_VECTOR (7 downto 0);
         clk: in STD_LOGIC;
-        nb : out STD_LOGIC_VECTOR (7 downto 0));
+        result : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
 component StartRom
     Port(
         symbol : in STD_LOGIC_VECTOR (7 downto 0);
         clk: in STD_LOGIC;
-        startValue : out STD_LOGIC_VECTOR (7 downto 0));
+        result : out STD_LOGIC_VECTOR (7 downto 0));
 end component;
 
 component encodingTableRom
@@ -94,15 +93,13 @@ signal init_buff,
        start_buff,
        ready_buff: STD_LOGIC;
        
-signal nb_bits_buff : STD_LOGIC_VECTOR(3 downto 0);
+signal nb_bits_buff : STD_LOGIC_VECTOR(3 downto 0):= x"0";
 signal empty_buff : STD_LOGIC := '0';
-signal encoderTableState : STD_LOGIC_VECTOR(7 downto 0);
-signal nb_rom: STD_LOGIC_VECTOR (7 downto 0);
-signal startForSymbol: STD_LOGIC_VECTOR (7 downto 0); 
-signal computedState : STD_LOGIC_VECTOR (7 downto 0);
-type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, GET_START_STATE, WAIT_FOR_END);
+
+signal Start_Symbol, Computed_State, encoderTableState, nb_rom, State, Symbol, Debug: STD_LOGIC_VECTOR (7 downto 0) := x"00";
+
+type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, WAIT_FOR_END);
 signal current_state, next_state : state_type;
-signal state: STD_LOGIC_VECTOR (7 downto 0);
 
 begin 
 
@@ -114,33 +111,33 @@ Port map(
             start => start_buff,
             
             nbBits => nb_bits_buff,
-            x => encoderTableState,
+            x => State,
             stream => data_out,
             produce_symbol => produced_symbol,
-            end_data => empty_buff,
-            end_state => encoderTableState
+            end_data => empty_buff
         );
 
 nbRm: NbRom
 Port map(
-            symbol => symbol,
             clk => clk,
-            nb => nb_rom
+            symbol => Symbol,
+            result => nb_rom
         );
 
 strRom: StartRom
 Port map(
-        clk => clk,
-        symbol => symbol,
-        startValue => startForSymbol
+            clk => clk,
+            symbol => Symbol,
+            result => Start_Symbol
         );
         
 encRom: encodingTableRom
 Port map(
-        clk => clk,
-        symbol => computedState,
-        result => state
+            clk => clk,
+            symbol => Computed_State,
+            result => State
         );
+        
 state_machine: process(CLK)
     begin
      if(rising_edge(clk)) then
@@ -152,7 +149,7 @@ state_machine: process(CLK)
       end if;
     end process;
     
-main_process: process(current_state, symbol, start, new_symbol, ready_buff)
+main_process: process(current_state, data_in, start, new_symbol, ready_buff)
     variable nb_bits: std_logic_vector(7 downto 0) := "00000000";
     variable actual_state : std_logic_vector(7 downto 0);
     variable r_value_int, amount: integer;
@@ -164,10 +161,11 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
         
         case current_state is
             when IDLE =>
+            
                 r_value_int := 0;
                 amount := 0;
                 counter := 0;
-                
+                Computed_State <= "11111111";
                 init_buff <= '1';
                 empty_buff <= '0';
                 ready <= '0';
@@ -179,49 +177,45 @@ main_process: process(current_state, symbol, start, new_symbol, ready_buff)
                 end if;
                
             when GET_AMOUNT =>
-                amount := to_integer(unsigned(symbol));                
+            
+                amount := to_integer(unsigned(data_in));                
                 next_state <= GET_rVALUE; 
                 
-            when GET_rVALUE =>                             
-                r_value_int := to_integer(unsigned(symbol)) + 1;         
-                next_state <= GET_START_STATE;  
-                
-            when GET_START_STATE =>
-                actual_state := symbol;
-                
-                next_state <= GET_SYMBOL;
-                
-            when GET_SYMBOL => 
-                 
+            when GET_rVALUE =>
+                                       
+                r_value_int := to_integer(unsigned(data_in)) + 1;         
+                next_state <= GET_SYMBOL ;  
+                         
+            when GET_SYMBOL =>
+            
+                 actual_state := State;
                  ready <= '1';
                  start_buff <= '0';
                           
                 if(new_symbol = '1') then
                     counter := counter + 1;
                     ready <= '0';
-            
-                    nb_bits := state + nb_rom;
-                    nb_bits := (r_value_int - 1 downto 0 => '0') & nb_bits(7 downto r_value_int);
-                    nb_bits_buff <= nb_bits(3 downto 0);
-                    encoderTableState <= state;
-                    start_buff <= '1';           
-                    --nb := nb_rom;
+                    Symbol <= data_in;
                     
                     next_state <= COMPUTE_NEXT_STATE;
                              
                 end if;
                          
             when COMPUTE_NEXT_STATE  =>
-            
-                actual_state :=  
-                    (to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
-                     actual_state(7 - to_integer(unsigned(nb_bits)) downto 0);
-                computedState <= startForSymbol + actual_state;              
                 
+                nb_bits := actual_state + nb_rom;
+                nb_bits := (r_value_int - 1 downto 0 => '0') & nb_bits(7 downto r_value_int);
+                                
+                nb_bits_buff <= nb_bits(3 downto 0);
+                start_buff <= '1';
+                
+                Computed_State <= Start_Symbol +((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & 
+                                                  actual_state(7 downto to_integer(unsigned(nb_bits))));
+                                                                               
+                Debug <= ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & actual_state(7 downto to_integer(unsigned(nb_bits))));
                 if(counter = amount) then
-                   encoderTableState <= state;
-                   empty_buff <= '1';
-                  
+                   
+                   empty_buff <= '1';                  
                    next_state <= WAIT_FOR_END;
                 else
                     next_state <= GET_SYMBOL;            
