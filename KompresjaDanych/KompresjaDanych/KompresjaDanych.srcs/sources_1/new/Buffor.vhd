@@ -50,7 +50,7 @@ end Buffor;
 
 architecture use_bits of Buffor is
 
-type state_type is (IDLE, ENCODING, EMPTY_BUFF, OUT_AM_BYTES, OUT_STATE);
+type state_type is (IDLE, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_STATE);
 signal current_state, next_state : state_type;
 
 signal buffor: std_logic_vector(0 to 31):= x"00000000";
@@ -79,14 +79,19 @@ begin
             case action is
             
             when "001" =>
+            
                 if(buffor_fill + bits >= 8) then
+                
                     stream <= encoded_symbol(0 to 7 - buffor_fill) & buffor(32 - buffor_fill to 31);
                     produce_symbol <= '1';
                     buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - buffor_fill to bits - 1 );
                     buffor_fill <= bits - 8 + buffor_fill;
+                    
                 else
+                
                     buffor <= buffor or ((23 - buffor_fill downto 0 => '0') & encoded_symbol & (buffor_fill - 1 downto 0 => '0'));
                     buffor_fill <= buffor_fill + bits;
+                    
                 end if;
             
             when "010" =>
@@ -107,8 +112,8 @@ begin
                     produce_symbol <= '1';
                     
                     stream <= std_logic_vector(to_unsigned(buffor_fill, 3)) &
-                                              (4 - buffor_fill downto 0 => '0') &
-                                              buffor(31 downto 32 - buffor_fill); 
+                                              (0 to 4 - buffor_fill => '0') &
+                                              buffor(32 - buffor_fill to 31); 
                     buffor_fill <= 0;
                     buffor <= x"00000000";
                 
@@ -125,16 +130,12 @@ begin
             when "100" =>
                 
                 stream <= end_state;
+                produce_symbol <= '0';
                 
             when others =>
                 produce_symbol <= '0';            
             
-            end case;
-            
-            
-            
-        else
-             produce_symbol <= '0';
+            end case;         
         end if;
     end process;
     
@@ -153,30 +154,40 @@ begin
                                        
             if(start = '1')then
                 next_state <= ENCODING;
+            elsif(end_data = '1') then
+                action <= "010";
+                next_state <= EMPTY_BUFF;
             end if;
             
         when ENCODING =>
             
             bits <= to_integer(unsigned(nbBits)); 
-            encoded_symbol <= x(to_integer(unsigned(nbBits)) - 1 downto 0) & 
-                              (7 - to_integer(unsigned(nbBits)) downto 0 => '0'); 
+            encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
+                              x(to_integer(unsigned(nbBits)) - 1 downto 0) ; 
             action <= "001";        
             
-            if(end_data = '0')then
+            --if(end_data = '0')then
                 next_state <= IDLE;
-            else
-                action <= "010";
-                end_state <= x;
-                next_state <= EMPTY_BUFF;
-            end if;                                                     
+           -- else
+           --     action <= "010";
+           --     end_state <= x;
+           --    next_state <= EMPTY_BUFF;
+           -- end if;                                                     
             
         when EMPTY_BUFF =>
          
             if(buffor_fill = 0) then
                 next_state <= OUT_AM_BYTES;
                 action <= "011";
+            else
+                next_state <= EMPTY_BUFF_2;
             end if;
-        
+            
+        when EMPTY_BUFF_2 =>
+                
+            next_state <= OUT_AM_BYTES;
+            action <= "011";
+             
         when OUT_AM_BYTES =>
             
             action <= "100";

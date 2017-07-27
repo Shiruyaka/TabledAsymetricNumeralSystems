@@ -87,7 +87,7 @@ read_and_encode: process
     
 begin
     
-  file_open(read_file, "C:\Users\tomas\Desktop\test.txt", READ_MODE);
+  file_open(read_file, "C:\Users\Ola\Desktop\test.txt", READ_MODE);
    
   Init <= '1';
   New_symbol <= '0';
@@ -132,7 +132,7 @@ begin
 end process;
 
 write_encoded_data: process(Produced_Symbol, End_Data, Data_Out)
-file write_file: text open write_mode is "C:\Users\tomas\Desktop\out.txt";
+file write_file: text open write_mode is "C:\Users\Ola\Desktop\out.txt";
 variable line_to_file : line;
 variable line_str: string(1 to 8);
 variable line_content: string(1 to 8);

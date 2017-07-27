@@ -96,7 +96,8 @@ signal init_buff,
 signal nb_bits_buff : STD_LOGIC_VECTOR(3 downto 0):= x"0";
 signal empty_buff : STD_LOGIC := '0';
 
-signal Start_Symbol, Computed_State, encoderTableState, nb_rom, State, Symbol, Debug: STD_LOGIC_VECTOR (7 downto 0) := x"00";
+signal Start_Symbol, Computed_State, Nb_Rom,
+       State, Symbol, Debug, State_To_Buff : STD_LOGIC_VECTOR (7 downto 0) := x"00";
 
 type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, WAIT_FOR_END);
 signal current_state, next_state : state_type;
@@ -111,7 +112,7 @@ Port map(
             start => start_buff,
             
             nbBits => nb_bits_buff,
-            x => State,
+            x => State_To_Buff,
             stream => data_out,
             produce_symbol => produced_symbol,
             end_data => empty_buff
@@ -121,7 +122,7 @@ nbRm: NbRom
 Port map(
             clk => clk,
             symbol => Symbol,
-            result => nb_rom
+            result => Nb_Rom
         );
 
 strRom: StartRom
@@ -165,7 +166,7 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 r_value_int := 0;
                 amount := 0;
                 counter := 0;
-                Computed_State <= "11111111";
+                Computed_State <= x"00";
                 init_buff <= '1';
                 empty_buff <= '0';
                 ready <= '0';
@@ -203,10 +204,12 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                          
             when COMPUTE_NEXT_STATE  =>
                 
-                nb_bits := actual_state + nb_rom;
+                nb_bits := actual_state + Nb_Rom;
                 nb_bits := (r_value_int - 1 downto 0 => '0') & nb_bits(7 downto r_value_int);
                                 
                 nb_bits_buff <= nb_bits(3 downto 0);
+                
+                State_To_Buff <= actual_state;
                 start_buff <= '1';
                 
                 Computed_State <= Start_Symbol +((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & 
@@ -214,7 +217,6 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                                                                                
                 Debug <= ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & actual_state(7 downto to_integer(unsigned(nb_bits))));
                 if(counter = amount) then
-                   
                    empty_buff <= '1';                  
                    next_state <= WAIT_FOR_END;
                 else
@@ -222,10 +224,13 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 end if;    
             
             when WAIT_FOR_END =>
+                 start_buff <= '0';
+                 
                  if(ready_buff = '1') then
                   end_data <= '1';
                   next_state <= IDLE;
                  end if;
+                 
         end case;
                
     end process;
