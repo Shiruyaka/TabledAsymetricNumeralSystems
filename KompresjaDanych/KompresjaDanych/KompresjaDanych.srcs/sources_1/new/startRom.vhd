@@ -17,8 +17,8 @@ begin
 		if(rising_edge(clk)) then
 
 			case symbol is
-				when "00000000" => result <= "00000011";
-				when "00000001" => result <= "00000101";
+				when "00000000" => result <= "11111101";
+				when "00000001" => result <= "11111011";
 				when "00000010" => result <= "00000110";
 				when others => NULL; 
 			end case;
