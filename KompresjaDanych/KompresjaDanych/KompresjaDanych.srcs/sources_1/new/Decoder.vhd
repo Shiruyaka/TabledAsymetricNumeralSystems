@@ -127,7 +127,7 @@ state_machine: process(CLK)
     
     when IDLE =>
     
-        end_decoded <= '1';
+        end_decoded <= '0';
         buffor <= x"00000000";        
         length := 0;
         ready <= '0';
@@ -191,7 +191,7 @@ state_machine: process(CLK)
             ready <= '0';
             length := to_integer(unsigned(data_in(0 to 2)));
             
-            buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(3 to 7) & (0 to 26 - buffor_counter => '0'));   
+            buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(8 - length to 7) & (0 to 31 - buffor_counter - length => '0'));               
             buffor_counter := buffor_counter + length;
             
             next_state <= DECODING_DATA;
@@ -218,11 +218,12 @@ state_machine: process(CLK)
         
             produced_symbol <= '1';
             stream <= symbol;
-            buffor_counter := buffor_counter - nbBitsInt;
+            
                    
-            state <=  STD_LOGIC_VECTOR(unsigned(sixteen) + unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
-            buffor <= (buffor(nbBitsInt to 31) & (0 to nbBitsInt - 1 => '0'));
-        
+            state <=  STD_LOGIC_VECTOR(unsigned(sixteen) + unsigned(newX) + unsigned(buffor(32 - nbBitsInt to 31)));
+            buffor <= (buffor(32 - buffor_counter to 31 - nbBitsInt) & (0 to 31 - buffor_counter + nbBitsInt  => '0'));
+            
+            buffor_counter := buffor_counter - nbBitsInt;
             next_state <= COMPUTE_NEXT_STATE;
         
         else

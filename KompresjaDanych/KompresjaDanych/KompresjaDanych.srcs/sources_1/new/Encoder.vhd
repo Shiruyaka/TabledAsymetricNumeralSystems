@@ -99,7 +99,7 @@ signal empty_buff : STD_LOGIC := '0';
 signal Start_Symbol, Computed_State, Nb_Rom,
        State, Symbol, Debug, State_To_Buff : STD_LOGIC_VECTOR (7 downto 0) := x"00";
 
-type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, WAIT_FOR_END);
+type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, SET_END_STATE, WAIT_FOR_END);
 signal current_state, next_state : state_type;
 
 begin 
@@ -216,21 +216,31 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 Computed_State <= Start_Symbol +((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & 
                                                   actual_state(7 downto to_integer(unsigned(nb_bits))));
                                                                                
-                Debug <= ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & actual_state(7 downto to_integer(unsigned(nb_bits))));
                 if(counter = amount) then
-                   empty_buff <= '1';                  
-                   next_state <= WAIT_FOR_END;
+                   empty_buff <= '1';              
+                   next_state <= SET_END_STATE;
                 else
                     next_state <= GET_SYMBOL;            
                 end if;    
             
+            when SET_END_STATE =>
+                start_buff <= '0';
+                
+                if(ready_buff = '1') then
+                    
+                    State_To_Buff <= State;
+                    next_state <= WAIT_FOR_END;
+                                                
+                end if;
+                
             when WAIT_FOR_END =>
-                 start_buff <= '0';
-                 end_data <= '1';
+
+                 if(ready_buff = '1') then
                  
-                 if(ready_buff = '1') then              
-                  next_state <= IDLE;
-                  end_data <= '0';
+                      empty_buff <= '0';           
+                      next_state <= IDLE;
+                      end_data <= '1';
+                      
                  end if;
                  
         end case;

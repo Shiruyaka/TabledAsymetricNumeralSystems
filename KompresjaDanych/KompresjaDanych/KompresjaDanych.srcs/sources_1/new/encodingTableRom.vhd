@@ -33,7 +33,7 @@ begin
 				when "00001101" => result <= "00010111";
 				when "00001110" => result <= "00011011";
 				when "00001111" => result <= "00011100";
-				when others => result <= x"00"; 
+				when others => NULL; 
 			end case;
 		end if;
 

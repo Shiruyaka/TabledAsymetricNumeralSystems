@@ -81,7 +81,7 @@ begin
             when "001" =>
             
                 if(buffor_fill + bits >= 8) then
-                    -- tutej duzo ?le oprocz buffor(32 - buffor_fill to 31)
+                   
                     stream <= encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
                     produce_symbol <= '1';
                     buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - bits to buffor_fill - 1);
@@ -133,7 +133,7 @@ begin
             when "100" =>
                 
                 stream <= x;
-                produce_symbol <= '0';
+                produce_symbol <= '1';
                 
             when others =>
                 produce_symbol <= '0';            
@@ -156,10 +156,13 @@ begin
             action <= "111";
                                        
             if(start = '1')then
+            
                 next_state <= ENCODING;
+                
             elsif(end_data = '1') then
                 action <= "010";
                 next_state <= EMPTY_BUFF;
+                
             end if;
             
         when ENCODING =>
@@ -168,17 +171,11 @@ begin
             encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
                               x(to_integer(unsigned(nbBits)) - 1 downto 0) ; 
             action <= "001";        
-            
-            --if(end_data = '0')then
-                next_state <= IDLE;
-           -- else
-           --     action <= "010";
-           --     end_state <= x;
-           --    next_state <= EMPTY_BUFF;
-           -- end if;                                                     
+            next_state <= IDLE;
+                                                     
             
         when EMPTY_BUFF =>
-         
+            
             if(buffor_fill = 0) then
                 next_state <= OUT_AM_BYTES;
                 action <= "011";
@@ -187,12 +184,13 @@ begin
             end if;
             
         when EMPTY_BUFF_2 =>
-                
+            
             next_state <= OUT_AM_BYTES;
             action <= "011";
              
         when OUT_AM_BYTES =>
             
+            ready <= '1';                    
             action <= "100";
             next_state <= OUT_STATE;
             
