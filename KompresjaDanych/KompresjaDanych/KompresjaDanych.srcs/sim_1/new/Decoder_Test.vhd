@@ -82,7 +82,7 @@ begin
 end process;
 
 read_and_decode:process
-file read_file:text open read_mode is "C:\Users\Ola\Desktop\compression_tests\to_decode.txt";
+file read_file:text open read_mode is "C:\Users\tomas\Desktop\compression_tests\to_decode.txt";
 variable line_enum : line;
 variable line_content: string(1 to 8);
 variable byte: std_logic_vector(1 to 8);
@@ -131,7 +131,7 @@ end process;
 
 
 write_decoded_symbol:process(Stream, End_Decoded, Produced_Symbol)
-file write_to_file: text open write_mode is "C:\Users\Ola\Desktop\compression_tests\decode_out.txt";
+file write_to_file: text open write_mode is "C:\Users\tomas\Desktop\compression_tests\decode_out.txt";
 variable line_to_file : line;
 variable line_content: string(1 to 8);
 variable i : integer := 0;

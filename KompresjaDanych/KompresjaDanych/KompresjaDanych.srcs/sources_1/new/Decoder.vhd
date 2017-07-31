@@ -208,20 +208,21 @@ state_machine: process(CLK)
                buffor_counter := buffor_counter + 8;
                ready <= '0';
                next_state <= DECODING_DATA;
+               
         end if;
                
       when DECODING_DATA =>
       
        nbBitsInt := to_integer(unsigned(nbBits));
       
-       if(buffor_counter > nbBitsInt) then
+       if(buffor_counter >= nbBitsInt) then
         
             produced_symbol <= '1';
             stream <= symbol;
             
                    
-            state <=  STD_LOGIC_VECTOR(unsigned(sixteen) + unsigned(newX) + unsigned(buffor(32 - nbBitsInt to 31)));
-            buffor <= (buffor(32 - buffor_counter to 31 - nbBitsInt) & (0 to 31 - buffor_counter + nbBitsInt  => '0'));
+            state <=  STD_LOGIC_VECTOR(unsigned(sixteen) + unsigned(newX) + unsigned(buffor(0 to nbBitsInt - 1)));
+            buffor <= (buffor(nbBitsInt to buffor_counter -  1) & (0 to 31 - buffor_counter + nbBitsInt  => '0'));
             
             buffor_counter := buffor_counter - nbBitsInt;
             next_state <= COMPUTE_NEXT_STATE;

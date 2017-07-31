@@ -44,6 +44,9 @@ entity Encoder is
            
            data_in : in STD_LOGIC_VECTOR (7 downto 0);
            data_out : out STD_LOGIC_VECTOR (7 downto 0);
+           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
+           r_value : in STD_LOGIC_VECTOR(7 downto 0);
+           
            produced_symbol : out STD_LOGIC;
            new_symbol : in STD_LOGIC
          );
@@ -99,7 +102,7 @@ signal empty_buff : STD_LOGIC := '0';
 signal Start_Symbol, Computed_State, Nb_Rom,
        State, Symbol, Debug, State_To_Buff : STD_LOGIC_VECTOR (7 downto 0) := x"00";
 
-type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, GET_rVALUE, GET_AMOUNT, SET_END_STATE, WAIT_FOR_END);
+type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, SET_END_STATE, WAIT_FOR_END);
 signal current_state, next_state : state_type;
 
 begin 
@@ -153,8 +156,7 @@ state_machine: process(CLK)
 main_process: process(current_state, data_in, start, new_symbol, ready_buff)
     variable nb_bits: std_logic_vector(7 downto 0) := "00000000";
     variable actual_state : std_logic_vector(7 downto 0);
-    variable r_value_int, amount: integer;
-    variable counter : integer := 0;
+    variable counter, r_value_int, amount_byes_int : integer := 0;
     
     begin
         next_state <= current_state;
@@ -164,29 +166,20 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             when IDLE =>
             
                 end_data <= '0';
-                r_value_int := 0;
-                amount := 0;
                 counter := 0;
                 Computed_State <= x"00";
                 init_buff <= '1';
                 empty_buff <= '0';
                 ready <= '0';
+                
                                                   
                 if(start = '1') then
+                   r_value_int := to_integer(unsigned(r_value)) + 1;
+                   amount_byes_int := to_integer(unsigned(amount_bytes));
                    end_data <= '0';
                    init_buff <= '0';
-                   next_state <= GET_AMOUNT;
+                   next_state <= GET_SYMBOL;
                 end if;
-               
-            when GET_AMOUNT =>
-            
-                amount := to_integer(unsigned(data_in));                
-                next_state <= GET_rVALUE; 
-                
-            when GET_rVALUE =>
-                                       
-                r_value_int := to_integer(unsigned(data_in)) + 1;         
-                next_state <= GET_SYMBOL ;  
                          
             when GET_SYMBOL =>
             
@@ -206,7 +199,8 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             when COMPUTE_NEXT_STATE  =>
                 
                 nb_bits := actual_state + Nb_Rom;
-                nb_bits := (r_value_int - 1 downto 0 => '0') & nb_bits(7 downto r_value_int);
+                nb_bits := (r_value_int - 1 downto 0 => '0') &
+                            nb_bits(7 downto r_value_int);
                                 
                 nb_bits_buff <= nb_bits(3 downto 0);
                 
@@ -216,7 +210,7 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 Computed_State <= Start_Symbol +((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') & 
                                                   actual_state(7 downto to_integer(unsigned(nb_bits))));
                                                                                
-                if(counter = amount) then
+                if(counter = amount_byes_int) then
                    empty_buff <= '1';              
                    next_state <= SET_END_STATE;
                 else

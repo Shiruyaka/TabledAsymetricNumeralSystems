@@ -1,0 +1,224 @@
+#include<iostream>
+#include<algorithm>
+#include<cmath>
+#include<fstream>
+#include<string>
+#include <vector>
+
+using namespace std;
+
+class tANS {
+private:
+	int alphabet_size, R, L;
+	double * prob;
+	int * Ls, * symbol, * nbBits, * newX, *encodingTable;
+
+	void spreadSymbol() {
+		int x = 0;
+		//int step = 5 / 8 * L + 3;
+		int step = 5;
+
+		for (int s = 0; s < alphabet_size; ++s) {
+			for (int i = 1; i <= Ls[s]; ++i) {
+				symbol[x] = s;
+				x = (x + step) % L;
+			}
+		}
+	}
+
+	string toBinary(int n, int len, bool downto)
+	{
+		string r, result;
+		int counter = 0;
+		while (n != 0) {
+			r = (n % 2 == 0 ? "0" : "1") + r;
+			n /= 2;
+			counter++;
+		}
+
+		for (int i = 0; i < len - counter; i++) {
+			result += '0';
+		}
+
+		if (downto == true)
+			result += r;
+		else {
+			std::reverse(r.begin(), r.end());
+			result = r + result;
+
+		}
+
+		return result;
+	}
+	
+public:
+	tANS(int alphabet_size_, double * prob_, int R_) {
+		
+		alphabet_size = alphabet_size_;
+		prob = prob_;
+		R = R_;
+
+		L = 1 << R;
+
+		Ls = new int[alphabet_size];
+		symbol = new int[L];
+		newX = new int[L];
+		nbBits = new int[L];
+		encodingTable = new int[L];
+
+		for (int i = 0; i < alphabet_size; ++i) {
+			Ls[i] = prob[i] * L;
+		}
+
+		spreadSymbol();
+	}
+
+	void generateDecodingTables() {
+		int temp;
+		
+		int syl[] = { 1,1,0,2,2,1,0,2,1,0,2,1,2,1,1,1 };
+
+		for (int x = 0; x < L; ++x) {
+			temp = Ls[syl[x]]++;
+			nbBits[x] = R - floor(log2(temp));
+			newX[x] = (temp << nbBits[x]) - L;
+		}
+
+		string * state = new string[L];
+		string * nbBitsStr = new string[L];
+		string * newXStr = new string[L];
+		string * symbolStr = new string[L];
+
+		for (int i = 0; i < L; ++i) {
+			state[i] = toBinary(i + 16, 8, 1);
+			nbBitsStr[i] = toBinary(nbBits[i], 8, 1);
+			newXStr[i] = toBinary(newX[i], 8, 1);
+			symbolStr[i] = toBinary(syl[i], 8, 1);
+		}
+
+		saveToFile(state, "nbBitsRom", nbBitsStr, "nbBitsRomDecoder.vhd", L, 0);
+		saveToFile(state, "newXRom", newXStr, "newXRomDecoder.vhd", L, 0);
+		saveToFile(state, "symbolRom", symbolStr, "symbolRomDecoder.vhd", L, 0);
+	}
+
+	void generateEncodingTables() { 
+		int* k = new int[alphabet_size];
+		int* nb = new int[alphabet_size];
+		int* start = new int[alphabet_size];
+		
+		int r = R + 1;
+
+		for (int s = 0; s < alphabet_size; ++s) {
+			k[s] = R - floor(log2(Ls[s]));
+			nb[s] = (k[s] << r) - (Ls[s] << k[s]);
+			start[s] = -Ls[s];
+
+			for (int i = 0; i < s; ++i) {
+				start[s] += Ls[i];
+			}
+		}
+
+		int s;
+
+		for (int x = L; x < 2*L; ++x) {
+			s = symbol[x - L];
+			encodingTable[start[s] + (Ls[s]++)] = x;
+		}
+		
+		int syl[] = { 1,1,0,2,2,1,0,2,1,0,2,1,2,1,1,1 };
+
+		string * state = new string[L];
+		string * nbStr = new string[L];
+		string * startStr = new string[L];
+		string * encodingTableStr = new string[L];
+
+		for (int i = 0; i < L; ++i) {
+			state[i] = toBinary(i + 16, 8, 0);
+			nbStr[i] = toBinary(nb[i], 8, 0);
+			startStr[i] = toBinary(start[i], 8, 0);
+			encodingTableStr[i] = toBinary(encodingTable[i], 8, 0);
+		}
+		
+		saveToFile(state, "nbRom", nbStr, "nbBitsRomDecoder.vhd", L, 0);
+		saveToFile(state, "startRom", startStr, "newXRomDecoder.vhd", L, 0);
+		saveToFile(state, "encodingTableRom", encodingTableStr, "symbolRomDecoder.vhd", L, 0);
+	}
+
+	void saveToFile(string* symbols, string entityName, string* results, string filename, int len, bool toOrDownTo) {
+
+		string header = "library IEEE; \nuse IEEE.STD_LOGIC_1164.ALL;\n\n";
+		string to = "(0 to 7)";
+		string downto = "(7 downto 0)";
+
+
+		string entity = "entity " + entityName + " is\n";
+		entity += "\tPort ( symbol : in STD_LOGIC_VECTOR" + (toOrDownTo ? downto : to) + ";\n";
+		entity += "\t\tclk : in STD_LOGIC;\n";
+		entity += "\t\tresult: out STD_LOGIC_VECTOR" + (toOrDownTo ? downto : to) + ");\n";
+		entity += "end " + entityName + ";\n\n";
+
+		string archirecture = "architecture behavioral of " + entityName + " is\n\n";
+		archirecture += "begin\n\n";
+		archirecture += "\tprocess(symbol, clk)\n";
+		archirecture += "\tbegin\n\n";
+		archirecture += "\t\tif(rising_edge(clk)) then\n\n";
+		archirecture += "\t\t\tcase symbol is\n";
+
+		for (int i = 0; i < len; i++) {
+			string row = "when \"" + symbols[i] + "\" => result <= \"" + results[i] + "\";\n";
+			archirecture += "\t\t\t\t" + row;
+		}
+
+		archirecture += "\t\t\t\twhen others => NULL; \n";
+		archirecture += "\t\t\tend case;\n";
+		archirecture += "\t\tend if;\n\n";
+		archirecture += "\tend process;\n\n";
+		archirecture += "end behavioral;\n";
+
+
+		ofstream out(filename);
+		out << header << entity << archirecture;
+		out.close();
+
+	}
+
+};
+
+void reverse() {
+
+	string line = "";
+	vector<string> tab;
+	ifstream in("out.txt");
+	ofstream out("decoder_in.txt");
+
+	while (in >> line) {
+		tab.push_back(line);
+	}
+
+	for (int i = tab.size() - 1; i > -1; --i) {
+		out << tab[i];
+
+		if (i != 0) {
+			out << endl;
+		}
+	}
+
+	out.close();
+	in.close();
+
+}
+
+int main() {
+	double prob[] = { 3. / 16, 8. / 16, 5. / 16 };
+	//double prob[] = { 3. / 4, 1. / 4 };
+
+	tANS T(3, prob, 4);
+	
+	T.generateDecodingTables();
+	//T.generateEncodingTables();
+
+
+	//reverse();
+
+	return 0;
+}
