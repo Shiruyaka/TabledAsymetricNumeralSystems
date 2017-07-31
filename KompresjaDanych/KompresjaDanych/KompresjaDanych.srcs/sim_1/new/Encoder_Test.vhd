@@ -47,8 +47,8 @@ port(
         produced_symbol : out STD_LOGIC;
         end_data : out STD_LOGIC;
         
-        data_in : in STD_LOGIC_VECTOR (7 downto 0);
-        data_out : out STD_LOGIC_VECTOR (7 downto 0);                    
+        data_in : in STD_LOGIC_VECTOR (15 downto 0);
+        data_out : out STD_LOGIC_VECTOR (15 downto 0);                    
         
         amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
         r_value : in STD_LOGIC_VECTOR(7 downto 0)
@@ -57,7 +57,8 @@ port(
 end component;
 
 signal Init, Start, Ready, Clk, New_Symbol, Produced_Symbol, End_Data : STD_LOGIC;
-signal Symbol, Data_Out, R_Value : STD_LOGIC_VECTOR(7 downto 0);
+signal R_Value : STD_LOGIC_VECTOR(7 downto 0);
+signal Data_Out, Symbol: STD_LOGIC_VECTOR(15 downto 0);
 signal Amount_Bytes : STD_LOGIC_VECTOR(31 downto 0);
 
 begin
@@ -90,14 +91,16 @@ read_and_encode: process
     file read_file: text;
     variable line_enum : line;
     variable line_content: string(1 to 8);
+    variable symbols: string(1 to 16);
     variable amount_bytes_str: string(1 to 32);
     
+    variable medium_byte: std_logic_vector(1 to 16);
     variable large_byte: std_logic_vector(1 to 32);
     variable byte: std_logic_vector(1 to 8);
     
 begin
     
-  file_open(read_file, "C:\Users\tomas\Desktop\compression_tests\to_encode_test.txt", READ_MODE);
+  file_open(read_file, "C:\Users\Ola\Desktop\compression_tests\to_encode_test.txt", READ_MODE);
    
   Init <= '1';
   New_symbol <= '0';
@@ -142,14 +145,14 @@ begin
   while not endfile(read_file) loop
     
     readline(read_file, line_enum);
-    read(line_enum, line_content);
+    read(line_enum, symbols);
     
-    for i in line_content'range loop
+    for i in symbols'range loop
         
-        if(line_content(i) = '1')then
-            byte(i) := '1';
+        if(symbols(i) = '1')then
+            medium_byte(i) := '1';
         else
-            byte(i) := '0'; 
+            medium_byte(i) := '0'; 
         end if;
         
     end loop;
@@ -157,7 +160,7 @@ begin
     wait until rising_edge(Clk) and Ready = '1';
     
     New_Symbol <= '1';
-    Symbol <= byte;
+    Symbol <= medium_byte;
     
     wait until rising_edge(Clk);
 
@@ -171,22 +174,22 @@ end process;
 
 write_encoded_data: process
 
-file write_file: text open write_mode is "C:\Users\tomas\Desktop\compression_tests\encode_out_test.txt";
+file write_file: text open write_mode is "C:\Users\Ola\Desktop\compression_tests\encode_out_test.txt";
 variable line_to_file : line;
-variable line_str: string(1 to 8);
-variable line_content: string(1 to 8);
+variable line_str: string(1 to 16);
+variable line_content: string(1 to 16);
 variable i : integer := 0;
 
 begin
     wait until rising_edge(Clk);
     
         if(Produced_Symbol = '1') then      
-            for i in 0 to 7 loop
+            for i in 0 to 15 loop
                 
                 if(Data_Out(i)= '1') then
-                    line_content(8 - i) := '1';
+                    line_content(16 - i) := '1';
                 else
-                    line_content(8 - i) := '0';
+                    line_content(16 - i) := '0';
                 end if;
               
             end loop;  

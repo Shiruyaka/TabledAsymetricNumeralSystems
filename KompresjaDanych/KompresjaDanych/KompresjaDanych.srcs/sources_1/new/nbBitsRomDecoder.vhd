@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity nbBitsRom is
-	Port ( symbol : in STD_LOGIC_VECTOR(0 to 7);
+	Port ( symbol : in STD_LOGIC_VECTOR(0 to 15);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR(0 to 7));
+		result: out STD_LOGIC_VECTOR(0 to 15));
 end nbBitsRom;
 
 architecture behavioral of nbBitsRom is
@@ -17,22 +17,22 @@ begin
 		if(rising_edge(clk)) then
 
 			case symbol is
-				when "00010000" => result <= "00000011";
-				when "00010001" => result <= "00000010";
-				when "00010010" => result <= "00000001";
-				when "00010011" => result <= "00000001";
-				when "00010100" => result <= "00000001";
-				when "00010101" => result <= "00000010";
-				when "00010110" => result <= "00000010";
-				when "00010111" => result <= "00000010";
-				when "00011000" => result <= "00000001";
-				when "00011001" => result <= "00000001";
-				when "00011010" => result <= "00000010";
-				when "00011011" => result <= "00000001";
-				when "00011100" => result <= "00000001";
-				when "00011101" => result <= "00000001";
-				when "00011110" => result <= "00000001";
-				when "00011111" => result <= "00000001";
+				when "0000000000010000" => result <= "0000000000000011";
+				when "0000000000010001" => result <= "0000000000000001";
+				when "0000000000010010" => result <= "0000000000000001";
+				when "0000000000010011" => result <= "0000000000000010";
+				when "0000000000010100" => result <= "0000000000000001";
+				when "0000000000010101" => result <= "0000000000000001";
+				when "0000000000010110" => result <= "0000000000000010";
+				when "0000000000010111" => result <= "0000000000000001";
+				when "0000000000011000" => result <= "0000000000000001";
+				when "0000000000011001" => result <= "0000000000000010";
+				when "0000000000011010" => result <= "0000000000000010";
+				when "0000000000011011" => result <= "0000000000000001";
+				when "0000000000011100" => result <= "0000000000000001";
+				when "0000000000011101" => result <= "0000000000000010";
+				when "0000000000011110" => result <= "0000000000000001";
+				when "0000000000011111" => result <= "0000000000000001";
 				when others => NULL; 
 			end case;
 		end if;

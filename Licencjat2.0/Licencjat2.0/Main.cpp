@@ -5,7 +5,7 @@
 #include<string>
 #include <vector>
 #include<random>
-
+#include<ctime>
 using namespace std;
 
 class tANS {
@@ -15,13 +15,32 @@ private:
 	int * Ls, * symbol, * nbBits, * newX, *encodingTable;
 	int const symbolsAmount;
 
+	void quantize_fast(int m, double * p) {
+		double maxv = 0.0;
+		int indmax = 0, used = 0;
+		
+		for (int i = 0; i < m; ++i) {
+			Ls[i] = round(L*p[i]);
+
+			if (Ls[i] == 0)
+				Ls[i]++;
+
+			used += Ls[i];
+
+			if (p[i] > maxv) {
+				maxv = p[i];
+				indmax = i;
+			}
+		}
+
+		Ls[indmax] += L - used;
+	}
 	void spreadSymbol() {
 		int x = 0;
-		int step = 5 / 8 * L + 3;
-		//int step = 5;
+		int step = (L >> 1) + (L >> 3) + 3;
 
 		for (int s = 0; s < alphabet_size; ++s) {
-			for (int i = 1; i <= Ls[s]; ++i) {
+			for (int i = 0; i < Ls[s]; ++i) {
 				symbol[x] = s;
 				x = (x + step) % L;
 			}
@@ -100,6 +119,7 @@ private:
 
 		return p;
 	}
+
 	int whichSymbol(double point) {
 
 		double whereWeAre = prob[0];
@@ -121,7 +141,7 @@ private:
 		mt19937 gen(rd());
 		uniform_real_distribution<double> r{ 0, 1 };
 
-		ofstream out("C:/Users/tomas/Desktop/compression_tests/symbolsToEncode.txt");
+		ofstream out("C:/Users/Ola/Desktop/compression_tests/symbolsToEncode.txt");
 
 		out << toBinary(R, 8, 1) << endl;
 		out << toBinary(symbolsAmount, 18, 1) << endl;
@@ -153,10 +173,7 @@ public:
 		nbBits = new int[L];
 		encodingTable = new int[L];
 
-		for (int i = 0; i < alphabet_size; ++i) {
-			Ls[i] = prob[i] * L;
-		}
-
+		quantize_fast(alphabet_size_, prob);
 		spreadSymbol();
 		generateData();
 	}
@@ -166,8 +183,14 @@ public:
 	void generateDecodingTables() {
 		int temp;
 		
+		int * next = new int[alphabet_size];
+
+		for (int i = 0; i < alphabet_size; ++i)
+			next[i] = Ls[i];
+
+		
 		for (int x = 0; x < L; ++x) {
-			temp = Ls[symbol[x]]++;
+			temp = next[symbol[x]]++;
 			nbBits[x] = R - floor(log2(temp));
 			newX[x] = (temp << nbBits[x]) - L;
 		}
@@ -177,21 +200,22 @@ public:
 		string * newXStr = new string[L];
 		string * symbolStr = new string[L];
 
-
-		for (int i = 0; i < alphabet_size; ++i)
-			cout << Ls[i] << " ";
-		cout << endl;
-
 		for (int i = 0; i < L; ++i) {
-			state[i] = toBinary(i + 16, 8, 1);
-			nbBitsStr[i] = toBinary(nbBits[i], 8, 1);
-			newXStr[i] = toBinary(newX[i], 8, 1);
-			symbolStr[i] = toBinary(symbol[i], 8, 1);
+			state[i] = toBinary(i + 16, 16, 1);
+			nbBitsStr[i] = toBinary(nbBits[i], 16, 1);
+			newXStr[i] = toBinary(newX[i], 16, 1);
+			symbolStr[i] = toBinary(symbol[i], 16, 1);
 		}
 
 		saveToFile(state, "nbBitsRom", nbBitsStr, "nbBitsRomDecoder.vhd", L, 0);
 		saveToFile(state, "newXRom", newXStr, "newXRomDecoder.vhd", L, 0);
 		saveToFile(state, "symbolRom", symbolStr, "symbolRomDecoder.vhd", L, 0);
+
+		delete[] next;
+		delete[] state;
+		delete[] nbBitsStr;
+		delete[] newXStr;
+		delete[] symbolStr;
 	}
 
 	void generateEncodingTables() { 
@@ -201,13 +225,21 @@ public:
 		
 		int r = R + 1;
 
+		int * next = new int[alphabet_size];
+
+		for (int i = 0; i < alphabet_size; ++i) {
+			next[i] = Ls[i];
+			cout << next[i] << " ";
+		}
+		cout << endl;
+
 		for (int s = 0; s < alphabet_size; ++s) {
-			k[s] = R - floor(log2(Ls[s]));
-			nb[s] = (k[s] << r) - (Ls[s] << k[s]);
-			start[s] = -Ls[s];
+			k[s] = R - floor(log2(next[s]));
+			nb[s] = (k[s] << r) - (next[s] << k[s]);
+			start[s] = -next[s];
 
 			for (int i = 0; i < s; ++i) {
-				start[s] += Ls[i];
+				start[s] += next[i];
 			}
 		}
 
@@ -215,7 +247,7 @@ public:
 
 		for (int x = L; x < 2*L; ++x) {
 			s = symbol[x - L];
-			encodingTable[start[s] + (Ls[s]++)] = x;
+			encodingTable[start[s] + (next[s]++)] = x;
 		}
 		
 		string * symbolStr = new string[alphabet_size];
@@ -226,31 +258,38 @@ public:
 		
 
 		for (int i = 0; i < alphabet_size; ++i) {
-			symbolStr[i] = toBinary(i, 8, 1);
+			symbolStr[i] = toBinary(i, 16, 1);
 			
-			nbStr[i] = toBinary(nb[i], 8, 1);
+			nbStr[i] = toBinary(nb[i], 16, 1);
 
-			startStr[i] = toBinary(start[i], 8, 1);
+			startStr[i] = toBinary(start[i], 16, 1);
 
 			if (start[i] < 0)
 				startStr[i] = negativeBinary(startStr[i]);
 		}
 
 		for (int i = 0; i < L; ++i) {
-			encodingTableStr[i] = toBinary(encodingTable[i], 8, 1);
-			state[i] = toBinary(i, 8, 1);
+			encodingTableStr[i] = toBinary(encodingTable[i], 16, 1);
+			state[i] = toBinary(i, 16, 1);
 		}
 		
 		saveToFile(symbolStr, "nbRom", nbStr, "nbRom.vhd", alphabet_size, 0);
 		saveToFile(symbolStr, "startRom", startStr, "startRom.vhd", alphabet_size, 0);
 		saveToFile(state, "encodingTableRom", encodingTableStr, "encodingTableRom.vhd", L, 0);
+
+		delete[] next;
+		delete[] symbolStr;
+		delete[] nbStr;
+		delete[] startStr;
+		delete[] encodingTableStr;
+		delete[] state;
 	}
 
 	void saveToFile(string* symbols, string entityName, string* results, string filename, int len, bool toOrDownTo) {
 
 		string header = "library IEEE; \nuse IEEE.STD_LOGIC_1164.ALL;\n\n";
-		string to = "(0 to 7)";
-		string downto = "(7 downto 0)";
+		string to = "(0 to 15)";
+		string downto = "(15 downto 0)";
 
 
 		string entity = "entity " + entityName + " is\n";
@@ -283,7 +322,30 @@ public:
 		out.close();
 
 	}
+	
 
+	void check_files(string to_encode, string decode_out) {
+		ifstream in(to_encode);
+		ifstream decoded(decode_out);
+		string line1, line2;
+		int ct = 0;
+
+		in >> line1;
+		in >> line1;
+
+		while (in >> line1, decoded >> line2) {
+			if (line1 == line2)
+				ct++;
+		}
+
+		if (ct == symbolsAmount) {
+			cout << "OK" << endl;
+		}
+		else {
+			cout << "NOPE" << endl;
+		}
+
+	}
 };
 
 void reverse_file(string file_in, string file_out) {
@@ -310,21 +372,33 @@ void reverse_file(string file_in, string file_out) {
 	
 }
 
+
 int main() {
-	//double prob[] = { 3. / 16, 8. / 16, 5. / 16 };
+	double prob[] = { 3. / 16, 8. / 16, 5. / 16 };
 	//double prob[] = { 3. / 4, 1. / 4 };
 
-	//tANS T(3, prob, 4);
+	tANS T(3, prob, 4);
 	
-	//T.generateDecodingTables();
-	//T.generateEncodingTables();
-
-	reverse_file("C:/Users/tomas/Desktop/compression_tests/encode_out_test.txt", 
-			"C:/Users/tomas/Desktop/compression_tests/to_decode.txt");
-
-	reverse_file("C:/Users/tomas/Desktop/compression_tests/decode_out.txt",
-	"C:/Users/tomas/Desktop/compression_tests/decode_out_rev.txt");
-
 	//tANS T(10, 5);
+
+	T.generateEncodingTables();
+	T.generateDecodingTables();
+
+	cout << "Waiting" << endl;
+	cin.ignore();
+	getchar();
+	
+
+	reverse_file("C:/Users/Ola/Desktop/compression_tests/encode_out_test.txt", 
+			"C:/Users/Ola/Desktop/compression_tests/to_decode.txt");
+
+	cin.ignore();
+	getchar();
+
+	reverse_file("C:/Users/Ola/Desktop/compression_tests/decode_out.txt",
+	"C:/Users/Ola/Desktop/compression_tests/decode_out_rev.txt");
+
+	T.check_files("C:/Users/Ola/Desktop/compression_tests/symbolsToEncode",
+		"C:/Users/Ola/Desktop/compression_tests/decode_out_rev.txt");
 	return 0;
 }

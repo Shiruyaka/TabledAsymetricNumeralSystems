@@ -43,8 +43,8 @@ entity Buffor is
            produce_symbol : out STD_LOGIC;
            
            nbBits : in STD_LOGIC_VECTOR(3 downto 0); 
-           stream : out STD_LOGIC_VECTOR(7 downto 0);
-           x : in STD_LOGIC_VECTOR(7 downto 0)
+           stream : out STD_LOGIC_VECTOR(15 downto 0);
+           x : in STD_LOGIC_VECTOR(15 downto 0)
           );
 end Buffor;
 
@@ -82,7 +82,7 @@ begin
             
                 if(buffor_fill + bits >= 8) then
                    
-                    stream <= encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
+                    stream <= (0 to 7 => '0') & encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
                     produce_symbol <= '1';
                     buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - bits to buffor_fill - 1);
                     buffor_fill <= bits - 8 + buffor_fill;
@@ -102,7 +102,7 @@ begin
                     disjointed_bytes <= disjointed_bytes + 1;
                     produce_symbol <= '1';
                     
-                    stream  <= std_logic_vector(to_unsigned(5, 3)) & buffor(27 to 31);
+                    stream  <= (0 to 7 => '0') & std_logic_vector(to_unsigned(5, 3)) & buffor(27 to 31);
                     buffor_fill <= buffor_fill - 5;
                     buffor <= (4 downto 0 => '0') & buffor(0 to 26);
                 
@@ -111,7 +111,7 @@ begin
                     disjointed_bytes <= disjointed_bytes + 1;
                     produce_symbol <= '1';
                     
-                    stream <= std_logic_vector(to_unsigned(buffor_fill, 3)) &
+                    stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
                                               (0 to 4 - buffor_fill => '0') &
                                               buffor(32 - buffor_fill to 31); 
                     buffor_fill <= 0;
@@ -127,7 +127,7 @@ begin
             
             when "011" =>
                 
-                stream <= std_logic_vector(to_unsigned(disjointed_bytes, 8));
+                stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(disjointed_bytes, 8));
                 produce_symbol <= '1';
                 
             when "100" =>
