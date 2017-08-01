@@ -2,9 +2,9 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity startRom is
-	Port ( symbol : in STD_LOGIC_VECTOR(0 to 15);
+	Port ( symbol : in STD_LOGIC_VECTOR(15 downto 0);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR(0 to 15));
+		result: out STD_LOGIC_VECTOR(15 downto 0));
 end startRom;
 
 architecture behavioral of startRom is

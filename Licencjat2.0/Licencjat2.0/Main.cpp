@@ -273,9 +273,9 @@ public:
 			state[i] = toBinary(i, 16, 1);
 		}
 		
-		saveToFile(symbolStr, "nbRom", nbStr, "nbRom.vhd", alphabet_size, 0);
-		saveToFile(symbolStr, "startRom", startStr, "startRom.vhd", alphabet_size, 0);
-		saveToFile(state, "encodingTableRom", encodingTableStr, "encodingTableRom.vhd", L, 0);
+		saveToFile(symbolStr, "nbRom", nbStr, "nbRom.vhd", alphabet_size, 1);
+		saveToFile(symbolStr, "startRom", startStr, "startRom.vhd", alphabet_size, 1);
+		saveToFile(state, "encodingTableRom", encodingTableStr, "encodingTableRom.vhd", L, 1);
 
 		delete[] next;
 		delete[] symbolStr;

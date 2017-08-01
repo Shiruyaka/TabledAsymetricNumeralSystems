@@ -42,7 +42,7 @@ entity Buffor is
           
            produce_symbol : out STD_LOGIC;
            
-           nbBits : in STD_LOGIC_VECTOR(3 downto 0); 
+           nbBits : in STD_LOGIC_VECTOR(7 downto 0); 
            stream : out STD_LOGIC_VECTOR(15 downto 0);
            x : in STD_LOGIC_VECTOR(15 downto 0)
           );
@@ -54,6 +54,7 @@ type state_type is (IDLE, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_
 signal current_state, next_state : state_type;
 
 signal buffor: std_logic_vector(0 to 31):= x"00000000";
+signal state_to_encode : std_logic_vector(15 downto 0);
 signal encoded_symbol, end_state: std_logic_vector(0 to 7) := x"00";
 signal action: std_logic_vector(0 to 2) := "000";
 signal buffor_fill, bits, disjointed_bytes: integer := 0;
@@ -156,7 +157,7 @@ begin
             action <= "111";
                                        
             if(start = '1')then
-            
+                state_to_encode <= x;
                 next_state <= ENCODING;
                 
             elsif(end_data = '1') then
@@ -169,10 +170,10 @@ begin
             
             bits <= to_integer(unsigned(nbBits)); 
             encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
-                              x(to_integer(unsigned(nbBits)) - 1 downto 0) ; 
+                              state_to_encode(to_integer(unsigned(nbBits)) - 1 downto 0) ; 
             action <= "001";        
             next_state <= IDLE;
-                                                     
+                                                
             
         when EMPTY_BUFF =>
             
