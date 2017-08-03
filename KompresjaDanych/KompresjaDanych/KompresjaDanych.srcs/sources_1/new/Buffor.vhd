@@ -89,14 +89,128 @@ begin
                 
                 if(buffor_fill + bits >= 8) then
                    
-                    stream <= (0 to 7 => '0') & encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
+                    --stream <= (0 to 7 => '0') & encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
+                    
+                    case buffor_fill is
+                        when 1 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(1 to 7) & buffor(31 to 31);
+                        when 2 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(2 to 7) & buffor(30 to 31);
+                        when 3 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(3 to 7) & buffor(29 to 31);
+                        when 4 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(4 to 7) & buffor(28 to 31);
+                        when 5 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(5 to 7) & buffor(27 to 31);
+                        when 6 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(6 to 7) & buffor(26 to 31);
+                        when 7 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(7 to 7) & buffor(25 to 31);
+                        when others => NULL;
+                    end case;
+                    
                     produce_symbol <= '1';
-                    buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - bits to buffor_fill - 1);
+                    
+                   -- buffor <= (0 to 39 - buffor_fill - bits => '0') & encoded_symbol(8 - bits to buffor_fill - 1);
+                    case buffor_fill is
+                        when 7 => 
+                            case bits is
+                                when 2 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(6 to 6);
+                                when 3 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(5 to 6);
+                                when 4 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(4 to 6);
+                                when 5 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(3 to 6);
+                                when 6 =>
+                                    buffor <= (0 to 26 => '0') & encoded_symbol(2 to 6);
+                                when 7 =>
+                                    buffor <= (0 to 25 => '0') & encoded_symbol(1 to 6);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                            
+                        when 6 => 
+                            case bits is
+                                when 3 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(5 to 5);
+                                when 4 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(4 to 5);
+                                when 5 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(3 to 5);
+                                when 6 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(2 to 5);
+                                when 7 =>
+                                    buffor <= (0 to 26 => '0') & encoded_symbol(1 to 5);
+                                when others => 
+                                    buffor <= (0 to 31 => '0');    
+                            end case;
+                            
+                        when 5 => 
+                           case bits is
+                                when 4 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(4 to 4);
+                                when 5 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(3 to 4);
+                                when 6 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(2 to 4);
+                                when 7 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(1 to 4);
+                                when others => buffor <= (0 to 31 => '0');
+                           end case;
+                           
+                        when 4 => 
+                            case bits is
+                                when 5 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(3 to 3);
+                                when 6 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(2 to 3);
+                                when 7 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(1 to 3);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                            
+                        when 3 =>
+                            case bits is
+                                when 6 => 
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(2 to 2);
+                               when 7 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(1 to 2);
+                               when others => buffor <= (0 to 31 => '0');                                   
+                            end case;
+                            
+                        when 2 => 
+                            case bits is
+                                when 7 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(1 to 1);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                        
+                        when others => buffor <= (0 to 31 => '0');
+                    end case;
+                    
                     buffor_fill <= bits - 8 + buffor_fill;
                     
                 else
-                
-                    buffor <= buffor or ((23 - buffor_fill downto 0 => '0') & encoded_symbol & (buffor_fill - 1 downto 0 => '0'));
+                    
+                    case buffor_fill is
+                        when 6 =>
+                            buffor <= buffor or ((17 downto 0 => '0') & encoded_symbol & (5 downto 0 => '0'));  
+                        when 5 =>
+                            buffor <= buffor or ((18 downto 0 => '0') & encoded_symbol & (4 downto 0 => '0'));
+                        when 4 =>
+                            buffor <= buffor or ((19 downto 0 => '0') & encoded_symbol & (3 downto 0 => '0'));
+                        when 3 =>
+                            buffor <= buffor or ((20 downto 0 => '0') & encoded_symbol & (2 downto 0 => '0'));
+                        when 2 =>
+                            buffor <= buffor or ((21 downto 0 => '0') & encoded_symbol & (1 downto 0 => '0'));
+                        when 1 =>
+                            buffor <= buffor or ((22 downto 0 => '0') & encoded_symbol & (0 downto 0 => '0'));
+                        when others =>
+                            buffor <= buffor or ((23 downto 0 => '0') & encoded_symbol);
+                    end case;
+                    
+                    --buffor <= buffor or ((23 - buffor_fill downto 0 => '0') & encoded_symbol & (buffor_fill - 1 downto 0 => '0'));
                     buffor_fill <= buffor_fill + bits;
                     
                 end if;
@@ -123,15 +237,37 @@ begin
                     disjointed_bytes <= disjointed_bytes + 1;
                     produce_symbol <= '1';
                     
+                    --stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
+                    --                          (0 to 4 - buffor_fill => '0') &
+                    --                          buffor(32 - buffor_fill to 31);
+                    
                     stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
-                                              (0 to 4 - buffor_fill => '0') &
-                                              buffor(32 - buffor_fill to 31); 
-                    buffor_fill <= 0;
+                              buffor(27 to 31);
+--                    case buffor_fill is
+--                        when 5 =>
+--                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(5, 3)) &
+--                                      buffor(27 to 31);
+--                        when 4 =>
+--                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(4, 3)) &
+--                                      (0 to 0 => '0') & buffor(27 to 31);                                     
+--                        when 3 =>
+--                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(3, 3)) &
+--                                      (0 to 1 => '0') & buffor(27 to 31);                       
+--                        when 2 =>
+--                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(2, 3)) &
+--                                      (0 to 2 => '0') & buffor(27 to 31);                       
+--                        when 1 =>
+--                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(1,3)) &
+--                                      (0 to 3 => '0') & buffor(27 to 31);                                       
+--                        when others =>
+--                            stream <= (0 to 31 => '0');
+--                    end case;
+                    buffor_fill <= 0;    
                     buffor <= x"00000000";
-              
                 
-                else        
-                
+                else
+                    
+                    buffor <= x"00000000";
                     disjointed_bytes <= 0;
                     produce_symbol <= '1';
                     
@@ -182,9 +318,27 @@ begin
         when ENCODING =>
             
             bits <= to_integer(unsigned(nbBits)); 
-            encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
-                              state_to_encode(to_integer(unsigned(nbBits)) - 1 downto 0);
-                              
+            --encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
+            --                  state_to_encode(to_integer(unsigned(nbBits)) - 1 downto 0);
+            
+            case to_integer(unsigned(nbBits)) is
+                when 1 =>
+                    encoded_symbol <= (6 downto 0 => '0') & state_to_encode(0 downto 0);
+                when 2 =>
+                    encoded_symbol <= (5 downto 0 => '0') & state_to_encode(1 downto 0);
+                when 3 =>
+                    encoded_symbol <= (4 downto 0 => '0') & state_to_encode(2 downto 0);
+                when 4 =>
+                    encoded_symbol <= (3 downto 0 => '0') & state_to_encode(3 downto 0);
+                when 5 =>
+                    encoded_symbol <= (2 downto 0 => '0') & state_to_encode(4 downto 0);
+                when 6 =>
+                    encoded_symbol <= (1 downto 0 => '0') & state_to_encode(5 downto 0);
+                when 7 =>
+                    encoded_symbol <= (0 downto 0 => '0') & state_to_encode(6 downto 0);
+                when others => encoded_symbol <= x"00";    
+            end case;
+            
             do_it <= '1'; 
             action <= "001";        
             next_state <= IDLE;

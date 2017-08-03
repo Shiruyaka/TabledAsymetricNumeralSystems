@@ -178,16 +178,86 @@ begin
         if(Compute = '1') then
             
             nb_bits := Actual_State + Nb_Rom;
-            nb_bits := (r_value_int - 1 downto 0 => '0') &
-                       nb_bits(15 downto r_value_int);
+            
+            case r_value_int is
+                when 2 => 
+                    nb_bits := (1 downto 0 => '0') &
+                               nb_bits(15 downto 2);
+                when 3 =>
+                    nb_bits := (2 downto 0 => '0') &
+                               nb_bits(15 downto 3);
+                when 4 =>
+                    nb_bits := (3 downto 0 => '0') &
+                               nb_bits(15 downto 4);
+                when 5 =>
+                    nb_bits := (4 downto 0 => '0') &
+                               nb_bits(15 downto 5);                              
+                when 6 =>
+                    nb_bits := (5 downto 0 => '0') &
+                               nb_bits(15 downto 6);               
+                when 7 =>
+                    nb_bits := (6 downto 0 => '0') &
+                               nb_bits(15 downto 7);                             
+                when 8 =>
+                    nb_bits := (7 downto 0 => '0') &
+                               nb_bits(15 downto 8);                              
+                when 9 =>
+                    nb_bits := (8 downto 0 => '0') &
+                               nb_bits(15 downto 9);                             
+                when 10 =>
+                    nb_bits := (9 downto 0 => '0') &
+                               nb_bits(15 downto 10);                
+                when 11 =>
+                    nb_bits := (10 downto 0 => '0') &
+                               nb_bits(15 downto 11);                               
+                when 12 =>
+                    nb_bits := (11 downto 0 => '0') &
+                               nb_bits(15 downto 12);
+                when 13 =>
+                    nb_bits := (12 downto 0 => '0') &
+                               nb_bits(15 downto 13); 
+                when others =>
+                    nb_bits := x"0000";                                                                
+            end case;
+            
+            --nb_bits := (r_value_int - 1 downto 0 => '0') &
+            --           nb_bits(15 downto r_value_int);
             
             Start_Buff <= '1';
             
             Nb_Bits_Buff <= nb_bits(7 downto 0);
             counter := counter + 1;
-            Computed_State <= Start_Symbol + 
-                             ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
-                             Actual_State(15 downto to_integer(unsigned(nb_bits))));
+            
+            case to_integer(unsigned(nb_bits)) is
+                when 1 => 
+                    Computed_State <= Start_Symbol + 
+                                      ((0 downto 0 => '0') & Actual_State(15 downto 1));
+                when 2 =>
+                    Computed_State <= Start_Symbol +
+                                      ((1 downto 0 => '0') & Actual_State(15 downto 2));
+                when 3 =>
+                    Computed_State <= Start_Symbol +
+                                      ((2 downto 0 => '0') & Actual_State(15 downto 3));
+                when 4 =>
+                    Computed_State <= Start_Symbol +
+                                      ((3 downto 0 => '0') & Actual_State(15 downto 4));
+                when 5 =>   
+                    Computed_State <= Start_Symbol +
+                                      ((4 downto 0 => '0') & Actual_State(15 downto 5));
+                when 6 =>
+                    Computed_State <= Start_Symbol +
+                                      ((5 downto 0 => '0') & Actual_State(15 downto 6));
+                when 7 =>
+                    Computed_State <= Start_Symbol +
+                                      ((6 downto 0 => '0') & Actual_State(15 downto 7));
+                when others =>
+                    Computed_State <= Start_Symbol;
+            end case;
+
+                
+           --Computed_State <= Start_Symbol + 
+           --                  ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
+           --                  Actual_State(15 downto to_integer(unsigned(nb_bits))));
                                                                                        
             if(to_integer(unsigned(amount_bytes)) = counter) then
                 Empty <= '1';
