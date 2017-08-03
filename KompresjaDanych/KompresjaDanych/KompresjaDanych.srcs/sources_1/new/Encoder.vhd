@@ -36,7 +36,6 @@ entity Encoder is
            
            init : in STD_LOGIC; -- reset
            start : in STD_LOGIC;
-           ready : out STD_LOGIC;
            clk : in STD_LOGIC;
            end_data : out STD_LOGIC;
            
@@ -64,6 +63,7 @@ component Buffor
            nbBits : in STD_LOGIC_VECTOR(7 downto 0);
            stream : out STD_LOGIC_VECTOR(15 downto 0);
            x : in STD_LOGIC_VECTOR(15 downto 0);
+           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
            
            produce_symbol : out STD_LOGIC;
                       
@@ -114,7 +114,7 @@ signal
 signal
        r_value_int: integer := 0;
        
-type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, SET_END_STATE, WAIT_FOR_END);
+type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, WAIT_FOR_END_ENC, SET_END_STATE, WAIT_FOR_END);
 signal current_state, next_state : state_type;
 
 
@@ -129,7 +129,7 @@ Port map(
             nbBits => Nb_Bits_Buff,
             x => State_To_Buff,
             stream => data_out,
-            
+            amount_bytes => amount_bytes,
             produce_symbol => produced_symbol,
             
             end_data => empty_buff
@@ -213,7 +213,7 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 end_data <= '0';
                 counter := 0;
                 init_buff <= '1';
-                ready <= '0';
+                
                 
                 if(start = '1') then
                 
@@ -227,31 +227,39 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             when GET_SYMBOL =>
             
                 Init_Buff <= '0';
-                Compute <= '0';
-                ready <= '1';
+                Compute <= '1';
                 
                 Actual_State <= State;
                 State_To_Buff <= State;
-                          
-                --if(new_symbol = '1') then
-                    
-                    --ready <= '0';
-                    --next_state <= COMPUTE_NEXT_STATE;
-                    
-                if(Empty = '1') then
-                    Empty_Buff <= '1';
-                    next_state <= SET_END_STATE;
-                else
+                                 
+                --if(Empty = '1') then
+                --    Compute <= '0';
+                --    Empty_Buff <= '1';
+                --    next_state <= SET_END_STATE;
+                --else
                     next_state <= COMPUTE_NEXT_STATE;  
-                end if;               
+                --end if;               
                 
                 
             when COMPUTE_NEXT_STATE =>
-            
-                Compute <= '1';
-                next_state <= GET_SYMBOL;
                 
-                               
+                Compute <= '0';
+                
+                if(Empty = '1') then
+                    Compute <= '1';
+                    next_state <= WAIT_FOR_END_ENC;
+                else
+                    next_state <= GET_SYMBOL;
+                end if;
+            
+            when WAIT_FOR_END_ENC =>
+                
+                 Compute <= '0';
+                    
+                if(Ready_Buff = '1') then
+                    next_state <= SET_END_STATE;
+                end if;
+                       
             when SET_END_STATE =>
             State_To_Buff <= State;
                            

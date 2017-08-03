@@ -41,7 +41,6 @@ component Encoder
 port(
         init : in STD_LOGIC; -- reset
         start : in STD_LOGIC;
-        ready : out STD_LOGIC;
         clk : in STD_LOGIC;
         new_symbol : in STD_LOGIC;
         produced_symbol : out STD_LOGIC;
@@ -56,7 +55,7 @@ port(
 );
 end component;
 
-signal Init, Start, Ready, Clk, New_Symbol, Produced_Symbol, End_Data : STD_LOGIC;
+signal Init, Start, Clk, New_Symbol, Produced_Symbol, End_Data : STD_LOGIC;
 signal R_Value : STD_LOGIC_VECTOR(7 downto 0);
 signal Data_Out, Symbol: STD_LOGIC_VECTOR(15 downto 0);
 signal Amount_Bytes : STD_LOGIC_VECTOR(31 downto 0);
@@ -67,7 +66,6 @@ test: Encoder
     Port map(
                 init => Init,
                 start => Start,
-                ready => Ready,
                 clk => Clk,
                 data_in => Symbol,
                 data_out => Data_out,
@@ -135,10 +133,26 @@ begin
     
   Amount_Bytes <= large_byte;
   
-  wait until rising_edge(Clk);
-  Init <= '0';
  
-  Start <= '1';
+  readline(read_file, line_enum);
+  read(line_enum, symbols);
+  
+  for i in symbols'range loop
+      
+      if(symbols(i) = '1')then
+          medium_byte(i) := '1';
+      else
+          medium_byte(i) := '0'; 
+      end if;
+      
+  end loop;
+
+  Symbol <= medium_byte;
+  
+  wait until rising_edge(Clk);
+  Start <= '1';  
+  Init <= '0';
+  
   wait until rising_edge(Clk);
   Start <= '0';
     
@@ -195,7 +209,7 @@ begin
             end loop;  
             
             write(line_to_file, string'(line_content)); 
-            --writeline(write_file, line_to_file);            
+            writeline(write_file, line_to_file);            
         end if;
         
         

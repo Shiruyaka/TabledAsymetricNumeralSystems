@@ -44,8 +44,8 @@ entity Decoder is
             produced_symbol : out STD_LOGIC;  
             ready : out STD_LOGIC;
                         
-            stream : out STD_LOGIC_VECTOR(0 to 7);
-            data_in : in STD_LOGIC_VECTOR(0 to 7)
+            stream : out STD_LOGIC_VECTOR(0 to 15);
+            data_in : in STD_LOGIC_VECTOR(0 to 15)
           );
 end Decoder;
 
@@ -53,31 +53,28 @@ architecture decode of Decoder is
 
 type state_type is (IDLE, GET_STATE, AMOUNT_BYTE_TO_MERGE, MERGING_LAST_BYTE_SECOND, 
                     MERGING_LAST_BYTE_FIRST, GET_SYMBOLS, DECODING_DATA, COMPUTE_NEXT_STATE);
-                    
+    
 signal current_state, next_state : state_type;
 signal buffor : STD_LOGIC_VECTOR(0 to 31);
 
-signal nbBits: STD_LOGIC_VECTOR(0 to 7);
-signal newX: STD_LOGIC_VECTOR(0 to 7);
-signal state: STD_LOGIC_VECTOR(0 to 7);
-signal symbol: STD_LOGIC_VECTOR(0 to 7);
+signal nbBits, newX, state, symbol: STD_LOGIC_VECTOR(0 to 15);
 
 component nbBitsRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 15);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (0 to 7));
+		result: out STD_LOGIC_VECTOR (0 to 15));
 end component;
 
 component symbolRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 15);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (0 to 7));
+		result: out STD_LOGIC_VECTOR (0 to 15));
 end component;
 
 component newXRom is
-	Port ( symbol : in STD_LOGIC_VECTOR (0 to 7);
+	Port ( symbol : in STD_LOGIC_VECTOR (0 to 15);
 		clk : in STD_LOGIC;
-		result: out STD_LOGIC_VECTOR (0 to 7));
+		result: out STD_LOGIC_VECTOR (0 to 15));
 end component;
 
 
@@ -117,7 +114,7 @@ state_machine: process(CLK)
 
  main_process: process(current_state, start, data_in, new_symbol)
     variable length, bytes, buffor_counter, nbBitsInt : integer := 0;
-    variable decoded_sym, mask, shifted_buff, sixteen : STD_LOGIC_VECTOR(0 to 7);
+    variable decoded_sym, mask, shifted_buff, sixteen : STD_LOGIC_VECTOR(0 to 15);
      
     begin
     
@@ -132,7 +129,7 @@ state_machine: process(CLK)
         length := 0;
         ready <= '0';
         produced_symbol <= '0';
-        sixteen := "00010000";
+        sixteen := x"0010";
         
         if(start = '1') then
             end_decoded <= '0';
@@ -174,10 +171,10 @@ state_machine: process(CLK)
        
        if(new_symbol = '1')then 
           ready <= '0';
-          length := to_integer(unsigned(data_in(0 to 2)));
+          length := to_integer(unsigned(data_in(8 to 10)));
            
           buffor_counter := buffor_counter + length;
-          buffor <= (data_in(8 - length to 7) & (0 to 31 - length => '0'));
+          buffor <= (data_in(16 - length to 15) & (0 to 31 - length => '0'));
 
           next_state <= MERGING_LAST_BYTE_FIRST;
 
@@ -189,9 +186,9 @@ state_machine: process(CLK)
         
         if(new_symbol = '1') then
             ready <= '0';
-            length := to_integer(unsigned(data_in(0 to 2)));
+            length := to_integer(unsigned(data_in(8 to 10)));
             
-            buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(8 - length to 7) & (0 to 31 - buffor_counter - length => '0'));               
+            buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(16 - length to 15) & (0 to 31 - buffor_counter - length => '0'));               
             buffor_counter := buffor_counter + length;
             
             next_state <= DECODING_DATA;
@@ -204,7 +201,7 @@ state_machine: process(CLK)
         if(new_symbol = '1') then
         
                ready <= '0';
-               buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in & (0 to 23 - buffor_counter => '0')); 
+               buffor <= buffor or ((0 to buffor_counter - 1 => '0') & data_in(8 to 15) & (0 to 23 - buffor_counter => '0')); 
                buffor_counter := buffor_counter + 8;
                ready <= '0';
                next_state <= DECODING_DATA;

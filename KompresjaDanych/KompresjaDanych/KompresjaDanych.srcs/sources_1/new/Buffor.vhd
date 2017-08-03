@@ -42,6 +42,7 @@ entity Buffor is
           
            produce_symbol : out STD_LOGIC;
            
+           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
            nbBits : in STD_LOGIC_VECTOR(7 downto 0); 
            stream : out STD_LOGIC_VECTOR(15 downto 0);
            x : in STD_LOGIC_VECTOR(15 downto 0)
@@ -53,6 +54,7 @@ architecture use_bits of Buffor is
 type state_type is (IDLE, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_STATE);
 signal current_state, next_state : state_type;
 
+signal do_it, go_to_emmpty: std_logic;
 signal buffor: std_logic_vector(0 to 31):= x"00000000";
 signal state_to_encode : std_logic_vector(15 downto 0);
 signal encoded_symbol, end_state: std_logic_vector(0 to 7) := x"00";
@@ -74,13 +76,17 @@ begin
     
     
     update_buffor: process(clk, action)
+    
+    variable counter: integer := 0;
+    
     begin 
         if(rising_edge(clk))then
             
             case action is
             
             when "001" =>
-            
+                counter := counter + 1;
+                
                 if(buffor_fill + bits >= 8) then
                    
                     stream <= (0 to 7 => '0') & encoded_symbol(buffor_fill to 7) & buffor(32 - buffor_fill to 31);
@@ -95,8 +101,13 @@ begin
                     
                 end if;
             
+                if(counter = to_integer(unsigned(amount_bytes)))then
+                    --ready <= '1';
+                    go_to_emmpty <= '1';
+                end if;
             when "010" =>
                 
+                go_to_emmpty <= '0';
                 
                 if(buffor_fill > 5) then 
                     
@@ -155,12 +166,14 @@ begin
         
             ready <= '0';           
             action <= "111";
+            do_it <= '0';
                                        
             if(start = '1')then
                 state_to_encode <= x;
                 next_state <= ENCODING;
                 
-            elsif(end_data = '1') then
+            elsif(go_to_emmpty = '1') then
+                ready <= '1';
                 action <= "010";
                 next_state <= EMPTY_BUFF;
                 
@@ -170,12 +183,15 @@ begin
             
             bits <= to_integer(unsigned(nbBits)); 
             encoded_symbol <= (7 - to_integer(unsigned(nbBits)) downto 0 => '0') & 
-                              state_to_encode(to_integer(unsigned(nbBits)) - 1 downto 0) ; 
+                              state_to_encode(to_integer(unsigned(nbBits)) - 1 downto 0);
+                              
+            do_it <= '1'; 
             action <= "001";        
             next_state <= IDLE;
                                                 
             
         when EMPTY_BUFF =>
+            ready <= '0';
             
             if(buffor_fill = 0) then
                 next_state <= OUT_AM_BYTES;

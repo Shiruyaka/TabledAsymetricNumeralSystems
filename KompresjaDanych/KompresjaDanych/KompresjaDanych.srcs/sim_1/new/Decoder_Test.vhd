@@ -38,7 +38,7 @@ end Decoder_Test;
 architecture dec_test of Decoder_Test is
 
 signal Init, Start, Clk, Ready, New_Symbol, End_Data, End_Decoded, Produced_Symbol : STD_LOGIC;
-signal Stream, Data_In : STD_LOGIC_VECTOR(7 downto 0);
+signal Stream, Data_In : STD_LOGIC_VECTOR(15 downto 0);
 
 component Decoder is
     Port (
@@ -46,13 +46,13 @@ component Decoder is
             start : in STD_LOGIC;
             clk : in STD_LOGIC;
                        
-            stream : out STD_LOGIC_VECTOR(7 downto 0);
+            stream : out STD_LOGIC_VECTOR(15 downto 0);
             ready : out STD_LOGIC;
             end_decoded : out STD_LOGIC;
             produced_symbol : out STD_LOGIC;
             new_symbol : in STD_LOGIC;
             end_data : in STD_LOGIC;
-            data_in : in STD_LOGIC_VECTOR(7 downto 0)
+            data_in : in STD_LOGIC_VECTOR(15 downto 0)
           );
 end component;
 
@@ -84,8 +84,8 @@ end process;
 read_and_decode:process
 file read_file:text open read_mode is "C:\Users\tomas\Desktop\compression_tests\to_decode.txt";
 variable line_enum : line;
-variable line_content: string(1 to 8);
-variable byte: std_logic_vector(1 to 8);
+variable line_content: string(1 to 16);
+variable byte: std_logic_vector(1 to 16);
 
 begin 
     Init <= '1';
@@ -139,7 +139,7 @@ variable i : integer := 0;
 begin 
    
    if(Produced_Symbol = '1' and End_Decoded = '0') then      
-          for i in 0 to 7 loop
+          for i in 0 to 15 loop
                
              if(Stream(i)= '1') then
                  line_content(8 - i) := '1';
