@@ -1,0 +1,581 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1756540 on Mon Jan 23 19:11:23 MST 2017
+# IP Build 1755317 on Mon Jan 23 20:30:07 MST 2017
+# Start of session at: Thu Aug 03 17:16:56 2017
+# Process ID: 14016
+# Current directory: C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1
+# Command line: vivado.exe -log Encoder.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Encoder.tcl
+# Log file: C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1/Encoder.vds
+# Journal file: C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Encoder.tcl -notrace
+Command: synth_design -top Encoder -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6900 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 282.605 ; gain = 72.246
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Encoder' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:54]
+INFO: [Synth 8-3491] module 'Buffor' declared at 'C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:35' bound to instance 'buff' of component 'Buffor' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:122]
+INFO: [Synth 8-638] synthesizing module 'Buffor' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:52]
+WARNING: [Synth 8-614] signal 'x' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:272]
+WARNING: [Synth 8-614] signal 'go_to_emmpty' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:272]
+WARNING: [Synth 8-614] signal 'nbBits' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:272]
+WARNING: [Synth 8-614] signal 'state_to_encode' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:272]
+WARNING: [Synth 8-614] signal 'buffor_fill' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:272]
+INFO: [Synth 8-256] done synthesizing module 'Buffor' (1#1) [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:52]
+INFO: [Synth 8-3491] module 'nbRom' declared at 'C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd:4' bound to instance 'nbRm' of component 'NbRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:139]
+INFO: [Synth 8-638] synthesizing module 'nbRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'nbRom' (2#1) [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd:10]
+INFO: [Synth 8-3491] module 'startRom' declared at 'C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd:4' bound to instance 'strRom' of component 'StartRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:146]
+INFO: [Synth 8-638] synthesizing module 'startRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'startRom' (3#1) [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd:10]
+INFO: [Synth 8-3491] module 'encodingTableRom' declared at 'C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/encodingTableRom.vhd:4' bound to instance 'encRom' of component 'encodingTableRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:153]
+INFO: [Synth 8-638] synthesizing module 'encodingTableRom' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/encodingTableRom.vhd:10]
+INFO: [Synth 8-256] done synthesizing module 'encodingTableRom' (4#1) [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/encodingTableRom.vhd:10]
+WARNING: [Synth 8-614] signal 'r_value' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:274]
+WARNING: [Synth 8-614] signal 'State' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:274]
+WARNING: [Synth 8-614] signal 'Empty' is read in the process but is not in the sensitivity list [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:274]
+INFO: [Synth 8-256] done synthesizing module 'Encoder' (5#1) [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:54]
+WARNING: [Synth 8-3331] design Buffor has unconnected port end_data
+WARNING: [Synth 8-3331] design Encoder has unconnected port new_symbol
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 320.070 ; gain = 109.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 320.070 ; gain = 109.711
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 320.070 ; gain = 109.711
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'state_to_encode_reg' and it is trimmed from '16' to '7' bits. [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:286]
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Buffor'
+INFO: [Synth 8-5545] ROM "stream" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "action" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5545] ROM "next_state" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Synth 8-5546] ROM "result" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "result" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "result" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:156]
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Encoder'
+INFO: [Synth 8-5544] ROM "next_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-327] inferring latch for variable 'ready_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:281]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                           000001 |                              000
+                encoding |                           000010 |                              001
+              empty_buff |                           000100 |                              010
+            empty_buff_2 |                           001000 |                              011
+            out_am_bytes |                           010000 |                              100
+               out_state |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'Buffor'
+WARNING: [Synth 8-327] inferring latch for variable 'action_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:85]
+WARNING: [Synth 8-327] inferring latch for variable 'bits_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:90]
+WARNING: [Synth 8-327] inferring latch for variable 'encoded_symbol_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:96]
+WARNING: [Synth 8-327] inferring latch for variable 'state_to_encode_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:286]
+WARNING: [Synth 8-327] inferring latch for variable 'end_data_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:283]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idle |                              000 |                              000
+              get_symbol |                              001 |                              001
+      compute_next_state |                              010 |                              010
+        wait_for_end_enc |                              011 |                              011
+           set_end_state |                              100 |                              100
+            wait_for_end |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'Encoder'
+WARNING: [Synth 8-327] inferring latch for variable 'Compute_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:178]
+WARNING: [Synth 8-327] inferring latch for variable 'Init_Buff_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:125]
+WARNING: [Synth 8-327] inferring latch for variable 'Empty_Buff_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:135]
+WARNING: [Synth 8-327] inferring latch for variable 'r_value_int_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:182]
+WARNING: [Synth 8-327] inferring latch for variable 'Actual_State_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:180]
+WARNING: [Synth 8-327] inferring latch for variable 'State_To_Buff_reg' [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd:130]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 336.516 ; gain = 126.156
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 4     
+	   5 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 2     
+	   8 Input     16 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   9 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 8     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 16    
+	   4 Input      1 Bit        Muxes := 2     
+	  16 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module Encoder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 2     
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   8 Input     16 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 11    
+Module Buffor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 4     
+	   3 Input     32 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   5 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 5     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   8 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 2     
+	   9 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   5 Input      2 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 9     
+	   2 Input      1 Bit        Muxes := 5     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 5     
+Module nbRom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module startRom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module encodingTableRom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "action" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design Buffor has unconnected port end_data
+WARNING: [Synth 8-3331] design Encoder has unconnected port new_symbol
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[15]' (FDE) to 'strRom/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[10]' (FDE) to 'strRom/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[11]' (FDE) to 'strRom/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[12]' (FDE) to 'strRom/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[13]' (FDE) to 'strRom/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[14]' (FDE) to 'strRom/result_reg[9]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[9]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[0]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[3]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[4]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[5]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[6]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strRom/result_reg[7]' (FDE) to 'strRom/result_reg[8]'
+INFO: [Synth 8-3886] merging instance 'buff/encoded_symbol_reg[0]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[15]' (LD) to 'Actual_State_reg[14]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[15]' (FDE) to 'nbRm/result_reg[14]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[14]' (LD) to 'Actual_State_reg[13]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[14]' (FDE) to 'nbRm/result_reg[13]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[13]' (LD) to 'Actual_State_reg[12]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[13]' (FDE) to 'nbRm/result_reg[12]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[12]' (LD) to 'Actual_State_reg[11]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[12]' (FDE) to 'nbRm/result_reg[11]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[11]' (LD) to 'Actual_State_reg[10]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[11]' (FDE) to 'nbRm/result_reg[10]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[10]' (LD) to 'Actual_State_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[10]' (FDE) to 'nbRm/result_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[0]' (FDE) to 'nbRm/result_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[1]' (FDE) to 'nbRm/result_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[2]' (FDE) to 'nbRm/result_reg[5]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[5]' (LD) to 'Actual_State_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[6]' (LD) to 'Actual_State_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[7]' (LD) to 'Actual_State_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[7]' (FDE) to 'nbRm/result_reg[9]'
+INFO: [Synth 8-3886] merging instance 'Actual_State_reg[8]' (LD) to 'Actual_State_reg[9]'
+INFO: [Synth 8-3886] merging instance 'nbRm/result_reg[8]' (FDE) to 'nbRm/result_reg[9]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Actual_State_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nbRm/result_reg[9] )
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[20]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[19]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[18]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[24]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[23]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[22]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[21]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[29]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[28]' (LD) to 'r_value_int_reg[31]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[31]' (LD) to 'r_value_int_reg[30]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[30]' (LD) to 'r_value_int_reg[27]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[27]' (LD) to 'r_value_int_reg[26]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[26]' (LD) to 'r_value_int_reg[25]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[25]' (LD) to 'r_value_int_reg[17]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[10]' (LD) to 'r_value_int_reg[17]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[9]' (LD) to 'r_value_int_reg[17]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[15]' (LD) to 'r_value_int_reg[17]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[14]' (LD) to 'r_value_int_reg[17]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[17]' (LD) to 'r_value_int_reg[16]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[16]' (LD) to 'r_value_int_reg[13]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[13]' (LD) to 'r_value_int_reg[12]'
+INFO: [Synth 8-3886] merging instance 'r_value_int_reg[12]' (LD) to 'r_value_int_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\r_value_int_reg[11] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\encRom/result_reg[4] )
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[5]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[6]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[7]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[8]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[9]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[10]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[11]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[12]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[13]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3886] merging instance 'State_To_Buff_reg[14]' (LD) to 'State_To_Buff_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\State_To_Buff_reg[15] )
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[8]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[9]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[10]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[11]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[12]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[13]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[14]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[15]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[16]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[17]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[18]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[19]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[20]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[21]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[22]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[23]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[24]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[25]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[26]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[27]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[28]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[29]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3886] merging instance 'buff/bits_reg[30]' (LD) to 'buff/bits_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (buff/\bits_reg[31] )
+INFO: [Synth 8-3886] merging instance 'buff/state_to_encode_reg[6]' (LD) to 'buff/state_to_encode_reg[5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (buff/\state_to_encode_reg[5] )
+INFO: [Synth 8-3886] merging instance 'Nb_Bits_Buff_reg[6]' (FDE) to 'Nb_Bits_Buff_reg[7]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Nb_Bits_Buff_reg[7] )
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[8]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[9]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[10]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[11]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[12]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[13]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3886] merging instance 'buff/stream_reg[14]' (FDE) to 'buff/stream_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (buff/\stream_reg[15] )
+INFO: [Synth 8-3886] merging instance 'buff/encoded_symbol_reg[1]' (LD) to 'buff/encoded_symbol_reg[2]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (buff/\bits_reg[7] )
+WARNING: [Synth 8-3332] Sequential element (state_to_encode_reg[5]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[8]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[9]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[10]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[11]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[12]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[13]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[14]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[15]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[16]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[17]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[18]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[19]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[20]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[21]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[22]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[23]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[24]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[25]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[26]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[27]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[28]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[29]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[30]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (disjointed_bytes_reg[31]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (stream_reg[15]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (bits_reg[7]) is unused and will be removed from module Buffor.
+WARNING: [Synth 8-3332] Sequential element (nbRm/result_reg[9]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (encRom/result_reg[4]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (Empty_Buff_reg) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (r_value_int_reg[11]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (Actual_State_reg[9]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (Actual_State_reg[0]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (State_To_Buff_reg[15]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (Nb_Bits_Buff_reg[7]) is unused and will be removed from module Encoder.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 460.168 ; gain = 249.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 460.168 ; gain = 249.809
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[5]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[6]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[7]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[8]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[9]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[10]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[11]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[12]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[13]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[14]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[15]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[16]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[17]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[18]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[19]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[20]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[0]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[1]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[2]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[3]) is unused and will be removed from module Encoder.
+WARNING: [Synth 8-3332] Sequential element (buff/buffor_reg[4]) is unused and will be removed from module Encoder.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:21 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin G has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd:90]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    84|
+|3     |LUT1   |   207|
+|4     |LUT2   |   176|
+|5     |LUT3   |    30|
+|6     |LUT4   |    34|
+|7     |LUT5   |    36|
+|8     |LUT6   |   120|
+|9     |FDRE   |   153|
+|10    |FDSE   |    15|
+|11    |LD     |    41|
+|12    |IBUF   |    59|
+|13    |OBUF   |    18|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-----------------+------+
+|      |Instance |Module           |Cells |
++------+---------+-----------------+------+
+|1     |top      |                 |   974|
+|2     |  buff   |Buffor           |   618|
+|3     |  encRom |encodingTableRom |    11|
+|4     |  nbRm   |nbRom            |    42|
+|5     |  strRom |startRom         |    20|
++------+---------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 82 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 461.871 ; gain = 251.512
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 461.871 ; gain = 251.512
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 184 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 41 instances were transformed.
+  LD => LDCE: 41 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+158 Infos, 82 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 531.723 ; gain = 321.363
+INFO: [Common 17-1381] The checkpoint 'C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1/Encoder.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.076 . Memory (MB): peak = 531.723 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 03 17:17:25 2017...

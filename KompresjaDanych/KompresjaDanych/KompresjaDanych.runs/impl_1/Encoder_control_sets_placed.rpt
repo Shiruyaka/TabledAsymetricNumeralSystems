@@ -1,0 +1,91 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
+| Date         : Thu Aug 03 17:18:24 2017
+| Host         : DESKTOP-5KNUINE running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Encoder_control_sets_placed.rpt
+| Design       : Encoder
+| Device       : xc7k70t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+3. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    22 |
+| Unused register locations in slices containing registers |    79 |
++----------------------------------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              47 |           22 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             142 |           49 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              20 |            5 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+3. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------+------------------------------------------+---------------------------------+------------------+----------------+
+|                Clock Signal                |               Enable Signal              |         Set/Reset Signal        | Slice Load Count | Bel Load Count |
++--------------------------------------------+------------------------------------------+---------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG                             | buff/produce_symbol_i_1_n_0              |                                 |                1 |              1 |
+|  Compute_reg_i_2_n_0                       |                                          |                                 |                1 |              1 |
+|  Init_Buff_reg_i_2_n_0                     |                                          |                                 |                1 |              1 |
+|  buff/end_data                             |                                          |                                 |                1 |              1 |
+|  buff/ready_reg_i_2_n_0                    |                                          |                                 |                1 |              1 |
+|  buff/action_reg[0]_i_2_n_0                |                                          |                                 |                2 |              3 |
+|  clk_IBUF_BUFG                             | encRom/result[3]_i_1__0_n_0              |                                 |                1 |              4 |
+|  Actual_State_reg[4]_i_1_n_0               |                                          |                                 |                1 |              4 |
+|  State_To_Buff_reg[4]_i_1_n_0              |                                          |                                 |                2 |              5 |
+|  buff/FSM_onehot_current_state[1]_i_1_n_0  |                                          |                                 |                2 |              5 |
+|  clk_IBUF_BUFG                             |                                          |                                 |                3 |              6 |
+|  clk_IBUF_BUFG                             | nbRm/E[0]                                |                                 |                2 |              6 |
+|  clk_IBUF_BUFG                             | buff/FSM_onehot_current_state[5]_i_1_n_0 | Init_Buff                       |                2 |              6 |
+|  clk_IBUF_BUFG                             | buff/disjointed_bytes[0]_i_1_n_0         |                                 |                2 |              8 |
+|  clk_IBUF_BUFG                             | buff/stream[7]_i_1_n_0                   |                                 |                3 |              8 |
+|  r_value_int_reg[8]_i_2_n_0                |                                          |                                 |                3 |              9 |
+|  clk_IBUF_BUFG                             | buff/buffor[21]_i_1_n_0                  |                                 |                7 |             11 |
+|  buff/FSM_onehot_current_state_reg_n_0_[1] |                                          |                                 |                5 |             11 |
+|  clk_IBUF_BUFG                             | Compute                                  | strRom/Computed_State_reg[15]_0 |                3 |             14 |
+|  clk_IBUF_BUFG                             | buff/counter[0]_i_1_n_0                  |                                 |                8 |             32 |
+|  clk_IBUF_BUFG                             | buff/buffor_fill[31]_i_1_n_0             |                                 |               12 |             32 |
+|  clk_IBUF_BUFG                             | Compute                                  |                                 |               13 |             40 |
++--------------------------------------------+------------------------------------------+---------------------------------+------------------+----------------+
+
+
++--------+-----------------------+
+| Fanout | Number of ControlSets |
++--------+-----------------------+
+| 1      |                     5 |
+| 3      |                     1 |
+| 4      |                     2 |
+| 5      |                     2 |
+| 6      |                     3 |
+| 8      |                     2 |
+| 9      |                     1 |
+| 11     |                     2 |
+| 14     |                     1 |
+| 16+    |                     3 |
++--------+-----------------------+
+
+

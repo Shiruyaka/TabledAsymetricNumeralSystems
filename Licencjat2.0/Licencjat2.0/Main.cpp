@@ -273,9 +273,11 @@ public:
 			state[i] = toBinary(i, 16, 1);
 		}
 		
-		saveToFile(symbolStr, "nbRom", nbStr, "nbRom.vhd", alphabet_size, 1);
-		saveToFile(symbolStr, "startRom", startStr, "startRom.vhd", alphabet_size, 1);
-		saveToFile(state, "encodingTableRom", encodingTableStr, "encodingTableRom.vhd", L, 1);
+		makeCoeFile(start, alphabet_size, "start.coe");
+
+		//saveToFile(symbolStr, "nbRom", nbStr, "nbRom.vhd", alphabet_size, 1);
+		//saveToFile(symbolStr, "startRom", startStr, "startRom.vhd", alphabet_size, 1);
+		//saveToFile(state, "encodingTableRom", encodingTableStr, "encodingTableRom.vhd", L, 1);
 
 		delete[] next;
 		delete[] symbolStr;
@@ -323,6 +325,21 @@ public:
 
 	}
 	
+	void makeCoeFile(int* values, int depth, string filename) {
+		string radix = "MEMORY_INITIALIZATION_RADIX = 10;\n";
+		string vector_init = "MEMORY_INITIALIZATION_VECTOR=\n";
+
+		for (int i = 0; i < depth - 1; ++i) {
+			vector_init += to_string(values[i]);
+			vector_init += ",\n";
+		}
+
+		vector_init += to_string(values[depth - 1]) + ";";
+
+		ofstream out(filename);
+		out << radix << vector_init;
+		out.close();
+	}
 
 	void check_files(string to_encode, string decode_out) {
 		ifstream in(to_encode);

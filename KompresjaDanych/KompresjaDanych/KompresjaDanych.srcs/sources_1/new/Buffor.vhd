@@ -236,32 +236,10 @@ begin
                     
                     disjointed_bytes <= disjointed_bytes + 1;
                     produce_symbol <= '1';
-                    
-                    --stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
-                    --                          (0 to 4 - buffor_fill => '0') &
-                    --                          buffor(32 - buffor_fill to 31);
-                    
+                                        
                     stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
                               buffor(27 to 31);
---                    case buffor_fill is
---                        when 5 =>
---                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(5, 3)) &
---                                      buffor(27 to 31);
---                        when 4 =>
---                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(4, 3)) &
---                                      (0 to 0 => '0') & buffor(27 to 31);                                     
---                        when 3 =>
---                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(3, 3)) &
---                                      (0 to 1 => '0') & buffor(27 to 31);                       
---                        when 2 =>
---                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(2, 3)) &
---                                      (0 to 2 => '0') & buffor(27 to 31);                       
---                        when 1 =>
---                            stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(1,3)) &
---                                      (0 to 3 => '0') & buffor(27 to 31);                                       
---                        when others =>
---                            stream <= (0 to 31 => '0');
---                    end case;
+
                     buffor_fill <= 0;    
                     buffor <= x"00000000";
                 

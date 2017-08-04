@@ -1,3 +1,15 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock/start_memblock_sim_netlist.vhdl" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_axi_read_fsm
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_axi_write_fsm
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_prim_wrapper_init
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_axi_read_wrapper
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_axi_write_wrapper
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_prim_width
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_generic_cstr
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_top
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_v8_3_5_synth
+INFO: [VRFC 10-307] analyzing entity start_memblock_blk_mem_gen_v8_3_5
+INFO: [VRFC 10-307] analyzing entity start_memblock
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity serializator
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Buffor.vhd" into library xil_defaultlib
