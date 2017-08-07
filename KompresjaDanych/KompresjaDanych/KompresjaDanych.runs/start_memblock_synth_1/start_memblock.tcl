@@ -5,21 +5,21 @@
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 set_msg_config -msgmgr_mode ooc_run
-create_project -in_memory -part xc7k70tfbv676-1
+create_project -in_memory -part xc7z010clg400-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.cache/wt [current_project]
-set_property parent.project_path C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr [current_project]
-set_property XPM_LIBRARIES XPM_MEMORY [current_project]
+set_property webtalk.parent_dir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.cache/wt [current_project]
+set_property parent.project_path D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_output_repo c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.cache/ip [current_project]
+set_property ip_output_repo d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci
-set_property is_locked true [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+read_ip -quiet D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci
+set_property is_locked true [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
@@ -27,11 +27,11 @@ foreach dcp [get_files -quiet -all *.dcp] {
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 
-set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1 -new_name start_memblock -ip [get_ips start_memblock]]
+set cached_ip [config_ip_cache -export -no_bom -use_project_ipc -dir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1 -new_name start_memblock -ip [get_ips start_memblock]]
 
 if { $cached_ip eq {} } {
 
-synth_design -top start_memblock -part xc7k70tfbv676-1 -mode out_of_context
+synth_design -top start_memblock -part xc7z010clg400-1 -mode out_of_context
 
 #---------------------------------------------------------
 # Generate Checkpoint/Stub/Simulation Files For IP Cache
@@ -62,25 +62,25 @@ write_checkpoint -force -noxdef start_memblock.dcp
 catch { report_utilization -file start_memblock_utilization_synth.rpt -pb start_memblock_utilization_synth.pb }
 
 if { [catch {
-  write_verilog -force -mode synth_stub C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v
+  write_verilog -force -mode synth_stub D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl
+  write_vhdl -force -mode synth_stub D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v
+  write_verilog -force -mode funcsim D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -91,36 +91,36 @@ if { [catch {
 
 }; # end if cached_ip 
 
-add_files C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v -of_objects [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v -of_objects [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
-add_files C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl -of_objects [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl -of_objects [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
-add_files C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v -of_objects [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v -of_objects [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
-add_files C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl -of_objects [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl -of_objects [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
-add_files C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock.dcp -of_objects [get_files c:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
+add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock.dcp -of_objects [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/ip/start_memblock/start_memblock.xci]
 
-if {[file isdir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
+if {[file isdir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
   catch { 
-    file copy -force C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
+    file copy -force D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.v D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
   }
 }
 
-if {[file isdir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
+if {[file isdir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
   catch { 
-    file copy -force C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
+    file copy -force D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_sim_netlist.vhdl D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
   }
 }
 
-if {[file isdir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
+if {[file isdir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
   catch { 
-    file copy -force C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
+    file copy -force D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.v D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
   }
 }
 
-if {[file isdir C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
+if {[file isdir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock]} {
   catch { 
-    file copy -force C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
+    file copy -force D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/start_memblock_synth_1/start_memblock_stub.vhdl D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/ip/start_memblock
   }
 }

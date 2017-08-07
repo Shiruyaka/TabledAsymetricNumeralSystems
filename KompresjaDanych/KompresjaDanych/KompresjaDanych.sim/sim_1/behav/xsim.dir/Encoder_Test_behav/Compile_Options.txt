@@ -1,1 +1,0 @@
--wto "70540a3212d3476bbdb162517936ac24" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "Encoder_Test_behav" "xil_defaultlib.Encoder_Test" -log "elaborate.log" 

@@ -53,6 +53,104 @@ end Encoder;
 
 architecture encode of Encoder is
 
+component start_block_wrapper is
+  port (
+    BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_clk : in STD_LOGIC;
+    BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_en : in STD_LOGIC;
+    BRAM_PORTB_rst : in STD_LOGIC;
+    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
+    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
+    DDR_cas_n : inout STD_LOGIC;
+    DDR_ck_n : inout STD_LOGIC;
+    DDR_ck_p : inout STD_LOGIC;
+    DDR_cke : inout STD_LOGIC;
+    DDR_cs_n : inout STD_LOGIC;
+    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_odt : inout STD_LOGIC;
+    DDR_ras_n : inout STD_LOGIC;
+    DDR_reset_n : inout STD_LOGIC;
+    DDR_we_n : inout STD_LOGIC;
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC
+  );
+end component;
+
+component nb_block_wrapper port (
+    BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_clk : in STD_LOGIC;
+    BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_en : in STD_LOGIC;
+    BRAM_PORTB_rst : in STD_LOGIC;
+    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
+    DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
+    DDR_cas_n : inout STD_LOGIC;
+    DDR_ck_n : inout STD_LOGIC;
+    DDR_ck_p : inout STD_LOGIC;
+    DDR_cke : inout STD_LOGIC;
+    DDR_cs_n : inout STD_LOGIC;
+    DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+    DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+    DDR_odt : inout STD_LOGIC;
+    DDR_ras_n : inout STD_LOGIC;
+    DDR_reset_n : inout STD_LOGIC;
+    DDR_we_n : inout STD_LOGIC;
+    FIXED_IO_ddr_vrn : inout STD_LOGIC;
+    FIXED_IO_ddr_vrp : inout STD_LOGIC;
+    FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+    FIXED_IO_ps_clk : inout STD_LOGIC;
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    FIXED_IO_ps_srstb : inout STD_LOGIC
+  );
+end component;
+
+component encoding_table_block_wrapper
+  port (
+      BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+      BRAM_PORTB_clk : in STD_LOGIC;
+      BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+      BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+      BRAM_PORTB_en : in STD_LOGIC;
+      BRAM_PORTB_rst : in STD_LOGIC;
+      BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+      DDR_addr : inout STD_LOGIC_VECTOR ( 14 downto 0 );
+      DDR_ba : inout STD_LOGIC_VECTOR ( 2 downto 0 );
+      DDR_cas_n : inout STD_LOGIC;
+      DDR_ck_n : inout STD_LOGIC;
+      DDR_ck_p : inout STD_LOGIC;
+      DDR_cke : inout STD_LOGIC;
+      DDR_cs_n : inout STD_LOGIC;
+      DDR_dm : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+      DDR_dq : inout STD_LOGIC_VECTOR ( 31 downto 0 );
+      DDR_dqs_n : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+      DDR_dqs_p : inout STD_LOGIC_VECTOR ( 3 downto 0 );
+      DDR_odt : inout STD_LOGIC;
+      DDR_ras_n : inout STD_LOGIC;
+      DDR_reset_n : inout STD_LOGIC;
+      DDR_we_n : inout STD_LOGIC;
+      FIXED_IO_ddr_vrn : inout STD_LOGIC;
+      FIXED_IO_ddr_vrp : inout STD_LOGIC;
+      FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+      FIXED_IO_ps_clk : inout STD_LOGIC;
+      FIXED_IO_ps_porb : inout STD_LOGIC;
+      FIXED_IO_ps_srstb : inout STD_LOGIC
+  );
+end component;
+
 component Buffor
    Port(     
            init : in STD_LOGIC;
@@ -70,42 +168,6 @@ component Buffor
            end_data : in STD_LOGIC --to dispose buffor
        );
  end component;
-
-COMPONENT start_memblock
-  PORT (
-    s_aclk : IN STD_LOGIC;
-    s_aresetn : IN STD_LOGIC;
-    s_axi_awid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_awaddr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_awlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    s_axi_awsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    s_axi_awburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_awvalid : IN STD_LOGIC;
-    s_axi_awready : OUT STD_LOGIC;
-    s_axi_wdata : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_wstrb : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_wlast : IN STD_LOGIC;
-    s_axi_wvalid : IN STD_LOGIC;
-    s_axi_wready : OUT STD_LOGIC;
-    s_axi_bid : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_bresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_bvalid : OUT STD_LOGIC;
-    s_axi_bready : IN STD_LOGIC;
-    s_axi_arid : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_araddr : IN STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_arlen : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-    s_axi_arsize : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
-    s_axi_arburst : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_arvalid : IN STD_LOGIC;
-    s_axi_arready : OUT STD_LOGIC;
-    s_axi_rid : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
-    s_axi_rdata : OUT STD_LOGIC_VECTOR(31 DOWNTO 0);
-    s_axi_rresp : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-    s_axi_rlast : OUT STD_LOGIC;
-    s_axi_rvalid : OUT STD_LOGIC;
-    s_axi_rready : IN STD_LOGIC
-  );
-END COMPONENT;
 
 component NbRom
     Port(
@@ -151,51 +213,121 @@ signal
        r_value_int: integer := 0;
        
 type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, WAIT_FOR_END_ENC, SET_END_STATE, WAIT_FOR_END);
-signal current_state, next_state : state_type;
 
-signal s_aclk, s_aresetn, s_axi_awvalid, s_axi_wready, s_axi_awready, s_axi_bvalid, s_axi_wvalid, s_axi_bready, s_axi_rlast, s_axi_arvalid, s_axi_arready, s_axi_rvalid, s_axi_wlast, s_axi_rready : STD_LOGIC := '0';
-signal s_axi_awid, s_axi_wstrb, s_axi_bid, s_axi_arid, s_axi_rid : STD_LOGIC_VECTOR(3 DOWNTO 0) := x"0";
-signal s_axi_awaddr, s_axi_wdata, s_axi_araddr, s_axi_rdata : STD_LOGIC_VECTOR(31 DOWNTO 0) := x"00000000";
-signal s_axi_awlen, s_axi_arlen : STD_LOGIC_VECTOR(7 DOWNTO 0) := x"00";
-signal s_axi_awsize, s_axi_arsize : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
-signal s_axi_awburst, s_axi_bresp, s_axi_arburst, s_axi_rresp : STD_LOGIC_VECTOR(1 DOWNTO 0) := "00";
- 
+    signal 
+        current_state, next_state : state_type;
+    signal 
+        BRAM_PORTB_clk, BRAM_PORTB_en, BRAM_PORTB_rst, DDR_cas_n, DDR_ck_n, DDR_ck_p,
+        DDR_cke, DDR_cs_n, DDR_odt, DDR_ras_n, DDR_reset_n, DDR_we_n, FIXED_IO_ddr_vrn,
+        FIXED_IO_ddr_vrp, FIXED_IO_ps_clk, FIXED_IO_ps_porb, FIXED_IO_ps_srstb : STD_LOGIC;
+    signal
+        BRAM_PORTB_addr, ENCODING_TABLE_addr, BRAM_PORTB_din, START_OUT, NB_OUT, ENCODING_TABLE_OUT, DDR_dq : STD_LOGIC_VECTOR ( 31 downto 0 );        
+    signal
+        BRAM_PORTB_we, DDR_dm, DDR_dqs_n, DDR_dqs_p :  STD_LOGIC_VECTOR ( 3 downto 0 );
+    signal
+        DDR_addr : STD_LOGIC_VECTOR ( 14 downto 0 );
+    signal
+        DDR_ba : STD_LOGIC_VECTOR ( 2 downto 0 );
+    signal
+        FIXED_IO_mio : STD_LOGIC_VECTOR ( 53 downto 0 );
 begin
 
-start_rom : start_memblock
-  PORT MAP (
-    s_aclk => Clk,
-    s_aresetn => s_aresetn,
-    s_axi_awid => s_axi_awid,
-    s_axi_awaddr => s_axi_awaddr,
-    s_axi_awlen => s_axi_awlen,
-    s_axi_awsize => s_axi_awsize,
-    s_axi_awburst => s_axi_awburst,
-    s_axi_awvalid => s_axi_awvalid,
-    s_axi_awready => s_axi_awready,
-    s_axi_wdata => s_axi_wdata,
-    s_axi_wstrb => s_axi_wstrb,
-    s_axi_wlast => s_axi_wlast,
-    s_axi_wvalid => s_axi_wvalid,
-    s_axi_wready => s_axi_wready,
-    s_axi_bid => s_axi_bid,
-    s_axi_bresp => s_axi_bresp,
-    s_axi_bvalid => s_axi_bvalid,
-    s_axi_bready => s_axi_bready,
-    s_axi_arid => s_axi_arid,
-    s_axi_araddr => s_axi_araddr,
-    s_axi_arlen => s_axi_arlen,
-    s_axi_arsize => s_axi_arsize,
-    s_axi_arburst => s_axi_arburst,
-    s_axi_arvalid => s_axi_arvalid,
-    s_axi_arready => s_axi_arready,
-    s_axi_rid => s_axi_rid,
-    s_axi_rdata => s_axi_rdata,
-    s_axi_rresp => s_axi_rresp,
-    s_axi_rlast => s_axi_rlast,
-    s_axi_rvalid => s_axi_rvalid,
-    s_axi_rready => s_axi_rready
+start_block: start_block_wrapper
+    Port map(  
+        BRAM_PORTB_addr => BRAM_PORTB_addr,
+        BRAM_PORTB_clk => Clk,
+        BRAM_PORTB_din => BRAM_PORTB_din,
+        BRAM_PORTB_dout => START_OUT,
+        BRAM_PORTB_en => BRAM_PORTB_en,
+        BRAM_PORTB_rst => BRAM_PORTB_rst,
+        BRAM_PORTB_we => BRAM_PORTB_we,
+        DDR_addr => DDR_addr,
+        DDR_ba => DDR_ba,
+        DDR_cas_n => DDR_cas_n,
+        DDR_ck_n => DDR_ck_n,
+        DDR_ck_p => DDR_ck_p,
+        DDR_cke => DDR_cke,
+        DDR_cs_n => DDR_cs_n,
+        DDR_dm => DDR_dm,
+        DDR_dq => DDR_dq,
+        DDR_dqs_n => DDR_dqs_n,
+        DDR_dqs_p => DDR_dqs_p,
+        DDR_odt => DDR_odt,
+        DDR_ras_n => DDR_ras_n,
+        DDR_reset_n => DDR_reset_n,
+        DDR_we_n => DDR_we_n,
+        FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
+        FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
+        FIXED_IO_mio => FIXED_IO_mio,
+        FIXED_IO_ps_clk => FIXED_IO_ps_clk,
+        FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+        FIXED_IO_ps_srstb => FIXED_IO_ps_srstb 
+      );
+ 
+nb_block: nb_block_wrapper
+     Port map(  
+        BRAM_PORTB_addr => BRAM_PORTB_addr,
+        BRAM_PORTB_clk => Clk,
+        BRAM_PORTB_din => BRAM_PORTB_din,
+        BRAM_PORTB_dout => NB_OUT,
+        BRAM_PORTB_en => BRAM_PORTB_en,
+        BRAM_PORTB_rst => BRAM_PORTB_rst,
+        BRAM_PORTB_we => BRAM_PORTB_we,
+        DDR_addr => DDR_addr,
+        DDR_ba => DDR_ba,
+        DDR_cas_n => DDR_cas_n,
+        DDR_ck_n => DDR_ck_n,
+        DDR_ck_p => DDR_ck_p,
+        DDR_cke => DDR_cke,
+        DDR_cs_n => DDR_cs_n,
+        DDR_dm => DDR_dm,
+        DDR_dq => DDR_dq,
+        DDR_dqs_n => DDR_dqs_n,
+        DDR_dqs_p => DDR_dqs_p,
+        DDR_odt => DDR_odt,
+        DDR_ras_n => DDR_ras_n,
+        DDR_reset_n => DDR_reset_n,
+        DDR_we_n => DDR_we_n,
+        FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
+        FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
+        FIXED_IO_mio => FIXED_IO_mio,
+        FIXED_IO_ps_clk => FIXED_IO_ps_clk,
+        FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+        FIXED_IO_ps_srstb => FIXED_IO_ps_srstb 
   );
+
+encoding_table_block: encoding_table_block_wrapper
+     Port map(  
+        BRAM_PORTB_addr => ENCODING_TABLE_addr,
+        BRAM_PORTB_clk => Clk,
+        BRAM_PORTB_din => BRAM_PORTB_din,
+        BRAM_PORTB_dout => ENCODING_TABLE_OUT,
+        BRAM_PORTB_en => BRAM_PORTB_en,
+        BRAM_PORTB_rst => BRAM_PORTB_rst,
+        BRAM_PORTB_we => BRAM_PORTB_we,
+        DDR_addr => DDR_addr,
+        DDR_ba => DDR_ba,
+        DDR_cas_n => DDR_cas_n,
+        DDR_ck_n => DDR_ck_n,
+        DDR_ck_p => DDR_ck_p,
+        DDR_cke => DDR_cke,
+        DDR_cs_n => DDR_cs_n,
+        DDR_dm => DDR_dm,
+        DDR_dq => DDR_dq,
+        DDR_dqs_n => DDR_dqs_n,
+        DDR_dqs_p => DDR_dqs_p,
+        DDR_odt => DDR_odt,
+        DDR_ras_n => DDR_ras_n,
+        DDR_reset_n => DDR_reset_n,
+        DDR_we_n => DDR_we_n,
+        FIXED_IO_ddr_vrn => FIXED_IO_ddr_vrn,
+        FIXED_IO_ddr_vrp => FIXED_IO_ddr_vrp,
+        FIXED_IO_mio => FIXED_IO_mio,
+        FIXED_IO_ps_clk => FIXED_IO_ps_clk,
+        FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+        FIXED_IO_ps_srstb => FIXED_IO_ps_srstb 
+  );
+
 
 buff: Buffor
 Port map(
@@ -220,6 +352,20 @@ Port map(
             symbol => data_in,
             result => Nb_Rom
         );
+
+start_nb_BlockRam: process(Clk, data_in)
+begin
+    if(rising_edge(Clk)) then
+        BRAM_PORTB_addr <= x"4000_0000" + to_integer(unsigned(data_in));
+    end if;
+end process;
+
+encoding_blockRam: process(Clk, Computed_State) 
+begin
+    if(rising_edge(Clk)) then
+        ENCODING_TABLE_addr <= x"4000_0000" + to_integer(unsigned(Computed_State));
+    end if;
+end process;
 
 strRom: StartRom
 Port map(
@@ -308,28 +454,28 @@ begin
             
             case to_integer(unsigned(nb_bits)) is
                 when 1 => 
-                    Computed_State <= Start_Symbol + 
+                    Computed_State <= START_OUT(16 downto 0) + 
                                       ((0 downto 0 => '0') & Actual_State(15 downto 1));
                 when 2 =>
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) + 
                                       ((1 downto 0 => '0') & Actual_State(15 downto 2));
                 when 3 =>
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) +
                                       ((2 downto 0 => '0') & Actual_State(15 downto 3));
                 when 4 =>
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) +
                                       ((3 downto 0 => '0') & Actual_State(15 downto 4));
                 when 5 =>   
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) +
                                       ((4 downto 0 => '0') & Actual_State(15 downto 5));
                 when 6 =>
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) +
                                       ((5 downto 0 => '0') & Actual_State(15 downto 6));
                 when 7 =>
-                    Computed_State <= Start_Symbol +
+                    Computed_State <= START_OUT(16 downto 0) +
                                       ((6 downto 0 => '0') & Actual_State(15 downto 7));
                 when others =>
-                    Computed_State <= Start_Symbol;
+                    Computed_State <= START_OUT(16 downto 0);
             end case;
 
                 
@@ -357,17 +503,16 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
         
         case current_state is
             when IDLE =>
-                s_aresetn <= '1';
+                
+                BRAM_PORTB_rst <= '1';
                 end_data <= '0';
                 counter := 0;
                 init_buff <= '1';
                 
-                
                 if(start = '1') then
-                    s_aresetn <= '0';
-                    s_axi_rready <= '1';
-                    s_axi_arlen <= x"10";
-                    s_axi_araddr <= x"A0002000";
+                    BRAM_PORTB_rst <= '0';
+                    BRAM_PORTB_en <= '1';
+                    
                     end_data <= '0';
                     r_value_int <= to_integer(unsigned(r_value)) + 1;
                     Init_Buff <= '1';
@@ -379,17 +524,10 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             
                 Init_Buff <= '0';
                 Compute <= '1';
-                
                 Actual_State <= State;
                 State_To_Buff <= State;
-                                 
-                --if(Empty = '1') then
-                --    Compute <= '0';
-                --    Empty_Buff <= '1';
-                --    next_state <= SET_END_STATE;
-                --else
-                    next_state <= COMPUTE_NEXT_STATE;  
-                --end if;               
+               
+                next_state <= COMPUTE_NEXT_STATE;  
                 
                 
             when COMPUTE_NEXT_STATE =>

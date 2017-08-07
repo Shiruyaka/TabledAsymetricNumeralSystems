@@ -98,7 +98,7 @@ read_and_encode: process
     
 begin
     
-  file_open(read_file, "C:\Users\tomas\Desktop\compression_tests\to_encode_test.txt", READ_MODE);
+  file_open(read_file, "C:\Users\Ola\Desktop\compression_tests\to_encode_test.txt", READ_MODE);
    
   Init <= '1';
   New_symbol <= '0';
@@ -188,7 +188,7 @@ end process;
 
 write_encoded_data: process
 
-file write_file: text open write_mode is "C:\Users\tomas\Desktop\compression_tests\encode_out_test.txt";
+file write_file: text open write_mode is "C:\Users\Ola\Desktop\compression_tests\encode_out_test.txt";
 variable line_to_file : line;
 variable line_str: string(1 to 16);
 variable line_content: string(1 to 16);

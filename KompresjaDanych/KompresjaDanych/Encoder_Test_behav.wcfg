@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Encoder_Test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Encoder_Test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="585000001fs"></ZoomEndTime>
+      <Cursor1Time time="420000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="178"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/Encoder_Test/Init" type="logic">
+      <obj_property name="ElementShortName">Init</obj_property>
+      <obj_property name="ObjectShortName">Init</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Start" type="logic">
+      <obj_property name="ElementShortName">Start</obj_property>
+      <obj_property name="ObjectShortName">Start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Clk" type="logic">
+      <obj_property name="ElementShortName">Clk</obj_property>
+      <obj_property name="ObjectShortName">Clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/New_Symbol" type="logic">
+      <obj_property name="ElementShortName">New_Symbol</obj_property>
+      <obj_property name="ObjectShortName">New_Symbol</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Produced_Symbol" type="logic">
+      <obj_property name="ElementShortName">Produced_Symbol</obj_property>
+      <obj_property name="ObjectShortName">Produced_Symbol</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/End_Data" type="logic">
+      <obj_property name="ElementShortName">End_Data</obj_property>
+      <obj_property name="ObjectShortName">End_Data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/R_Value" type="array">
+      <obj_property name="ElementShortName">R_Value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">R_Value[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Data_Out" type="array">
+      <obj_property name="ElementShortName">Data_Out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_Out[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Symbol" type="array">
+      <obj_property name="ElementShortName">Symbol[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Symbol[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/Amount_Bytes" type="array">
+      <obj_property name="ElementShortName">Amount_Bytes[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Amount_Bytes[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/test/s_aclk" type="logic">
+      <obj_property name="ElementShortName">s_aclk</obj_property>
+      <obj_property name="ObjectShortName">s_aclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Encoder_Test/test/s_aresetn" type="logic">
+      <obj_property name="ElementShortName">s_aresetn</obj_property>
+      <obj_property name="ObjectShortName">s_aresetn</obj_property>
+   </wvobject>
+</wave_config>

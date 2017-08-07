@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="start_memblock_synth_1" LaunchPart="xc7k70tfbv676-1" LaunchTime="1501797133">
+<GenRun Id="start_memblock_synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502096402">
   <File Type="RDS-PROPCONSTRS" Name="start_memblock_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="start_memblock.tcl"/>
   <File Type="RDS-RDS" Name="start_memblock.vds"/>
@@ -9,14 +9,14 @@
   <File Type="VDS-TIMINGSUMMARY" Name="start_memblock_timing_summary_synth.rpt"/>
   <File Type="VDS-TIMING-PB" Name="start_memblock_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_memblock">
-    <File Path="$PSRCDIR/sources_1/ip/start_memblock/start_memblock.xci">
+    <File Path="$PSRCDIR/sources_1/ip/start_memblock.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/start_memblock.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/start_memblock/start_memblock.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -29,14 +29,14 @@
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_memblock">
-    <File Path="$PSRCDIR/sources_1/ip/start_memblock/start_memblock.xci">
+    <File Path="$PSRCDIR/sources_1/ip/start_memblock.xcix">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/ip/start_memblock.xcix">
+    <File Path="$PSRCDIR/sources_1/ip/start_memblock/start_memblock.xci">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -49,9 +49,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

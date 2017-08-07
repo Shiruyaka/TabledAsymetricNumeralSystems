@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2016.4 (64-bit)              -->
+<!-- Product Version: Vivado v2016.3 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
+<Project Version="7" Minor="17" Path="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="70540a3212d3476bbdb162517936ac24"/>
-    <Option Name="Part" Val="xc7k70tfbv676-1"/>
+    <Option Name="Part" Val="xc7z010clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
     <Option Name="CompiledLibDirModelSim" Val="$PCACHEDIR/compile_simlib/modelsim"/>
@@ -31,20 +31,20 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/KompresjaDanych.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="522"/>
+    <Option Name="WTXSimLaunchSim" Val="540"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="6"/>
-    <Option Name="WTModelSimExportSim" Val="6"/>
-    <Option Name="WTQuestaExportSim" Val="6"/>
-    <Option Name="WTIesExportSim" Val="6"/>
-    <Option Name="WTVcsExportSim" Val="6"/>
-    <Option Name="WTRivieraExportSim" Val="6"/>
-    <Option Name="WTActivehdlExportSim" Val="6"/>
+    <Option Name="WTXSimExportSim" Val="8"/>
+    <Option Name="WTModelSimExportSim" Val="8"/>
+    <Option Name="WTQuestaExportSim" Val="8"/>
+    <Option Name="WTIesExportSim" Val="8"/>
+    <Option Name="WTVcsExportSim" Val="8"/>
+    <Option Name="WTRivieraExportSim" Val="8"/>
+    <Option Name="WTActivehdlExportSim" Val="8"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -120,6 +120,141 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/bd/start_block/start_block.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_blk_mem_gen_0_0/start_block_blk_mem_gen_0_0.xci">
+          <Proxy FileSetName="start_block_blk_mem_gen_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_axi_bram_ctrl_0_0/start_block_axi_bram_ctrl_0_0.xci">
+          <Proxy FileSetName="start_block_axi_bram_ctrl_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hdl/start_block.hwdef"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hw_handoff/start_block.hwh"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="start_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="start_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hw_handoff/start_block_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_auto_pc_0/start_block_auto_pc_0.xci">
+          <Proxy FileSetName="start_block_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_rst_ps7_0_50M_0/start_block_rst_ps7_0_50M_0.xci">
+          <Proxy FileSetName="start_block_rst_ps7_0_50M_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_axi_mem_intercon_0/start_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_processing_system7_0_0/start_block_processing_system7_0_0.xci">
+          <Proxy FileSetName="start_block_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hdl/start_block.vhd"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/start_block/hdl/start_block_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/nb_block/nb_block.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="nb_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="nb_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="hdl/nb_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_bram_ctrl_0_0/nb_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_processing_system7_0_0/nb_block_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_blk_mem_gen_0_0/nb_block_blk_mem_gen_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_auto_pc_0/nb_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_mem_intercon_0/nb_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_rst_ps7_0_50M_0/nb_block_rst_ps7_0_50M_0.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/nb_block/hdl/nb_block_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/encoding_table_block.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_mem_intercon_0/encoding_table_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_auto_pc_0/encoding_table_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_processing_system7_0_0/encoding_table_block_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_bram_ctrl_0_0/encoding_table_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_blk_mem_gen_0_0/encoding_table_block_blk_mem_gen_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="encoding_table_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="encoding_table_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="hdl/encoding_table_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_rst_ps7_0_50M_0/encoding_table_block_rst_ps7_0_50M_0.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/hdl/encoding_table_block_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/data_in_block/data_in_block.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_processing_system7_0_0/data_in_block_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="hdl/data_in_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_auto_pc_0/data_in_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_blk_mem_gen_0_0/data_in_block_blk_mem_gen_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_axi_mem_intercon_0/data_in_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_axi_bram_ctrl_0_0/data_in_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_rst_ps7_0_50M_0/data_in_block_rst_ps7_0_50M_0.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/data_in_block/hdl/data_in_block_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/data_out_block/data_out_block.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_axi_bram_ctrl_0_0/data_out_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_axi_mem_intercon_0/data_out_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_blk_mem_gen_0_0/data_out_block_blk_mem_gen_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_auto_pc_0/data_out_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="hdl/data_out_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="data_out_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="data_out_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_rst_ps7_0_50M_0/data_out_block_rst_ps7_0_50M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_processing_system7_0_0/data_out_block_processing_system7_0_0.xci"/>
+      </File>
+      <File Path="$PSRCDIR/sources_1/bd/data_out_block/hdl/data_out_block_wrapper.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Middleware.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Compressor.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Encoder"/>
@@ -157,6 +292,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Encoder_Test_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="Encoder_Test"/>
@@ -164,6 +304,38 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/Encoder_Test_behav.wcfg"/>
+        <Option Name="xsim.simulate.runtime" Val="500ns"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="start_block_blk_mem_gen_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_block_blk_mem_gen_0_0">
+      <Config>
+        <Option Name="TopModule" Val="start_block_blk_mem_gen_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="start_block_axi_bram_ctrl_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_block_axi_bram_ctrl_0_0">
+      <Config>
+        <Option Name="TopModule" Val="start_block_axi_bram_ctrl_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="start_block_processing_system7_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_block_processing_system7_0_0">
+      <Config>
+        <Option Name="TopModule" Val="start_block_processing_system7_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="start_block_rst_ps7_0_50M_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_block_rst_ps7_0_50M_0">
+      <Config>
+        <Option Name="TopModule" Val="start_block_rst_ps7_0_50M_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="start_block_auto_pc_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_block_auto_pc_0">
+      <Config>
+        <Option Name="TopModule" Val="start_block_auto_pc_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="start_memblock" Type="BlockSrcs" RelSrcDir="$PSRCDIR/start_memblock">
@@ -206,7 +378,7 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7k70tfbv676-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
@@ -214,17 +386,55 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="start_memblock_synth_1" Type="Ft3:Synth" SrcSet="start_memblock" Part="xc7k70tfbv676-1" ConstrsSet="start_memblock" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_memblock_synth_1" IncludeInArchive="true">
+    <Run Id="start_block_blk_mem_gen_0_0_synth_1" Type="Ft3:Synth" SrcSet="start_block_blk_mem_gen_0_0" Part="xc7z010clg400-1" ConstrsSet="start_block_blk_mem_gen_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_block_blk_mem_gen_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7k70tfbv676-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="start_block_axi_bram_ctrl_0_0_synth_1" Type="Ft3:Synth" SrcSet="start_block_axi_bram_ctrl_0_0" Part="xc7z010clg400-1" ConstrsSet="start_block_axi_bram_ctrl_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_block_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="start_block_processing_system7_0_0" Part="xc7z010clg400-1" ConstrsSet="start_block_processing_system7_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_block_processing_system7_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_rst_ps7_0_50M_0_synth_1" Type="Ft3:Synth" SrcSet="start_block_rst_ps7_0_50M_0" Part="xc7z010clg400-1" ConstrsSet="start_block_rst_ps7_0_50M_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_block_rst_ps7_0_50M_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_auto_pc_0_synth_1" Type="Ft3:Synth" SrcSet="start_block_auto_pc_0" Part="xc7z010clg400-1" ConstrsSet="start_block_auto_pc_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_block_auto_pc_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_memblock_synth_1" Type="Ft3:Synth" SrcSet="start_memblock" Part="xc7z010clg400-1" ConstrsSet="start_memblock" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/start_memblock_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -237,14 +447,86 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="start_memblock_impl_1" Type="Ft2:EntireDesign" Part="xc7k70tfbv676-1" ConstrsSet="start_memblock" Description="Default settings for Implementation." SynthRun="start_memblock_synth_1" IncludeInArchive="false">
+    <Run Id="start_block_blk_mem_gen_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_block_blk_mem_gen_0_0" Description="Default settings for Implementation." SynthRun="start_block_blk_mem_gen_0_0_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_axi_bram_ctrl_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_block_axi_bram_ctrl_0_0" Description="Default settings for Implementation." SynthRun="start_block_axi_bram_ctrl_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_processing_system7_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_block_processing_system7_0_0" Description="Default settings for Implementation." SynthRun="start_block_processing_system7_0_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_rst_ps7_0_50M_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_block_rst_ps7_0_50M_0" Description="Default settings for Implementation." SynthRun="start_block_rst_ps7_0_50M_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_block_auto_pc_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_block_auto_pc_0" Description="Default settings for Implementation." SynthRun="start_block_auto_pc_0_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+    </Run>
+    <Run Id="start_memblock_impl_1" Type="Ft2:EntireDesign" Part="xc7z010clg400-1" ConstrsSet="start_memblock" Description="Default settings for Implementation." SynthRun="start_memblock_synth_1" IncludeInArchive="false">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
