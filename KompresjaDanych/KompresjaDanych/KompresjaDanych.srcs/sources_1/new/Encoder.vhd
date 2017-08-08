@@ -43,9 +43,12 @@ entity Encoder is
            data_in : in STD_LOGIC_VECTOR (15 downto 0);
            data_out : out STD_LOGIC_VECTOR (15 downto 0);
            amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
-           r_value : in STD_LOGIC_VECTOR(7 downto 0);
            
            computed_state : out STD_LOGIC_VECTOR(15 downto 0);
+           
+           state : in STD_LOGIC_VECTOR(15 downto 0);
+           nb_bits : in STD_LOGIC_VECTOR(7 downto 0);
+           
            produced_symbol : out STD_LOGIC;
            new_symbol : in STD_LOGIC
          );
@@ -74,27 +77,6 @@ component Buffor
        );
  end component;
 
---component NbRom
---    Port(
---            symbol : in STD_LOGIC_VECTOR (15 downto 0);
---            clk: in STD_LOGIC;
---            result : out STD_LOGIC_VECTOR (15 downto 0));
---end component;
-
---component StartRom
---    Port(
---            symbol : in STD_LOGIC_VECTOR (15 downto 0);
---            clk: in STD_LOGIC;
---            result : out STD_LOGIC_VECTOR (15 downto 0));
---end component;
-
---component encodingTableRom
---	Port ( 
---	        symbol : in STD_LOGIC_VECTOR(15 downto 0);
---		    clk : in STD_LOGIC;
---		    result: out STD_LOGIC_VECTOR(15 downto 0));
---    end component;
-
 signal 
        Compute,
        Init_Buff, 
@@ -109,10 +91,8 @@ signal
        Nb_Rom, 
        Start_Symbol, 
        Symbol, 
-       State_To_Buff, 
-       --Computed_State,
-       Actual_State,
-       State : STD_LOGIC_VECTOR(15 downto 0) := x"0000";
+       State_To_Buff,
+       Actual_State : STD_LOGIC_VECTOR(15 downto 0) := x"0000";
 
 signal
        r_value_int: integer := 0;
@@ -141,27 +121,6 @@ Port map(
             end_data => empty_buff
         );
 
-
---nbRm: NbRom
---Port map(
---            clk => clk,
---            symbol => data_in,
---            result => Nb_Rom
---        );
---strRom: StartRom
---Port map(
---            clk => clk,
---            symbol => data_in,
---            result => Start_Symbol
---        );
-        
---encRom: encodingTableRom
---Port map(
---            clk => clk,
---            symbol => Computed_State,
---            result => State
---        );
-
 state_machine: process(CLK)
     begin
      if(rising_edge(clk)) then
@@ -182,87 +141,11 @@ begin
     
         if(Compute = '1') then
             
-            nb_bits := Actual_State + Nb_Rom;
-            
-            case r_value_int is
-                when 2 => 
-                    nb_bits := (1 downto 0 => '0') &
-                               nb_bits(15 downto 2);
-                when 3 =>
-                    nb_bits := (2 downto 0 => '0') &
-                               nb_bits(15 downto 3);
-                when 4 =>
-                    nb_bits := (3 downto 0 => '0') &
-                               nb_bits(15 downto 4);
-                when 5 =>
-                    nb_bits := (4 downto 0 => '0') &
-                               nb_bits(15 downto 5);                              
-                when 6 =>
-                    nb_bits := (5 downto 0 => '0') &
-                               nb_bits(15 downto 6);               
-                when 7 =>
-                    nb_bits := (6 downto 0 => '0') &
-                               nb_bits(15 downto 7);                             
-                when 8 =>
-                    nb_bits := (7 downto 0 => '0') &
-                               nb_bits(15 downto 8);                              
-                when 9 =>
-                    nb_bits := (8 downto 0 => '0') &
-                               nb_bits(15 downto 9);                             
-                when 10 =>
-                    nb_bits := (9 downto 0 => '0') &
-                               nb_bits(15 downto 10);                
-                when 11 =>
-                    nb_bits := (10 downto 0 => '0') &
-                               nb_bits(15 downto 11);                               
-                when 12 =>
-                    nb_bits := (11 downto 0 => '0') &
-                               nb_bits(15 downto 12);
-                when 13 =>
-                    nb_bits := (12 downto 0 => '0') &
-                               nb_bits(15 downto 13); 
-                when others =>
-                    nb_bits := x"0000";                                                                
-            end case;
-            
-            --nb_bits := (r_value_int - 1 downto 0 => '0') &
-            --           nb_bits(15 downto r_value_int);
-            
-            Start_Buff <= '1';
+             Start_Buff <= '1';
             
             Nb_Bits_Buff <= nb_bits(7 downto 0);
             counter := counter + 1;
             
-            case to_integer(unsigned(nb_bits)) is
-                when 1 => 
-                    Computed_State <= START_OUT(16 downto 0) + 
-                                      ((0 downto 0 => '0') & Actual_State(15 downto 1));
-                when 2 =>
-                    Computed_State <= START_OUT(16 downto 0) + 
-                                      ((1 downto 0 => '0') & Actual_State(15 downto 2));
-                when 3 =>
-                    Computed_State <= START_OUT(16 downto 0) +
-                                      ((2 downto 0 => '0') & Actual_State(15 downto 3));
-                when 4 =>
-                    Computed_State <= START_OUT(16 downto 0) +
-                                      ((3 downto 0 => '0') & Actual_State(15 downto 4));
-                when 5 =>   
-                    Computed_State <= START_OUT(16 downto 0) +
-                                      ((4 downto 0 => '0') & Actual_State(15 downto 5));
-                when 6 =>
-                    Computed_State <= START_OUT(16 downto 0) +
-                                      ((5 downto 0 => '0') & Actual_State(15 downto 6));
-                when 7 =>
-                    Computed_State <= START_OUT(16 downto 0) +
-                                      ((6 downto 0 => '0') & Actual_State(15 downto 7));
-                when others =>
-                    Computed_State <= START_OUT(16 downto 0);
-            end case;
-
-                
-           --Computed_State <= Start_Symbol + 
-           --                  ((to_integer(unsigned(nb_bits)) - 1 downto 0 => '0') &
-           --                  Actual_State(15 downto to_integer(unsigned(nb_bits))));
                                                                                        
             if(to_integer(unsigned(amount_bytes)) = counter) then
                 Empty <= '1';
@@ -284,8 +167,7 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
         
         case current_state is
             when IDLE =>
-                
-                
+                           
                 end_data <= '0';
                 counter := 0;
                 init_buff <= '1';
@@ -293,7 +175,6 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
                 if(start = '1') then
                     
                     end_data <= '0';
-                    r_value_int <= to_integer(unsigned(r_value)) + 1;
                     Init_Buff <= '1';
                     next_state <= GET_SYMBOL;
                     
@@ -303,8 +184,8 @@ main_process: process(current_state, data_in, start, new_symbol, ready_buff)
             
                 Init_Buff <= '0';
                 Compute <= '1';
-                Actual_State <= State;
-                State_To_Buff <= State;
+                --Actual_State <= State;
+                State_To_Buff <= state;
                
                 next_state <= COMPUTE_NEXT_STATE;  
                 
