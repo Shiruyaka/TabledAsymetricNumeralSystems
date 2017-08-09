@@ -32,7 +32,7 @@ USE IEEE.NUMERIC_STD;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity Buffor is
+entity Encoder is
     Port ( 
            init : in STD_LOGIC;
            start : in STD_LOGIC;
@@ -47,11 +47,11 @@ entity Buffor is
            stream : out STD_LOGIC_VECTOR(15 downto 0);
            x : in STD_LOGIC_VECTOR(15 downto 0)
           );
-end Buffor;
+end Encoder;
 
-architecture use_bits of Buffor is
+architecture encode of Encoder is
 
-type state_type is (IDLE, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_STATE);
+type state_type is (IDLE, GET_SYMBOL, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_STATE);
 signal current_state, next_state : state_type;
 
 signal do_it, go_to_emmpty: std_logic;
@@ -216,9 +216,9 @@ begin
                 end if;
             
                 if(counter = to_integer(unsigned(amount_bytes)))then
-                    --ready <= '1';
                     go_to_emmpty <= '1';
                 end if;
+                
             when "010" =>
                 
                 go_to_emmpty <= '0';
@@ -277,22 +277,30 @@ begin
         case current_state is
         
         when IDLE =>
-        
-            ready <= '0';           
+            
             action <= "111";
             do_it <= '0';
                                        
             if(start = '1')then
-                state_to_encode <= x;
-                next_state <= ENCODING;
-                
-            elsif(go_to_emmpty = '1') then
-                ready <= '1';
-                action <= "010";
-                next_state <= EMPTY_BUFF;
-                
-            end if;
+                next_state <= GET_SYMBOL;
+            end if;       
+                 
+        when GET_SYMBOL =>    
+  
+         action <= "111";
+         do_it <= '0';
+         
+        if(new_symbol = '1')then
+        
+            state_to_encode <= x;
+            next_state <= ENCODING;
             
+        elsif(go_to_emmpty = '1') then
+            action <= "010";
+            next_state <= EMPTY_BUFF;
+        
+        end if;
+
         when ENCODING =>
             
             bits <= to_integer(unsigned(nbBits)); 

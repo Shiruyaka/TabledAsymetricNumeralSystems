@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2016.3 (64-bit)              -->
+<!-- Product Version: Vivado v2016.4 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
+<Project Version="7" Minor="17" Path="C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="70540a3212d3476bbdb162517936ac24"/>
@@ -60,19 +60,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/Buffor.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/nbRom.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Encoder.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -126,17 +114,6 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="start_block.bmm"/>
-        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hw_handoff/start_block_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_auto_pc_0/start_block_auto_pc_0.xci">
-          <Proxy FileSetName="start_block_auto_pc_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_rst_ps7_0_50M_0/start_block_rst_ps7_0_50M_0.xci">
-          <Proxy FileSetName="start_block_rst_ps7_0_50M_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_processing_system7_0_0/start_block_processing_system7_0_0.xci">
-          <Proxy FileSetName="start_block_processing_system7_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_axi_bram_ctrl_0_0/start_block_axi_bram_ctrl_0_0.xci">
           <Proxy FileSetName="start_block_axi_bram_ctrl_0_0"/>
         </CompFileExtendedInfo>
@@ -146,7 +123,18 @@
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hdl/start_block.hwdef"/>
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hw_handoff/start_block.hwh"/>
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="start_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="start_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hw_handoff/start_block_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_auto_pc_0/start_block_auto_pc_0.xci">
+          <Proxy FileSetName="start_block_auto_pc_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_rst_ps7_0_50M_0/start_block_rst_ps7_0_50M_0.xci">
+          <Proxy FileSetName="start_block_rst_ps7_0_50M_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_axi_mem_intercon_0/start_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="ip/start_block_processing_system7_0_0/start_block_processing_system7_0_0.xci">
+          <Proxy FileSetName="start_block_processing_system7_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="start_block.bd" FileRelPathName="hdl/start_block.vhd"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/start_block/hdl/start_block_wrapper.vhd">
@@ -161,15 +149,15 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_mem_intercon_0/nb_block_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_blk_mem_gen_0_0/nb_block_blk_mem_gen_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_processing_system7_0_0/nb_block_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_auto_pc_0/nb_block_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_rst_ps7_0_50M_0/nb_block_rst_ps7_0_50M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_bram_ctrl_0_0/nb_block_axi_bram_ctrl_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="nb_block_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="nb_block.bmm"/>
         <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="hdl/nb_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_rst_ps7_0_50M_0/nb_block_rst_ps7_0_50M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_mem_intercon_0/nb_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_processing_system7_0_0/nb_block_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="nb_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_auto_pc_0/nb_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_axi_bram_ctrl_0_0/nb_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="nb_block.bd" FileRelPathName="ip/nb_block_blk_mem_gen_0_0/nb_block_blk_mem_gen_0_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/nb_block/hdl/nb_block_wrapper.vhd">
         <FileInfo>
@@ -183,15 +171,15 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_auto_pc_0/encoding_table_block_auto_pc_0.xci"/>
-        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_processing_system7_0_0/encoding_table_block_processing_system7_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_mem_intercon_0/encoding_table_block_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_bram_ctrl_0_0/encoding_table_block_axi_bram_ctrl_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_blk_mem_gen_0_0/encoding_table_block_blk_mem_gen_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="encoding_table_block_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="encoding_table_block.bmm"/>
         <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="hdl/encoding_table_block.vhd"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_auto_pc_0/encoding_table_block_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_rst_ps7_0_50M_0/encoding_table_block_rst_ps7_0_50M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_mem_intercon_0/encoding_table_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_axi_bram_ctrl_0_0/encoding_table_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_processing_system7_0_0/encoding_table_block_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="encoding_table_block.bd" FileRelPathName="ip/encoding_table_block_blk_mem_gen_0_0/encoding_table_block_blk_mem_gen_0_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/hdl/encoding_table_block_wrapper.vhd">
         <FileInfo>
@@ -205,15 +193,15 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block.bmm"/>
-        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_auto_pc_0/data_in_block_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="hdl/data_in_block.vhd"/>
         <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_rst_ps7_0_50M_0/data_in_block_rst_ps7_0_50M_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_axi_mem_intercon_0/data_in_block_axi_mem_intercon_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_auto_pc_0/data_in_block_auto_pc_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="data_in_block.bmm"/>
+        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_processing_system7_0_0/data_in_block_processing_system7_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_blk_mem_gen_0_0/data_in_block_blk_mem_gen_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_axi_bram_ctrl_0_0/data_in_block_axi_bram_ctrl_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="data_in_block.bd" FileRelPathName="ip/data_in_block_processing_system7_0_0/data_in_block_processing_system7_0_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/data_in_block/hdl/data_in_block_wrapper.vhd">
         <FileInfo>
@@ -227,23 +215,17 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_axi_mem_intercon_0/data_out_block_axi_mem_intercon_0.xci"/>
-        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_blk_mem_gen_0_0/data_out_block_blk_mem_gen_0_0.xci"/>
-        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_auto_pc_0/data_out_block_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_rst_ps7_0_50M_0/data_out_block_rst_ps7_0_50M_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_axi_mem_intercon_0/data_out_block_axi_mem_intercon_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_processing_system7_0_0/data_out_block_processing_system7_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_axi_bram_ctrl_0_0/data_out_block_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_blk_mem_gen_0_0/data_out_block_blk_mem_gen_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="ip/data_out_block_auto_pc_0/data_out_block_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="data_out_block_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="data_out_block.bmm"/>
         <CompFileExtendedInfo CompFileName="data_out_block.bd" FileRelPathName="hdl/data_out_block.vhd"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/data_out_block/hdl/data_out_block_wrapper.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Middleware.vhd">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -261,9 +243,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Encoder.vhd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Encoder"/>
+        <Option Name="TopModule" Val="Decoder"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

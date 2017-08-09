@@ -1,127 +1,40 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 01.08.2017 09:57:28
--- Design Name: 
--- Module Name: Encoder - encode
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
-USE IEEE.STD_LOGIC_UNSIGNED.ALL;
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+USE IEEE.NUMERIC_STD.ALL; 
+USE IEEE.NUMERIC_STD;
 
 entity Encoder is
     Port ( 
-           
-           init : in STD_LOGIC; -- reset
-           start : in STD_LOGIC;
-           clk : in STD_LOGIC;
-           end_data : out STD_LOGIC;
-           
-           
-           data_in : in STD_LOGIC_VECTOR (15 downto 0);
-           data_out : out STD_LOGIC_VECTOR (15 downto 0);
-           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
-           
-           computed_state : out STD_LOGIC_VECTOR(15 downto 0);
-           
-           state : in STD_LOGIC_VECTOR(15 downto 0);
-           nb_bits : in STD_LOGIC_VECTOR(7 downto 0);
-           
-           produced_symbol : out STD_LOGIC;
-           new_symbol : in STD_LOGIC
-         );
-           
-end Encoder;
-
-architecture encode of Encoder is
-
-
-
-component Buffor
-   Port(     
            init : in STD_LOGIC;
            start : in STD_LOGIC;
            ready : out STD_LOGIC;
            clk : in STD_LOGIC;
-           
-           nbBits : in STD_LOGIC_VECTOR(7 downto 0);
-           stream : out STD_LOGIC_VECTOR(15 downto 0);
-           x : in STD_LOGIC_VECTOR(15 downto 0);
-           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
+           new_symbol : in STD_LOGIC;
            
            produce_symbol : out STD_LOGIC;
-                      
-           end_data : in STD_LOGIC --to dispose buffor
-       );
- end component;
+           
+           amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
+           nbBits : in STD_LOGIC_VECTOR(7 downto 0); 
+           stream : out STD_LOGIC_VECTOR(15 downto 0);
+           x : in STD_LOGIC_VECTOR(15 downto 0)
+          );
+end Encoder;
 
-signal 
-       Compute,
-       Init_Buff, 
-       Start_Buff, 
-       Ready_Buff,
-       Empty_Buff,
-       Empty : STD_LOGIC := '0';
+architecture encode of Encoder is
 
-signal Debug, Nb_Bits_Buff : STD_LOGIC_VECTOR (7 downto 0) := x"00";
+type state_type is (IDLE, GET_SYMBOL, ENCODING, EMPTY_BUFF, EMPTY_BUFF_2, OUT_AM_BYTES, OUT_STATE);
+signal current_state, next_state : state_type;
 
-signal
-       Nb_Rom, 
-       Start_Symbol, 
-       Symbol, 
-       State_To_Buff,
-       Actual_State : STD_LOGIC_VECTOR(15 downto 0) := x"0000";
-
-signal
-       r_value_int: integer := 0;
-  
-type state_type is (IDLE, GET_SYMBOL, COMPUTE_NEXT_STATE, WAIT_FOR_END_ENC, SET_END_STATE, WAIT_FOR_END);
-
-signal 
-       current_state, next_state : state_type;
+signal do_it, go_to_emmpty: std_logic;
+signal buffor: std_logic_vector(0 to 31):= x"00000000";
+signal state_to_encode : std_logic_vector(15 downto 0);
+signal encoded_symbol, end_state: std_logic_vector(0 to 7) := x"00";
+signal action: std_logic_vector(0 to 2) := "000";
+signal buffor_fill, bits, disjointed_bytes: integer := 0;
 
 begin
-
-
-buff: Buffor
-Port map(
-            clk => clk,
-            init => Init_Buff,
-            ready => Ready_Buff,
-            start => Start_Buff,
-            
-            nbBits => Nb_Bits_Buff,
-            x => State_To_Buff,
-            stream => data_out,
-            amount_bytes => amount_bytes,
-            produce_symbol => produced_symbol,
-            
-            end_data => empty_buff
-        );
-
-state_machine: process(CLK)
+    
+    state_machine: process(clk)
     begin
      if(rising_edge(clk)) then
         if(init = '1')then
@@ -131,100 +44,287 @@ state_machine: process(CLK)
         end if;
       end if;
     end process;
-
-compute_and_start_buffor: process(Clk, Compute)
-
-variable nb_bits, debug: std_logic_vector(15 downto 0);
-variable counter: integer := 0;
-begin
-    if(rising_edge(Clk)) then
     
-        if(Compute = '1') then
+    
+    update_buffor: process(clk, action)
+    
+    variable counter: integer := 0;
+    
+    begin 
+        if(rising_edge(clk))then
             
-             Start_Buff <= '1';
+            case action is
             
-            Nb_Bits_Buff <= nb_bits(7 downto 0);
-            counter := counter + 1;
+            when "001" =>
+                counter := counter + 1;
+                
+                if(buffor_fill + bits >= 8) then
+                   
+                    case buffor_fill is
+                        when 1 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(1 to 7) & buffor(31 to 31);
+                        when 2 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(2 to 7) & buffor(30 to 31);
+                        when 3 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(3 to 7) & buffor(29 to 31);
+                        when 4 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(4 to 7) & buffor(28 to 31);
+                        when 5 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(5 to 7) & buffor(27 to 31);
+                        when 6 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(6 to 7) & buffor(26 to 31);
+                        when 7 =>
+                            stream <= (0 to 7 => '0') & encoded_symbol(7 to 7) & buffor(25 to 31);
+                        when others => NULL;
+                    end case;
+                    
+                    produce_symbol <= '1';
+                    
+                    case buffor_fill is
+                        when 7 => 
+                            case bits is
+                                when 2 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(6 to 6);
+                                when 3 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(5 to 6);
+                                when 4 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(4 to 6);
+                                when 5 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(3 to 6);
+                                when 6 =>
+                                    buffor <= (0 to 26 => '0') & encoded_symbol(2 to 6);
+                                when 7 =>
+                                    buffor <= (0 to 25 => '0') & encoded_symbol(1 to 6);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                            
+                        when 6 => 
+                            case bits is
+                                when 3 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(5 to 5);
+                                when 4 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(4 to 5);
+                                when 5 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(3 to 5);
+                                when 6 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(2 to 5);
+                                when 7 =>
+                                    buffor <= (0 to 26 => '0') & encoded_symbol(1 to 5);
+                                when others => 
+                                    buffor <= (0 to 31 => '0');    
+                            end case;
+                            
+                        when 5 => 
+                           case bits is
+                                when 4 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(4 to 4);
+                                when 5 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(3 to 4);
+                                when 6 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(2 to 4);
+                                when 7 =>
+                                    buffor <= (0 to 27 => '0') & encoded_symbol(1 to 4);
+                                when others => buffor <= (0 to 31 => '0');
+                           end case;
+                           
+                        when 4 => 
+                            case bits is
+                                when 5 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(3 to 3);
+                                when 6 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(2 to 3);
+                                when 7 =>
+                                    buffor <= (0 to 28 => '0') & encoded_symbol(1 to 3);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                            
+                        when 3 =>
+                            case bits is
+                                when 6 => 
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(2 to 2);
+                               when 7 =>
+                                    buffor <= (0 to 29 => '0') & encoded_symbol(1 to 2);
+                               when others => buffor <= (0 to 31 => '0');                                   
+                            end case;
+                            
+                        when 2 => 
+                            case bits is
+                                when 7 =>
+                                    buffor <= (0 to 30 => '0') & encoded_symbol(1 to 1);
+                                when others => buffor <= (0 to 31 => '0');
+                            end case;
+                        
+                        when others => buffor <= (0 to 31 => '0');
+                    end case;
+                    
+                    buffor_fill <= bits - 8 + buffor_fill;
+                    
+                else
+                    
+                    case buffor_fill is
+                        when 6 =>
+                            buffor <= buffor or ((17 downto 0 => '0') & encoded_symbol & (5 downto 0 => '0'));  
+                        when 5 =>
+                            buffor <= buffor or ((18 downto 0 => '0') & encoded_symbol & (4 downto 0 => '0'));
+                        when 4 =>
+                            buffor <= buffor or ((19 downto 0 => '0') & encoded_symbol & (3 downto 0 => '0'));
+                        when 3 =>
+                            buffor <= buffor or ((20 downto 0 => '0') & encoded_symbol & (2 downto 0 => '0'));
+                        when 2 =>
+                            buffor <= buffor or ((21 downto 0 => '0') & encoded_symbol & (1 downto 0 => '0'));
+                        when 1 =>
+                            buffor <= buffor or ((22 downto 0 => '0') & encoded_symbol & (0 downto 0 => '0'));
+                        when others =>
+                            buffor <= buffor or ((23 downto 0 => '0') & encoded_symbol);
+                    end case;
+                    
+                    buffor_fill <= buffor_fill + bits;
+                    
+                end if;
             
-                                                                                       
-            if(to_integer(unsigned(amount_bytes)) = counter) then
-                Empty <= '1';
-            end if;                                              
-        else
-            Empty <= '0';
-            Start_Buff <= '0';
+                if(counter = to_integer(unsigned(amount_bytes)))then
+                    go_to_emmpty <= '1';
+                end if;
+                
+            when "010" =>
+                
+                go_to_emmpty <= '0';
+                
+                if(buffor_fill > 5) then 
+                    
+                    disjointed_bytes <= disjointed_bytes + 1;
+                    produce_symbol <= '1';
+                    
+                    stream  <= (0 to 7 => '0') & std_logic_vector(to_unsigned(5, 3)) & buffor(27 to 31);
+                    buffor_fill <= buffor_fill - 5;
+                    buffor <= (4 downto 0 => '0') & buffor(0 to 26);
+                
+                elsif(buffor_fill > 0) then
+                    
+                    disjointed_bytes <= disjointed_bytes + 1;
+                    produce_symbol <= '1';
+                                        
+                    stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(buffor_fill, 3)) &
+                              buffor(27 to 31);
+
+                    buffor_fill <= 0;    
+                    buffor <= x"00000000";
+                
+                else
+                    
+                    buffor <= x"00000000";
+                    disjointed_bytes <= 0;
+                    produce_symbol <= '1';
+                    
+                end if;
+            
+            when "011" =>
+                
+                stream <= (0 to 7 => '0') & std_logic_vector(to_unsigned(disjointed_bytes, 8));
+                produce_symbol <= '1';
+                
+            when "100" =>
+                
+                stream <= x;
+                produce_symbol <= '1';
+                
+            when others =>
+                produce_symbol <= '0';            
+            
+            end case;         
         end if;
-        
-                 
-    end if;
-end process;
-
-main_process: process(current_state, data_in, start, new_symbol, ready_buff)
-    variable counter : integer := 0;
+    end process;
     
+    
+    encode: process(current_state, start)   
+        variable nb_bits_int : integer;
     begin
         next_state <= current_state;
         
         case current_state is
-            when IDLE =>
-                           
-                end_data <= '0';
-                counter := 0;
-                init_buff <= '1';
-                
-                if(start = '1') then
-                    
-                    end_data <= '0';
-                    Init_Buff <= '1';
-                    next_state <= GET_SYMBOL;
-                    
-                end if;
+        
+        when IDLE =>
             
-            when GET_SYMBOL =>
+            action <= "111";
+            do_it <= '0';
+                                       
+            if(start = '1')then
+                next_state <= GET_SYMBOL;
+            end if;       
+                 
+        when GET_SYMBOL =>    
+  
+         action <= "111";
+         do_it <= '0';
+         
+        if(new_symbol = '1')then
+        
+            nb_bits_int := to_integer(unsigned(nbBits));
+            state_to_encode <= x;
+            next_state <= ENCODING;
             
-                Init_Buff <= '0';
-                Compute <= '1';
-                --Actual_State <= State;
-                State_To_Buff <= state;
-               
-                next_state <= COMPUTE_NEXT_STATE;  
-                
-                
-            when COMPUTE_NEXT_STATE =>
-                
-                Compute <= '0';
-                
-                if(Empty = '1') then
-                    Compute <= '1';
-                    next_state <= WAIT_FOR_END_ENC;
-                else
-                    next_state <= GET_SYMBOL;
-                end if;
+        elsif(go_to_emmpty = '1') then
+            action <= "010";
+            next_state <= EMPTY_BUFF;
+        
+        end if;
+
+        when ENCODING =>
             
-            when WAIT_FOR_END_ENC =>
-                
-                 Compute <= '0';
-                    
-                if(Ready_Buff = '1') then
-                    next_state <= SET_END_STATE;
-                end if;
-                       
-            when SET_END_STATE =>
-            State_To_Buff <= State;
-                           
-                 if(Ready_Buff = '1') then
-                    Empty_Buff <= '0';       
-                    
-                    next_state <= WAIT_FOR_END;
-                                                            
-                 end if;
+            bits <= nb_bits_int; 
+              
+            case nb_bits_int is
+                when 1 =>
+                    encoded_symbol <= (6 downto 0 => '0') & x(0 downto 0);
+                when 2 =>
+                    encoded_symbol <= (5 downto 0 => '0') & x(1 downto 0);
+                when 3 =>
+                    encoded_symbol <= (4 downto 0 => '0') & x(2 downto 0);
+                when 4 =>
+                    encoded_symbol <= (3 downto 0 => '0') & x(3 downto 0);
+                when 5 =>
+                    encoded_symbol <= (2 downto 0 => '0') & x(4 downto 0);
+                when 6 =>
+                    encoded_symbol <= (1 downto 0 => '0') & x(5 downto 0);
+                when 7 =>
+                    encoded_symbol <= (0 downto 0 => '0') & x(6 downto 0);
+                when others => encoded_symbol <= x"00";    
+            end case;
+            
+            do_it <= '1'; 
+            action <= "001";        
+            next_state <= IDLE;
+                                                
+            
+        when EMPTY_BUFF =>
+            ready <= '0';
+            
+            if(buffor_fill = 0) then
+                next_state <= OUT_AM_BYTES;
+                action <= "011";
+            else
+                next_state <= EMPTY_BUFF_2;
+            end if;
+            
+        when EMPTY_BUFF_2 =>
+            
+            next_state <= OUT_AM_BYTES;
+            action <= "011";
              
-            when WAIT_FOR_END =>
+        when OUT_AM_BYTES =>
             
-                if(Ready_Buff = '1') then
-                    next_state <= IDLE;
-                    End_Data <= '1';
-                end if;
-        end case;
+            ready <= '1';                    
+            action <= "100";
+            next_state <= OUT_STATE;
+            
+        when OUT_STATE =>
+        
+            action <= "111";
+            ready <= '1';
+            next_state <= IDLE;
+            
+                
+        end case;   
     end process;
+    
 end encode;

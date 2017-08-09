@@ -1,58 +1,28 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 07.08.2017 17:45:29
--- Design Name: 
--- Module Name: Middleware - Communicate
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
 
 entity Driver is
     Port ( 
            gclk : in STD_LOGIC;
-           start : in STD_LOGIC;
            init : in STD_LOGIC;
+           start : in STD_LOGIC;
            
            amount_bytes : out STD_LOGIC_VECTOR(31 downto 0);
            r_value : out STD_LOGIC_VECTOR(7 downto 0);
-           roms_enable : out STD_LOGIC;
            start_encoder : out STD_LOGIC;
            init_encoder : out STD_LOGIC;
-                                 
-           start_nb_no : in STD_LOGIC_VECTOR (15 downto 0);
+            
+           state_nb_enable : out STD_LOGIC;
+           start_nb_address : out STD_LOGIC_VECTOR (31 downto 0);                                 
            start_from_ram : in STD_LOGIC_VECTOR (31 downto 0);
            nb_from_ram : in STD_LOGIC_VECTOR (31 downto 0);
            
            nbBits_for_encoder : out STD_LOGIC_VECTOR(7 downto 0);
-           --start_for_encoder : out STD_LOGIC_VECTOR(15 downto 0);
-           --nb_for_encoder : out STD_LOGIC_VECTOR(15 downto 0);
-           start_nb_address : out STD_LOGIC_VECTOR (31 downto 0);
            
-           --computed_state : in STD_LOGIC_VECTOR (15 downto 0);
+           state_enable : out STD_LOGIC;
            state_for_encoder : out STD_LOGIC_VECTOR(15 downto 0);
            state_address : out STD_LOGIC_VECTOR (31 downto 0);
            state_from_ram : in STD_LOGIC_VECTOR(31 downto 0);
@@ -65,13 +35,16 @@ entity Driver is
            
            --dataOut Ram
            data_produced : in STD_LOGIC;
-           data_out_from_encoder : in STD_LOGIC_VECTOR (31 downto 0);
-           data_out_address : out STD_LOGIC_VECTOR (31 downto 0));
+           data_out_from_encoder : in STD_LOGIC_VECTOR (15 downto 0);
+           data_out_address : out STD_LOGIC_VECTOR (31 downto 0);
+           data_out_to_save : out STD_LOGIC_VECTOR (31 downto 0);
+           out_enable : out STD_LOGIC;
+           write_enable : out STD_LOGIC_VECTOR(3 downto 0));
 end Driver;
 
 architecture Communicate of Driver is
 
-type state_type is (Idle, GET_AMOUNT_BYTES, GET_rValue, GET_FIRST_SYMBOL, RUN_ENCODER, GET_NEW_DATA);
+type state_type is (Idle, GET_AMOUNT_BYTES, GET_rValue, GET_FIRST_SYMBOL, RUN_ENCODER, GET_NEW_DATA, WAITING);
 
 signal 
     get_new_state : STD_LOGIC;
@@ -93,6 +66,22 @@ state_machine: process(gclk)
       end if;
     end process;
 
+save_output: process(gclk, data_produced)
+variable mem_point: integer;
+    begin
+        if(rising_edge(gclk))then
+            if(data_produced = '1') then
+                data_out_address <= x"4000_0000" + STD_LOGIC_VECTOR(to_unsigned(mem_point, 31));
+                mem_point := mem_point + 4;
+                data_out_to_save <= (15 downto 0 => '0') & data_out_from_encoder;
+                write_enable <= x"F";
+                out_enable <= '1';
+            else
+                state_enable <= '0';
+                write_enable <= x"0";
+            end if;
+        end if;
+    end process;
 
 get_start_nb: process(gclk, data_in)
 begin
@@ -172,6 +161,7 @@ begin
     end if;
 end process;
 
+--state_for_encoder <= state_from_ram(15 downto 0);
 set_state: process(gclk, state_from_ram)
 begin
     if(rising_edge(gclk)) then
@@ -180,7 +170,7 @@ begin
 end process;
 
 main_process: process(current_state, start)
-    variable mem_point : integer := 0;
+    variable mem_point, counter, amount : integer := 0;
     begin 
         next_state <= current_state;
     
@@ -198,6 +188,8 @@ main_process: process(current_state, start)
             when GET_AMOUNT_BYTES =>
                
                 amount_bytes <= data_in;
+                amount := to_integer(unsigned(data_in));
+                
                 mem_point := mem_point + 4;
                 data_in_address <= x"4000_0004";
                 next_state <= GET_rValue;
@@ -212,21 +204,39 @@ main_process: process(current_state, start)
                 next_state <= GET_FIRST_SYMBOL;
                 
            when GET_FIRST_SYMBOL =>
-                              
+           
+                counter := counter + 1;
                 init_encoder <= '0';
-                data_in_to_encoder <= data_in(15 downto 0);
+                start_encoder <= '1';
+                data_in_to_encoder <= data_in(15 downto 0);                                                
+                
                 next_state <= RUN_ENCODER;
                 
            when RUN_ENCODER =>
                 
-                start_encoder <= '1';
+                start_encoder <= '0';
+                new_data <= '1';
                 data_in_address <= x"4000_0000" + STD_LOGIC_VECTOR(to_unsigned(mem_point, 31));
+                
+                counter := counter + 1;
+                mem_point := mem_point + 4;
+                
                 next_state <= GET_NEW_DATA;
                 
            when GET_NEW_DATA =>
                 
-          
-                     
+                start_encoder <= '0';
+                
+                next_state <= WAITING;
+                
+           when WAITING =>
+                
+                if(counter = amount)then
+                    next_state <= IDLE;
+                else
+                    next_state <= RUN_ENCODER;
+                end if;
+           
        end case;     
     end process;
 end Communicate;
