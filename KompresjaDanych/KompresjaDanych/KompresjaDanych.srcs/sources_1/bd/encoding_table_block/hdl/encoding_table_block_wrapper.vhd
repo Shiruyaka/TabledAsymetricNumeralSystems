@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
---Date        : Mon Aug 07 11:22:11 2017
+--Date        : Wed Aug 09 10:47:14 2017
 --Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target encoding_table_block_wrapper.bd
 --Design      : encoding_table_block_wrapper

@@ -1,0 +1,43 @@
+#-----------------------------------------------------------
+# Vivado v2016.3 (64-bit)
+# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
+# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
+# Start of session at: Wed Aug 09 10:51:26 2017
+# Process ID: 4500
+# Current directory: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/encoding_table_block_auto_pc_0_synth_1
+# Command line: vivado.exe -log encoding_table_block_auto_pc_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source encoding_table_block_auto_pc_0.tcl
+# Log file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/encoding_table_block_auto_pc_0_synth_1/encoding_table_block_auto_pc_0.vds
+# Journal file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/encoding_table_block_auto_pc_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source encoding_table_block_auto_pc_0.tcl -notrace
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 304.828 ; gain = 92.957
+INFO: [Synth 8-638] synthesizing module 'encoding_table_block_auto_pc_0' [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/encoding_table_block/ip/encoding_table_block_auto_pc_0/synth/encoding_table_block_auto_pc_0.v:58]
+INFO: [Synth 8-638] synthesizing module 'axi_protocol_converter_v2_1_10_axi_protocol_converter' [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/encoding_table_block/ipshared/4a8b/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4806]
+INFO: [Synth 8-256] done synthesizing module 'axi_protocol_converter_v2_1_10_axi_protocol_converter' (1#1) [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/encoding_table_block/ipshared/4a8b/hdl/axi_protocol_converter_v2_1_vl_rfs.v:4806]
+INFO: [Synth 8-256] done synthesizing module 'encoding_table_block_auto_pc_0' (2#1) [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/encoding_table_block/ip/encoding_table_block_auto_pc_0/synth/encoding_table_block_auto_pc_0.v:58]
+Finished RTL Elaboration : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 421.875 ; gain = 210.004
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 421.875 ; gain = 210.004
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.032 . Memory (MB): peak = 543.086 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 543.086 ; gain = 331.215
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 543.086 ; gain = 331.215
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 543.086 ; gain = 331.215
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 543.086 ; gain = 331.215
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:09 ; elapsed = 00:01:12 . Memory (MB): peak = 543.086 ; gain = 331.215
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 575.617 ; gain = 363.746
+Finished Timing Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 575.617 ; gain = 363.746
+Finished Technology Mapping : Time (s): cpu = 00:01:25 ; elapsed = 00:01:29 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished IO Insertion : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:26 ; elapsed = 00:01:30 . Memory (MB): peak = 585.191 ; gain = 373.320
+synth_design: Time (s): cpu = 00:01:24 ; elapsed = 00:01:26 . Memory (MB): peak = 617.469 ; gain = 399.105

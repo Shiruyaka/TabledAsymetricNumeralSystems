@@ -7,6 +7,10 @@
 # of Vivado)
 ################################################################################
 create_clock -name BRAM_PORTB_clk -period 10 [get_ports BRAM_PORTB_clk]
+create_clock -name BRAM_PORTB_1_clk -period 10 [get_ports BRAM_PORTB_1_clk]
+create_clock -name BRAM_PORTB_2_clk -period 10 [get_ports BRAM_PORTB_2_clk]
+create_clock -name BRAM_PORTB_3_clk -period 10 [get_ports BRAM_PORTB_3_clk]
+create_clock -name BRAM_PORTB_4_clk -period 10 [get_ports BRAM_PORTB_4_clk]
 create_clock -name processing_system7_0_FCLK_CLK0 -period 20 [get_pins processing_system7_0/FCLK_CLK0]
 
 ################################################################################

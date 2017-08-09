@@ -9,13 +9,14 @@ entity Driver is
            gclk : in STD_LOGIC;
            init : in STD_LOGIC;
            start : in STD_LOGIC;
+           reset_ram : out STD_LOGIC;
            
            amount_bytes : out STD_LOGIC_VECTOR(31 downto 0);
            r_value : out STD_LOGIC_VECTOR(7 downto 0);
            start_encoder : out STD_LOGIC;
            init_encoder : out STD_LOGIC;
             
-           state_nb_enable : out STD_LOGIC;
+           start_nb_enable : out STD_LOGIC;
            start_nb_address : out STD_LOGIC_VECTOR (31 downto 0);                                 
            start_from_ram : in STD_LOGIC_VECTOR (31 downto 0);
            nb_from_ram : in STD_LOGIC_VECTOR (31 downto 0);
@@ -30,9 +31,8 @@ entity Driver is
            --dataIn Ram
            new_data : out STD_LOGIC;
            data_in : in STD_LOGIC_VECTOR (31 downto 0);
-           data_in_to_encoder : out STD_LOGIC_VECTOR (15 downto 0);
            data_in_address : out STD_LOGIC_VECTOR (31 downto 0);
-           
+           data_in_enable : out STD_LOGIC;
            --dataOut Ram
            data_produced : in STD_LOGIC;
            data_out_from_encoder : in STD_LOGIC_VECTOR (15 downto 0);
@@ -98,31 +98,31 @@ begin
         
         case r_value_int is
             when 2 => 
-                nb_bits:= (1 downto 0 => '0') & nb_bits(15 downto 2);
+                nb_bits:= (17 downto 0 => '0') & nb_bits(15 downto 2);
             when 3 =>
-                nb_bits := (2 downto 0 => '0') & nb_bits(15 downto 3);
+                nb_bits := (18 downto 0 => '0') & nb_bits(15 downto 3);
             when 4 =>
-                nb_bits := (3 downto 0 => '0') & nb_bits(15 downto 4);
+                nb_bits := (19 downto 0 => '0') & nb_bits(15 downto 4);
             when 5 =>
-                nb_bits := (4 downto 0 => '0') & nb_bits(15 downto 5);                              
+                nb_bits := (20 downto 0 => '0') & nb_bits(15 downto 5);                              
             when 6 =>
-                nb_bits := (5 downto 0 => '0') & nb_bits(15 downto 6);              
+                nb_bits := (21 downto 0 => '0') & nb_bits(15 downto 6);              
             when 7 =>
-                nb_bits := (6 downto 0 => '0') & nb_bits(15 downto 7);                             
+                nb_bits := (22 downto 0 => '0') & nb_bits(15 downto 7);                             
             when 8 =>
-                nb_bits := (7 downto 0 => '0') & nb_bits(15 downto 8);                              
+                nb_bits := (23 downto 0 => '0') & nb_bits(15 downto 8);                              
             when 9 =>
-                nb_bits := (8 downto 0 => '0') & nb_bits(15 downto 9);                             
+                nb_bits := (24 downto 0 => '0') & nb_bits(15 downto 9);                             
             when 10 =>
-                nb_bits := (9 downto 0 => '0') & nb_bits(15 downto 10);                
+                nb_bits := (25 downto 0 => '0') & nb_bits(15 downto 10);                
             when 11 =>
-                nb_bits := (10 downto 0 => '0') & nb_bits(15 downto 11);                               
+                nb_bits := (26 downto 0 => '0') & nb_bits(15 downto 11);                               
             when 12 =>
-                nb_bits := (11 downto 0 => '0') & nb_bits(15 downto 12);
+                nb_bits := (27 downto 0 => '0') & nb_bits(15 downto 12);
             when 13 =>
-                nb_bits := (12 downto 0 => '0') & nb_bits(15 downto 13); 
+                nb_bits := (28 downto 0 => '0') & nb_bits(15 downto 13); 
             when others =>
-                nb_bits := x"0000";                                                                
+                nb_bits := x"00000000";                                                                
         end case;
         
        nbBits_for_encoder <= nb_bits(7 downto 0);
@@ -176,11 +176,14 @@ main_process: process(current_state, start)
     
         case current_state is
             when IDLE =>
-            
-                roms_enable <= '0';
+                reset_ram <= '1';
+                start_nb_enable <= '0';
+                data_in_enable <= '0';
                 
                 if(start = '1') then
-                    roms_enable <= '1';
+                    reset_ram <= '0';
+                    start_nb_enable <= '1';
+                    data_in_enable <= '1';
                     next_state <= GET_AMOUNT_BYTES;
                     data_in_address <= x"4000_0000";
                 end if;
@@ -196,7 +199,7 @@ main_process: process(current_state, start)
             
            when GET_rValue =>
            
-                r_value_int <= to_integer(unsigned(data_in(7 downto 0))); 
+                r_value_int <= to_integer(unsigned(data_in(7 downto 0))) + 1; 
                 mem_point := mem_point + 4;
                 init_encoder <= '1';
                 data_in_address <= x"4000_0008";
@@ -208,14 +211,14 @@ main_process: process(current_state, start)
                 counter := counter + 1;
                 init_encoder <= '0';
                 start_encoder <= '1';
-                data_in_to_encoder <= data_in(15 downto 0);                                                
-                
+                data_in_enable <= '0';
                 next_state <= RUN_ENCODER;
                 
            when RUN_ENCODER =>
                 
                 start_encoder <= '0';
                 new_data <= '1';
+                data_in_enable <= '1';
                 data_in_address <= x"4000_0000" + STD_LOGIC_VECTOR(to_unsigned(mem_point, 31));
                 
                 counter := counter + 1;
@@ -225,8 +228,8 @@ main_process: process(current_state, start)
                 
            when GET_NEW_DATA =>
                 
-                start_encoder <= '0';
-                
+                data_in_enable <= '0';
+                start_encoder <= '0';               
                 next_state <= WAITING;
                 
            when WAITING =>

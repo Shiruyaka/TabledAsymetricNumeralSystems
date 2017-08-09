@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502096403">
-  <File Type="RDS-PROPCONSTRS" Name="Encoder_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="Encoder.tcl"/>
-  <File Type="RDS-RDS" Name="Encoder.vds"/>
-  <File Type="RDS-UTIL" Name="Encoder_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="Encoder_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="Encoder.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Encoder_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="Encoder_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502274119">
+  <File Type="RDS-PROPCONSTRS" Name="Compressor_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="Compressor.tcl"/>
+  <File Type="RDS-RDS" Name="Compressor.vds"/>
+  <File Type="RDS-UTIL" Name="Compressor_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Compressor_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Compressor.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="Compressor_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="Compressor_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Serializator.vhd">
@@ -16,19 +16,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Buffor.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/nbRom.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/Encoder.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -89,9 +77,79 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/nb_block/nb_block.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/nb_block/hdl/nb_block_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/encoding_table_block.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/hdl/encoding_table_block_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/data_in_block/data_in_block.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/data_in_block/hdl/data_in_block_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/data_out_block/data_out_block.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/data_out_block/hdl/data_out_block_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Compressor.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Driver.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Encoder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="Encoder"/>
+      <Option Name="TopModule" Val="Compressor"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -105,9 +163,17 @@
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="start_block_blk_mem_gen_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="data_out_block_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="start_block_axi_bram_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_memblock"/>
+  <BlockFileSet Type="BlockSrcs" Name="encoding_table_block_axi_bram_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="start_block_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="encoding_table_block_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="start_memblock"/>
   <BlockFileSet Type="BlockSrcs" Name="start_block_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="start_block_rst_ps7_0_50M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="data_out_block_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="data_in_block_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="data_in_block_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="nb_block_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="nb_block_axi_bram_ctrl_0_0"/>
 </GenRun>

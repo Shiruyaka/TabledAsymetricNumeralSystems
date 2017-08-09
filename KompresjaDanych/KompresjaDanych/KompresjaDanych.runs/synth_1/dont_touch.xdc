@@ -22,4 +22,96 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==start_block_rst
 # IP: bd/start_block/ip/start_block_auto_pc_0/start_block_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==start_block_auto_pc_0 || ORIG_REF_NAME==start_block_auto_pc_0}]
 
+# Block Designs: bd/nb_block/nb_block.bd
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block || ORIG_REF_NAME==nb_block}]
+
+# IP: bd/nb_block/ip/nb_block_processing_system7_0_0/nb_block_processing_system7_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_processing_system7_0_0 || ORIG_REF_NAME==nb_block_processing_system7_0_0}]
+
+# IP: bd/nb_block/ip/nb_block_blk_mem_gen_0_0/nb_block_blk_mem_gen_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_blk_mem_gen_0_0 || ORIG_REF_NAME==nb_block_blk_mem_gen_0_0}]
+
+# IP: bd/nb_block/ip/nb_block_axi_bram_ctrl_0_0/nb_block_axi_bram_ctrl_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_axi_bram_ctrl_0_0 || ORIG_REF_NAME==nb_block_axi_bram_ctrl_0_0}]
+
+# IP: bd/nb_block/ip/nb_block_axi_mem_intercon_0/nb_block_axi_mem_intercon_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_axi_mem_intercon_0 || ORIG_REF_NAME==nb_block_axi_mem_intercon_0}]
+
+# IP: bd/nb_block/ip/nb_block_rst_ps7_0_50M_0/nb_block_rst_ps7_0_50M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_rst_ps7_0_50M_0 || ORIG_REF_NAME==nb_block_rst_ps7_0_50M_0}]
+
+# IP: bd/nb_block/ip/nb_block_auto_pc_0/nb_block_auto_pc_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==nb_block_auto_pc_0 || ORIG_REF_NAME==nb_block_auto_pc_0}]
+
+# Block Designs: bd/encoding_table_block/encoding_table_block.bd
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block || ORIG_REF_NAME==encoding_table_block}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_processing_system7_0_0/encoding_table_block_processing_system7_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_processing_system7_0_0 || ORIG_REF_NAME==encoding_table_block_processing_system7_0_0}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_blk_mem_gen_0_0/encoding_table_block_blk_mem_gen_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_blk_mem_gen_0_0 || ORIG_REF_NAME==encoding_table_block_blk_mem_gen_0_0}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_axi_bram_ctrl_0_0/encoding_table_block_axi_bram_ctrl_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_axi_bram_ctrl_0_0 || ORIG_REF_NAME==encoding_table_block_axi_bram_ctrl_0_0}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_axi_mem_intercon_0/encoding_table_block_axi_mem_intercon_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_axi_mem_intercon_0 || ORIG_REF_NAME==encoding_table_block_axi_mem_intercon_0}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_rst_ps7_0_50M_0/encoding_table_block_rst_ps7_0_50M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_rst_ps7_0_50M_0 || ORIG_REF_NAME==encoding_table_block_rst_ps7_0_50M_0}]
+
+# IP: bd/encoding_table_block/ip/encoding_table_block_auto_pc_0/encoding_table_block_auto_pc_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==encoding_table_block_auto_pc_0 || ORIG_REF_NAME==encoding_table_block_auto_pc_0}]
+
+# Block Designs: bd/data_in_block/data_in_block.bd
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block || ORIG_REF_NAME==data_in_block}]
+
+# IP: bd/data_in_block/ip/data_in_block_processing_system7_0_0/data_in_block_processing_system7_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_processing_system7_0_0 || ORIG_REF_NAME==data_in_block_processing_system7_0_0}]
+
+# IP: bd/data_in_block/ip/data_in_block_axi_bram_ctrl_0_0/data_in_block_axi_bram_ctrl_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_axi_bram_ctrl_0_0 || ORIG_REF_NAME==data_in_block_axi_bram_ctrl_0_0}]
+
+# IP: bd/data_in_block/ip/data_in_block_blk_mem_gen_0_0/data_in_block_blk_mem_gen_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_blk_mem_gen_0_0 || ORIG_REF_NAME==data_in_block_blk_mem_gen_0_0}]
+
+# IP: bd/data_in_block/ip/data_in_block_axi_mem_intercon_0/data_in_block_axi_mem_intercon_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_axi_mem_intercon_0 || ORIG_REF_NAME==data_in_block_axi_mem_intercon_0}]
+
+# IP: bd/data_in_block/ip/data_in_block_rst_ps7_0_50M_0/data_in_block_rst_ps7_0_50M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_rst_ps7_0_50M_0 || ORIG_REF_NAME==data_in_block_rst_ps7_0_50M_0}]
+
+# IP: bd/data_in_block/ip/data_in_block_auto_pc_0/data_in_block_auto_pc_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_in_block_auto_pc_0 || ORIG_REF_NAME==data_in_block_auto_pc_0}]
+
+# Block Designs: bd/data_out_block/data_out_block.bd
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block || ORIG_REF_NAME==data_out_block}]
+
+# IP: bd/data_out_block/ip/data_out_block_blk_mem_gen_0_0/data_out_block_blk_mem_gen_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_blk_mem_gen_0_0 || ORIG_REF_NAME==data_out_block_blk_mem_gen_0_0}]
+
+# IP: bd/data_out_block/ip/data_out_block_axi_bram_ctrl_0_0/data_out_block_axi_bram_ctrl_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_axi_bram_ctrl_0_0 || ORIG_REF_NAME==data_out_block_axi_bram_ctrl_0_0}]
+
+# IP: bd/data_out_block/ip/data_out_block_processing_system7_0_0/data_out_block_processing_system7_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_processing_system7_0_0 || ORIG_REF_NAME==data_out_block_processing_system7_0_0}]
+
+# IP: bd/data_out_block/ip/data_out_block_axi_mem_intercon_0/data_out_block_axi_mem_intercon_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_axi_mem_intercon_0 || ORIG_REF_NAME==data_out_block_axi_mem_intercon_0}]
+
+# IP: bd/data_out_block/ip/data_out_block_rst_ps7_0_50M_0/data_out_block_rst_ps7_0_50M_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_rst_ps7_0_50M_0 || ORIG_REF_NAME==data_out_block_rst_ps7_0_50M_0}]
+
+# IP: bd/data_out_block/ip/data_out_block_auto_pc_0/data_out_block_auto_pc_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==data_out_block_auto_pc_0 || ORIG_REF_NAME==data_out_block_auto_pc_0}]
+
 # XDC: bd/start_block/start_block_ooc.xdc
+
+# XDC: bd/nb_block/nb_block_ooc.xdc
+
+# XDC: bd/encoding_table_block/encoding_table_block_ooc.xdc
+
+# XDC: bd/data_in_block/data_in_block_ooc.xdc
+
+# XDC: bd/data_out_block/data_out_block_ooc.xdc

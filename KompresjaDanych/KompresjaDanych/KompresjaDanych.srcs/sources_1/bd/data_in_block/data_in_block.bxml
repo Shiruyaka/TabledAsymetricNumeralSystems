@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="data_in_block" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1502100401"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1502100401"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1502100401"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1502275839"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1502275839"/>
+    <Generation Name="SIMULATION" State="STALE" Timestamp="1502275839"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\data_in_block_processing_system7_0_0\data_in_block_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -23,7 +23,7 @@
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\data_in_block_blk_mem_gen_0_0\data_in_block_blk_mem_gen_0_0.xci" Type="IP">
-        <Instance HierarchyPath="blk_mem_gen_0"/>
+        <Instance HierarchyPath="start_mem"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -49,6 +49,93 @@
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="hw_handoff\data_in_block.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\data_in_block_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hdl\data_in_block.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="ip\data_in_block_blk_mem_gen_1_0\data_in_block_blk_mem_gen_1_0.xci" Type="IP">
+        <Instance HierarchyPath="nb_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_axi_bram_ctrl_1_0\data_in_block_axi_bram_ctrl_1_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_bram_ctrl_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_xbar_0\data_in_block_xbar_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_mem_intercon/xbar"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_blk_mem_gen_0_1\data_in_block_blk_mem_gen_0_1.xci" Type="IP">
+        <Instance HierarchyPath="encoding_table_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_axi_bram_ctrl_2_0\data_in_block_axi_bram_ctrl_2_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_bram_ctrl_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_blk_mem_gen_0_2\data_in_block_blk_mem_gen_0_2.xci" Type="IP">
+        <Instance HierarchyPath="data_in_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_axi_bram_ctrl_3_0\data_in_block_axi_bram_ctrl_3_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_bram_ctrl_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_blk_mem_gen_0_3\data_in_block_blk_mem_gen_0_3.xci" Type="IP">
+        <Instance HierarchyPath="data_out_mem"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\data_in_block_axi_bram_ctrl_4_0\data_in_block_axi_bram_ctrl_4_0.xci" Type="IP">
+        <Instance HierarchyPath="axi_bram_ctrl_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="ip\data_in_block_auto_pc_0\data_in_block_auto_pc_0.xci" Type="IP">

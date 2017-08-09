@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
---Date        : Mon Aug 07 11:12:04 2017
+--Date        : Wed Aug 09 10:45:33 2017
 --Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target nb_block.bd
 --Design      : nb_block
@@ -776,7 +776,7 @@ entity nb_block is
     FIXED_IO_ps_srstb : inout STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of nb_block : entity is "nb_block,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=nb_block,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=1,da_bram_cntlr_cnt=2,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of nb_block : entity is "nb_block,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=nb_block,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=7,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=2,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of nb_block : entity is "nb_block.hwdef";
 end nb_block;

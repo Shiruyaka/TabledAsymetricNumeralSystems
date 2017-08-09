@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
---Date        : Mon Aug 07 12:06:41 2017
+--Date        : Wed Aug 09 12:56:42 2017
 --Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target data_in_block_wrapper.bd
 --Design      : data_in_block_wrapper
@@ -13,6 +13,34 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity data_in_block_wrapper is
   port (
+    BRAM_PORTB_1_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_clk : in STD_LOGIC;
+    BRAM_PORTB_1_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_en : in STD_LOGIC;
+    BRAM_PORTB_1_rst : in STD_LOGIC;
+    BRAM_PORTB_1_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_2_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_clk : in STD_LOGIC;
+    BRAM_PORTB_2_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_en : in STD_LOGIC;
+    BRAM_PORTB_2_rst : in STD_LOGIC;
+    BRAM_PORTB_2_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_3_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_clk : in STD_LOGIC;
+    BRAM_PORTB_3_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_en : in STD_LOGIC;
+    BRAM_PORTB_3_rst : in STD_LOGIC;
+    BRAM_PORTB_3_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_4_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_clk : in STD_LOGIC;
+    BRAM_PORTB_4_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_en : in STD_LOGIC;
+    BRAM_PORTB_4_rst : in STD_LOGIC;
+    BRAM_PORTB_4_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
     BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_clk : in STD_LOGIC;
     BRAM_PORTB_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -74,12 +102,68 @@ architecture STRUCTURE of data_in_block_wrapper is
     BRAM_PORTB_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     BRAM_PORTB_en : in STD_LOGIC;
     BRAM_PORTB_rst : in STD_LOGIC;
-    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 )
+    BRAM_PORTB_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_1_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_clk : in STD_LOGIC;
+    BRAM_PORTB_1_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_1_en : in STD_LOGIC;
+    BRAM_PORTB_1_rst : in STD_LOGIC;
+    BRAM_PORTB_1_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_2_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_clk : in STD_LOGIC;
+    BRAM_PORTB_2_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_2_en : in STD_LOGIC;
+    BRAM_PORTB_2_rst : in STD_LOGIC;
+    BRAM_PORTB_2_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_3_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_clk : in STD_LOGIC;
+    BRAM_PORTB_3_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_3_en : in STD_LOGIC;
+    BRAM_PORTB_3_rst : in STD_LOGIC;
+    BRAM_PORTB_3_we : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    BRAM_PORTB_4_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_clk : in STD_LOGIC;
+    BRAM_PORTB_4_din : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    BRAM_PORTB_4_en : in STD_LOGIC;
+    BRAM_PORTB_4_rst : in STD_LOGIC;
+    BRAM_PORTB_4_we : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component data_in_block;
 begin
 data_in_block_i: component data_in_block
      port map (
+      BRAM_PORTB_1_addr(31 downto 0) => BRAM_PORTB_1_addr(31 downto 0),
+      BRAM_PORTB_1_clk => BRAM_PORTB_1_clk,
+      BRAM_PORTB_1_din(31 downto 0) => BRAM_PORTB_1_din(31 downto 0),
+      BRAM_PORTB_1_dout(31 downto 0) => BRAM_PORTB_1_dout(31 downto 0),
+      BRAM_PORTB_1_en => BRAM_PORTB_1_en,
+      BRAM_PORTB_1_rst => BRAM_PORTB_1_rst,
+      BRAM_PORTB_1_we(3 downto 0) => BRAM_PORTB_1_we(3 downto 0),
+      BRAM_PORTB_2_addr(31 downto 0) => BRAM_PORTB_2_addr(31 downto 0),
+      BRAM_PORTB_2_clk => BRAM_PORTB_2_clk,
+      BRAM_PORTB_2_din(31 downto 0) => BRAM_PORTB_2_din(31 downto 0),
+      BRAM_PORTB_2_dout(31 downto 0) => BRAM_PORTB_2_dout(31 downto 0),
+      BRAM_PORTB_2_en => BRAM_PORTB_2_en,
+      BRAM_PORTB_2_rst => BRAM_PORTB_2_rst,
+      BRAM_PORTB_2_we(3 downto 0) => BRAM_PORTB_2_we(3 downto 0),
+      BRAM_PORTB_3_addr(31 downto 0) => BRAM_PORTB_3_addr(31 downto 0),
+      BRAM_PORTB_3_clk => BRAM_PORTB_3_clk,
+      BRAM_PORTB_3_din(31 downto 0) => BRAM_PORTB_3_din(31 downto 0),
+      BRAM_PORTB_3_dout(31 downto 0) => BRAM_PORTB_3_dout(31 downto 0),
+      BRAM_PORTB_3_en => BRAM_PORTB_3_en,
+      BRAM_PORTB_3_rst => BRAM_PORTB_3_rst,
+      BRAM_PORTB_3_we(3 downto 0) => BRAM_PORTB_3_we(3 downto 0),
+      BRAM_PORTB_4_addr(31 downto 0) => BRAM_PORTB_4_addr(31 downto 0),
+      BRAM_PORTB_4_clk => BRAM_PORTB_4_clk,
+      BRAM_PORTB_4_din(31 downto 0) => BRAM_PORTB_4_din(31 downto 0),
+      BRAM_PORTB_4_dout(31 downto 0) => BRAM_PORTB_4_dout(31 downto 0),
+      BRAM_PORTB_4_en => BRAM_PORTB_4_en,
+      BRAM_PORTB_4_rst => BRAM_PORTB_4_rst,
+      BRAM_PORTB_4_we(3 downto 0) => BRAM_PORTB_4_we(3 downto 0),
       BRAM_PORTB_addr(31 downto 0) => BRAM_PORTB_addr(31 downto 0),
       BRAM_PORTB_clk => BRAM_PORTB_clk,
       BRAM_PORTB_din(31 downto 0) => BRAM_PORTB_din(31 downto 0),

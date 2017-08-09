@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="data_out_block" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1502100434"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1502100434"/>
-    <Generation Name="SIMULATION" State="STALE" Timestamp="1502100433"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1502268661"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1502268661"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1502268661"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\data_out_block_blk_mem_gen_0_0\data_out_block_blk_mem_gen_0_0.xci" Type="IP">
         <Instance HierarchyPath="blk_mem_gen_0"/>
@@ -71,6 +71,21 @@
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\data_out_block.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\data_out_block_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hdl\data_out_block.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
       </File>
     </FileCollection>
   </CompositeFile>

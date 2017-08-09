@@ -1,0 +1,1148 @@
+Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
+| Date         : Wed Aug 09 12:28:12 2017
+| Host         : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
+| Command      : report_drc -file Compressor_drc_opted.rpt
+| Design       : Compressor
+| Device       : xc7z010clg400-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 105
++-------------+------------------+--------------------------------------------+------------+
+| Rule        | Severity         | Description                                | Violations |
++-------------+------------------+--------------------------------------------+------------+
+| PLIOBUF-4   | Error            | DRC check between IO and buffer(IBUF/OBUF) | 59         |
+| PLIOSTD-2   | Error            | IOSTANDARD violations                      | 1          |
+| UTLZ-1      | Error            | Resource utilization                       | 2          |
+| IOSTDTYPE-1 | Critical Warning | IOStandard Type                            | 40         |
+| NSTD-1      | Critical Warning | Unspecified I/O Standard                   | 1          |
+| UCIO-1      | Critical Warning | Unconstrained Logical Port                 | 1          |
+| IOCNT-1     | Warning          | Number of IOs                              | 1          |
++-------------+------------------+--------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PLIOBUF-4#1 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_ddr_vrn is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/DDR_VRN_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/DDR_VRN_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/DDR_VRN_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/DDR_VRN_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/DDR_VRN_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#2 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_ddr_vrp is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/DDR_VRP_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/DDR_VRP_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/DDR_VRP_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/DDR_VRP_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/DDR_VRP_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#3 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[0] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[0].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[0].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[0].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[0].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[0].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#4 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[10] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[10].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[10].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[10].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[10].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[10].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#5 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[11] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[11].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[11].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[11].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[11].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[11].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#6 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[12] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[12].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[12].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[12].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[12].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[12].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#7 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[13] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[13].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[13].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[13].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[13].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[13].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#8 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[14] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[14].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[14].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[14].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[14].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[14].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#9 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[15] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[15].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[15].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[15].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[15].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[15].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#10 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[16] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[16].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[16].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[16].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[16].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[16].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#11 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[17] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[17].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[17].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[17].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[17].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[17].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#12 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[18] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[18].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[18].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[18].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[18].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[18].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#13 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[19] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[19].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[19].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[19].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[19].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[19].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#14 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[1] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[1].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[1].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[1].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[1].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[1].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#15 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[20] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[20].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[20].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[20].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[20].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[20].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#16 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[21] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[21].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[21].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[21].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[21].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[21].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#17 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[22] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[22].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[22].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[22].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[22].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[22].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#18 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[23] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[23].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[23].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[23].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[23].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[23].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#19 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[24] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[24].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[24].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[24].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[24].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[24].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#20 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[25] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[25].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[25].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[25].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[25].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[25].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#21 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[26] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[26].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[26].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[26].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[26].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[26].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#22 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[27] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[27].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[27].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[27].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[27].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[27].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#23 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[28] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[28].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#24 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[29] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[29].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#25 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[2] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[2].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[2].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[2].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[2].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[2].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#26 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[30] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[30].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#27 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[31] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[31].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#28 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[32] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[32].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[32].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[32].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[32].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[32].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#29 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[33] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[33].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[33].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[33].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[33].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[33].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#30 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[34] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[34].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[34].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[34].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[34].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[34].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#31 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[35] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[35].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[35].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[35].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[35].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[35].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#32 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[36] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[36].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[36].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[36].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[36].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[36].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#33 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[37] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[37].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[37].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[37].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[37].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[37].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#34 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[38] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[38].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[38].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[38].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[38].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[38].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#35 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[39] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[39].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[39].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[39].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[39].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[39].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#36 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[3] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[3].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[3].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[3].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[3].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[3].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#37 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[40] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[40].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[40].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[40].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[40].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[40].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#38 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[41] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[41].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[41].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[41].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[41].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[41].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#39 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[42] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[42].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[42].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[42].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[42].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[42].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#40 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[43] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[43].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[43].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[43].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[43].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[43].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#41 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[44] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[44].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[44].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[44].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[44].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[44].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#42 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[45] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[45].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[45].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[45].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[45].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[45].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#43 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[46] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[46].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[46].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[46].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[46].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[46].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#44 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[47] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[47].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[47].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[47].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[47].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[47].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#45 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[48] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[48].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[48].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[48].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[48].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[48].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#46 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[49] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[49].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[49].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[49].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[49].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[49].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#47 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[4] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[4].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[4].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[4].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[4].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[4].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#48 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[50] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[50].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[50].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[50].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[50].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[50].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#49 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[51] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[51].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[51].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[51].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[51].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[51].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#50 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[52] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[52].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[52].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[52].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[52].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[52].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#51 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[53] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[53].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[53].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[53].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[53].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[53].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#52 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[5] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[5].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[5].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[5].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[5].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[5].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#53 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[6] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[6].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[6].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[6].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[6].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[6].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#54 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[7] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[7].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[7].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[7].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[7].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[7].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#55 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[8] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[8].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[8].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[8].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[8].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[8].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#56 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_mio[9] is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/genblk13[9].MIO_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/genblk13[9].MIO_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/genblk13[9].MIO_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/genblk13[9].MIO_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/genblk13[9].MIO_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#57 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_ps_clk is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/PS_CLK_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/PS_CLK_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/PS_CLK_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/PS_CLK_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/PS_CLK_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#58 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_ps_porb is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/PS_PORB_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/PS_PORB_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/PS_PORB_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/PS_PORB_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/PS_PORB_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOBUF-4#59 Error
+DRC check between IO and buffer(IBUF/OBUF)  
+IO port FIXED_IO_ps_srstb is driving multiple buffers. This will lead to an unplaceable/unroutable situation. The buffers connected are:
+    data_in_block/data_in_block_i/processing_system7_0/inst/PS_SRSTB_BIBUF {BIBUF}
+    data_out_block/data_out_block_i/processing_system7_0/inst/PS_SRSTB_BIBUF {BIBUF}
+    encoding_table_block/encoding_table_block_i/processing_system7_0/inst/PS_SRSTB_BIBUF {BIBUF}
+    nb_block/nb_block_i/processing_system7_0/inst/PS_SRSTB_BIBUF {BIBUF}
+    start_block/start_block_i/processing_system7_0/inst/PS_SRSTB_BIBUF {BIBUF}
+
+Related violations: <none>
+
+PLIOSTD-2#1 Error
+IOSTANDARD violations  
+High Performance (HP) banks  have insufficient capacity to support the IOSTANDARDs defined for this design. There are 145 IO available in the High Performance (HP) banks but this design has 222 IO that require placement in an High Performance (HP) bank. Please review the IOSTANDARD specifications for the IO below that require placement in an High Performance (HP) bank to determine if the IOSTANDARDs need to be modified or the target device needs to change to support the design's requirements: 
+    1. DDR_dqs_n_e[0] { DIFF_SSTL15_T_DCI }
+    2. DDR_dqs_n_e[1] { DIFF_SSTL15_T_DCI }
+    3. DDR_dqs_n_e[2] { DIFF_SSTL15_T_DCI }
+    4. DDR_dqs_n_e[3] { DIFF_SSTL15_T_DCI }
+    5. DDR_dqs_n_i[0] { DIFF_SSTL15_T_DCI }
+    6. DDR_dqs_n_i[1] { DIFF_SSTL15_T_DCI }
+    7. DDR_dqs_n_i[2] { DIFF_SSTL15_T_DCI }
+    8. DDR_dqs_n_i[3] { DIFF_SSTL15_T_DCI }
+    9. DDR_dqs_n_n[0] { DIFF_SSTL15_T_DCI }
+    10. DDR_dqs_n_n[1] { DIFF_SSTL15_T_DCI }
+    11. DDR_dqs_n_n[2] { DIFF_SSTL15_T_DCI }
+    12. DDR_dqs_n_n[3] { DIFF_SSTL15_T_DCI }
+    13. DDR_dqs_n_o[0] { DIFF_SSTL15_T_DCI }
+    14. DDR_dqs_n_o[1] { DIFF_SSTL15_T_DCI }
+    15. DDR_dqs_n_o[2] { DIFF_SSTL15_T_DCI }
+    16. DDR_dqs_n_o[3] { DIFF_SSTL15_T_DCI }
+    17. DDR_dqs_n_s[0] { DIFF_SSTL15_T_DCI }
+    18. DDR_dqs_n_s[1] { DIFF_SSTL15_T_DCI }
+    19. DDR_dqs_n_s[2] { DIFF_SSTL15_T_DCI }
+    20. DDR_dqs_n_s[3] { DIFF_SSTL15_T_DCI }
+    21. DDR_dqs_p_e[0] { DIFF_SSTL15_T_DCI }
+    22. DDR_dqs_p_e[1] { DIFF_SSTL15_T_DCI }
+    23. DDR_dqs_p_e[2] { DIFF_SSTL15_T_DCI }
+    24. DDR_dqs_p_e[3] { DIFF_SSTL15_T_DCI }
+    25. DDR_dqs_p_i[0] { DIFF_SSTL15_T_DCI }
+    26. DDR_dqs_p_i[1] { DIFF_SSTL15_T_DCI }
+    27. DDR_dqs_p_i[2] { DIFF_SSTL15_T_DCI }
+    28. DDR_dqs_p_i[3] { DIFF_SSTL15_T_DCI }
+    29. DDR_dqs_p_n[0] { DIFF_SSTL15_T_DCI }
+    30. DDR_dqs_p_n[1] { DIFF_SSTL15_T_DCI }
+    31. DDR_dqs_p_n[2] { DIFF_SSTL15_T_DCI }
+    32. DDR_dqs_p_n[3] { DIFF_SSTL15_T_DCI }
+    33. DDR_dqs_p_o[0] { DIFF_SSTL15_T_DCI }
+    34. DDR_dqs_p_o[1] { DIFF_SSTL15_T_DCI }
+    35. DDR_dqs_p_o[2] { DIFF_SSTL15_T_DCI }
+    36. DDR_dqs_p_o[3] { DIFF_SSTL15_T_DCI }
+    37. DDR_dqs_p_s[0] { DIFF_SSTL15_T_DCI }
+    38. DDR_dqs_p_s[1] { DIFF_SSTL15_T_DCI }
+    39. DDR_dqs_p_s[2] { DIFF_SSTL15_T_DCI }
+    40. DDR_dqs_p_s[3] { DIFF_SSTL15_T_DCI }
+    41. DDR_dm_e[0] { SSTL15_T_DCI }
+    42. DDR_dm_e[1] { SSTL15_T_DCI }
+    43. DDR_dm_e[2] { SSTL15_T_DCI }
+    44. DDR_dm_e[3] { SSTL15_T_DCI }
+    45. DDR_dm_i[0] { SSTL15_T_DCI }
+    46. DDR_dm_i[1] { SSTL15_T_DCI }
+    47. DDR_dm_i[2] { SSTL15_T_DCI }
+    48. DDR_dm_i[3] { SSTL15_T_DCI }
+    49. DDR_dm_n[0] { SSTL15_T_DCI }
+    50. DDR_dm_n[1] { SSTL15_T_DCI }
+    51. DDR_dm_n[2] { SSTL15_T_DCI }
+    52. DDR_dm_n[3] { SSTL15_T_DCI }
+    53. DDR_dm_o[0] { SSTL15_T_DCI }
+    54. DDR_dm_o[1] { SSTL15_T_DCI }
+    55. DDR_dm_o[2] { SSTL15_T_DCI }
+    56. DDR_dm_o[3] { SSTL15_T_DCI }
+    57. DDR_dm_s[0] { SSTL15_T_DCI }
+    58. DDR_dm_s[1] { SSTL15_T_DCI }
+    59. DDR_dm_s[2] { SSTL15_T_DCI }
+    60. DDR_dm_s[3] { SSTL15_T_DCI }
+    61. DDR_dq_e[0] { SSTL15_T_DCI }
+    62. DDR_dq_e[10] { SSTL15_T_DCI }
+    63. DDR_dq_e[11] { SSTL15_T_DCI }
+    64. DDR_dq_e[12] { SSTL15_T_DCI }
+    65. DDR_dq_e[13] { SSTL15_T_DCI }
+    66. DDR_dq_e[14] { SSTL15_T_DCI }
+    67. DDR_dq_e[15] { SSTL15_T_DCI }
+    68. DDR_dq_e[16] { SSTL15_T_DCI }
+    69. DDR_dq_e[17] { SSTL15_T_DCI }
+    70. DDR_dq_e[18] { SSTL15_T_DCI }
+    71. DDR_dq_e[19] { SSTL15_T_DCI }
+    72. DDR_dq_e[1] { SSTL15_T_DCI }
+    73. DDR_dq_e[20] { SSTL15_T_DCI }
+    74. DDR_dq_e[21] { SSTL15_T_DCI }
+    75. DDR_dq_e[22] { SSTL15_T_DCI }
+    76. DDR_dq_e[23] { SSTL15_T_DCI }
+    77. DDR_dq_e[24] { SSTL15_T_DCI }
+    78. DDR_dq_e[25] { SSTL15_T_DCI }
+    79. DDR_dq_e[26] { SSTL15_T_DCI }
+    80. DDR_dq_e[27] { SSTL15_T_DCI }
+    81. DDR_dq_e[28] { SSTL15_T_DCI }
+    82. DDR_dq_e[29] { SSTL15_T_DCI }
+    83. DDR_dq_e[2] { SSTL15_T_DCI }
+    84. DDR_dq_e[30] { SSTL15_T_DCI }
+    85. DDR_dq_e[31] { SSTL15_T_DCI }
+    86. DDR_dq_e[3] { SSTL15_T_DCI }
+    87. DDR_dq_e[4] { SSTL15_T_DCI }
+    88. DDR_dq_e[5] { SSTL15_T_DCI }
+    89. DDR_dq_e[6] { SSTL15_T_DCI }
+    90. DDR_dq_e[7] { SSTL15_T_DCI }
+    91. DDR_dq_e[8] { SSTL15_T_DCI }
+    92. DDR_dq_e[9] { SSTL15_T_DCI }
+    93. DDR_dq_i[0] { SSTL15_T_DCI }
+    94. DDR_dq_i[10] { SSTL15_T_DCI }
+    95. DDR_dq_i[11] { SSTL15_T_DCI }
+    96. DDR_dq_i[12] { SSTL15_T_DCI }
+    97. DDR_dq_i[13] { SSTL15_T_DCI }
+    98. DDR_dq_i[14] { SSTL15_T_DCI }
+    99. DDR_dq_i[15] { SSTL15_T_DCI }
+    100. DDR_dq_i[16] { SSTL15_T_DCI }
+    101. DDR_dq_i[17] { SSTL15_T_DCI }
+    102. DDR_dq_i[18] { SSTL15_T_DCI }
+    103. DDR_dq_i[19] { SSTL15_T_DCI }
+    104. DDR_dq_i[1] { SSTL15_T_DCI }
+    105. DDR_dq_i[20] { SSTL15_T_DCI }
+    106. DDR_dq_i[21] { SSTL15_T_DCI }
+    107. DDR_dq_i[22] { SSTL15_T_DCI }
+    108. DDR_dq_i[23] { SSTL15_T_DCI }
+    109. DDR_dq_i[24] { SSTL15_T_DCI }
+    110. DDR_dq_i[25] { SSTL15_T_DCI }
+    111. DDR_dq_i[26] { SSTL15_T_DCI }
+    112. DDR_dq_i[27] { SSTL15_T_DCI }
+    113. DDR_dq_i[28] { SSTL15_T_DCI }
+    114. DDR_dq_i[29] { SSTL15_T_DCI }
+    115. DDR_dq_i[2] { SSTL15_T_DCI }
+    116. DDR_dq_i[30] { SSTL15_T_DCI }
+    117. DDR_dq_i[31] { SSTL15_T_DCI }
+    118. DDR_dq_i[3] { SSTL15_T_DCI }
+    119. DDR_dq_i[4] { SSTL15_T_DCI }
+    120. DDR_dq_i[5] { SSTL15_T_DCI }
+    121. DDR_dq_i[6] { SSTL15_T_DCI }
+    122. DDR_dq_i[7] { SSTL15_T_DCI }
+    123. DDR_dq_i[8] { SSTL15_T_DCI }
+    124. DDR_dq_i[9] { SSTL15_T_DCI }
+    125. DDR_dq_n[0] { SSTL15_T_DCI }
+    126. DDR_dq_n[10] { SSTL15_T_DCI }
+    127. DDR_dq_n[11] { SSTL15_T_DCI }
+    128. DDR_dq_n[12] { SSTL15_T_DCI }
+    129. DDR_dq_n[13] { SSTL15_T_DCI }
+    130. DDR_dq_n[14] { SSTL15_T_DCI }
+    131. DDR_dq_n[15] { SSTL15_T_DCI }
+    132. DDR_dq_n[16] { SSTL15_T_DCI }
+    133. DDR_dq_n[17] { SSTL15_T_DCI }
+    134. DDR_dq_n[18] { SSTL15_T_DCI }
+    135. DDR_dq_n[19] { SSTL15_T_DCI }
+    136. DDR_dq_n[1] { SSTL15_T_DCI }
+    137. DDR_dq_n[20] { SSTL15_T_DCI }
+    138. DDR_dq_n[21] { SSTL15_T_DCI }
+    139. DDR_dq_n[22] { SSTL15_T_DCI }
+    140. DDR_dq_n[23] { SSTL15_T_DCI }
+    141. DDR_dq_n[24] { SSTL15_T_DCI }
+    142. DDR_dq_n[25] { SSTL15_T_DCI }
+    143. DDR_dq_n[26] { SSTL15_T_DCI }
+    144. DDR_dq_n[27] { SSTL15_T_DCI }
+    145. DDR_dq_n[28] { SSTL15_T_DCI }
+    146. DDR_dq_n[29] { SSTL15_T_DCI }
+    147. DDR_dq_n[2] { SSTL15_T_DCI }
+    148. DDR_dq_n[30] { SSTL15_T_DCI }
+    149. DDR_dq_n[31] { SSTL15_T_DCI }
+    150. DDR_dq_n[3] { SSTL15_T_DCI }
+    151. DDR_dq_n[4] { SSTL15_T_DCI }
+    152. DDR_dq_n[5] { SSTL15_T_DCI }
+    153. DDR_dq_n[6] { SSTL15_T_DCI }
+    154. DDR_dq_n[7] { SSTL15_T_DCI }
+    155. DDR_dq_n[8] { SSTL15_T_DCI }
+    156. DDR_dq_n[9] { SSTL15_T_DCI }
+    157. DDR_dq_o[0] { SSTL15_T_DCI }
+    158. DDR_dq_o[10] { SSTL15_T_DCI }
+    159. DDR_dq_o[11] { SSTL15_T_DCI }
+    160. DDR_dq_o[12] { SSTL15_T_DCI }
+    161. DDR_dq_o[13] { SSTL15_T_DCI }
+    162. DDR_dq_o[14] { SSTL15_T_DCI }
+    163. DDR_dq_o[15] { SSTL15_T_DCI }
+    164. DDR_dq_o[16] { SSTL15_T_DCI }
+    165. DDR_dq_o[17] { SSTL15_T_DCI }
+    166. DDR_dq_o[18] { SSTL15_T_DCI }
+    167. DDR_dq_o[19] { SSTL15_T_DCI }
+    168. DDR_dq_o[1] { SSTL15_T_DCI }
+    169. DDR_dq_o[20] { SSTL15_T_DCI }
+    170. DDR_dq_o[21] { SSTL15_T_DCI }
+    171. DDR_dq_o[22] { SSTL15_T_DCI }
+    172. DDR_dq_o[23] { SSTL15_T_DCI }
+    173. DDR_dq_o[24] { SSTL15_T_DCI }
+    174. DDR_dq_o[25] { SSTL15_T_DCI }
+    175. DDR_dq_o[26] { SSTL15_T_DCI }
+    176. DDR_dq_o[27] { SSTL15_T_DCI }
+    177. DDR_dq_o[28] { SSTL15_T_DCI }
+    178. DDR_dq_o[29] { SSTL15_T_DCI }
+    179. DDR_dq_o[2] { SSTL15_T_DCI }
+    180. DDR_dq_o[30] { SSTL15_T_DCI }
+    181. DDR_dq_o[31] { SSTL15_T_DCI }
+    182. DDR_dq_o[3] { SSTL15_T_DCI }
+    183. DDR_dq_o[4] { SSTL15_T_DCI }
+    184. DDR_dq_o[5] { SSTL15_T_DCI }
+    185. DDR_dq_o[6] { SSTL15_T_DCI }
+    186. DDR_dq_o[7] { SSTL15_T_DCI }
+    187. DDR_dq_o[8] { SSTL15_T_DCI }
+    188. DDR_dq_o[9] { SSTL15_T_DCI }
+    189. DDR_dq_s[0] { SSTL15_T_DCI }
+    190. DDR_dq_s[10] { SSTL15_T_DCI }
+    191. DDR_dq_s[11] { SSTL15_T_DCI }
+    192. DDR_dq_s[12] { SSTL15_T_DCI }
+    193. DDR_dq_s[13] { SSTL15_T_DCI }
+    194. DDR_dq_s[14] { SSTL15_T_DCI }
+    195. DDR_dq_s[15] { SSTL15_T_DCI }
+    196. DDR_dq_s[16] { SSTL15_T_DCI }
+    197. DDR_dq_s[17] { SSTL15_T_DCI }
+    198. DDR_dq_s[18] { SSTL15_T_DCI }
+    199. DDR_dq_s[19] { SSTL15_T_DCI }
+    200. DDR_dq_s[1] { SSTL15_T_DCI }
+    201. DDR_dq_s[20] { SSTL15_T_DCI }
+    202. DDR_dq_s[21] { SSTL15_T_DCI }
+    203. DDR_dq_s[22] { SSTL15_T_DCI }
+    204. DDR_dq_s[23] { SSTL15_T_DCI }
+    205. DDR_dq_s[24] { SSTL15_T_DCI }
+    206. DDR_dq_s[25] { SSTL15_T_DCI }
+    207. DDR_dq_s[26] { SSTL15_T_DCI }
+    208. DDR_dq_s[27] { SSTL15_T_DCI }
+    209. DDR_dq_s[28] { SSTL15_T_DCI }
+    210. DDR_dq_s[29] { SSTL15_T_DCI }
+    211. DDR_dq_s[2] { SSTL15_T_DCI }
+    212. DDR_dq_s[30] { SSTL15_T_DCI }
+    213. DDR_dq_s[31] { SSTL15_T_DCI }
+    214. DDR_dq_s[3] { SSTL15_T_DCI }
+    215. DDR_dq_s[4] { SSTL15_T_DCI }
+    216. DDR_dq_s[5] { SSTL15_T_DCI }
+    217. DDR_dq_s[6] { SSTL15_T_DCI }
+    218. DDR_dq_s[7] { SSTL15_T_DCI }
+    219. DDR_dq_s[8] { SSTL15_T_DCI }
+    220. DDR_dq_s[9] { SSTL15_T_DCI }
+    221. FIXED_IO_ddr_vrn { SSTL15_T_DCI }
+    222. FIXED_IO_ddr_vrp { SSTL15_T_DCI }
+
+Related violations: <none>
+
+UTLZ-1#1 Error
+Resource utilization  - PBlock:ROOT
+BIBUF over-utilized in Top Level Design (This design requires more BIBUF cells than are available in the target device. This design requires 650 of such cell types but only 130 compatible sites are available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)ROOT
+Related violations: <none>
+
+UTLZ-1#2 Error
+Resource utilization  - PBlock:ROOT
+PS7 over-utilized in Top Level Design (This design requires more PS7 cells than are available in the target device. This design requires 5 of such cell types but only 1 compatible site is available in the target device. Please analyze your synthesis results and constraints to ensure the design is mapped to Xilinx primitives as expected. If so, please consider targeting a larger device.)ROOT
+Related violations: <none>
+
+IOSTDTYPE-1#1 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_n_e is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#2 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_n_i is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#3 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_n_n is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#4 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_n_o is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#5 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_p_e is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#6 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_p_i is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#7 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_p_n is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#8 Critical Warning
+IOStandard Type  
+I/O port DDR_ck_p_o is Single-Ended but has an IOStandard of DIFF_SSTL15 which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#9 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_e[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#10 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_e[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#11 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_e[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#12 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_e[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#13 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_i[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#14 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_i[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#15 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_i[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#16 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_i[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#17 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_n[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#18 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_n[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#19 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_n[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#20 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_n[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#21 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_o[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#22 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_o[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#23 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_o[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#24 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_n_o[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#25 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_e[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#26 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_e[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#27 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_e[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#28 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_e[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#29 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_i[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#30 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_i[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#31 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_i[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#32 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_i[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#33 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_n[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#34 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_n[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#35 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_n[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#36 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_n[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#37 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_o[0] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#38 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_o[1] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#39 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_o[2] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+IOSTDTYPE-1#40 Critical Warning
+IOStandard Type  
+I/O port DDR_dqs_p_o[3] is Single-Ended but has an IOStandard of DIFF_SSTL15_T_DCI which can only support Differential
+Related violations: <none>
+
+NSTD-1#1 Critical Warning
+Unspecified I/O Standard  
+56 out of 416 logical ports use I/O standard (IOSTANDARD) value 'DEFAULT', instead of a user assigned specific value. This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all I/O standards. This design will fail to generate a bitstream unless all logical ports have a user specified I/O standard value defined. To allow bitstream creation with unspecified I/O standard values (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks NSTD-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run. Problem ports: init, FIXED_IO_mio[53:0], gclk.
+Related violations: <none>
+
+UCIO-1#1 Critical Warning
+Unconstrained Logical Port  
+345 out of 416 logical ports have no user assigned specific location constraint (LOC). This may cause I/O contention or incompatibility with the board power or connectivity affecting performance, signal integrity or in extreme cases cause damage to the device or the components to which it is connected. To correct this violation, specify all pin locations. This design will fail to generate a bitstream unless all logical ports have a user specified site LOC constraint defined.  To allow bitstream creation with unspecified pin locations (not recommended), use this command: set_property SEVERITY {Warning} [get_drc_checks UCIO-1].  NOTE: When using the Vivado Runs infrastructure (e.g. launch_runs Tcl command), add this command to a .tcl file and add that file as a pre-hook for write_bitstream step for the implementation run.  Problem ports: init, DDR_dqs_p_i[3:0], DDR_dqs_n_i[3:0], DDR_dq_i[31:0], DDR_dm_i[3:0], DDR_ba_i[2:0], DDR_addr_i[14:0], DDR_cas_n_i, DDR_ck_n_i, DDR_ck_p_i, DDR_cke_i, DDR_cs_n_i, DDR_odt_i, DDR_ras_n_i, DDR_reset_n_i (the first 15 of 68 listed).
+Related violations: <none>
+
+IOCNT-1#1 Warning
+Number of IOs  
+The design contains 345 unplaced I/O ports while the target device, xc7z010clg400-1, has 100 remaining available user I/O pins. This DRC assumes that all ports which do not drive MGT pins should be placed on user I/O pins. To correct this issue:
+1. Ensure you are targeting the correct device and package. Select a larger device or different package if necessary.
+2. Check the top-level ports of the design to ensure the correct number of ports are specified.
+3. Consider design changes to reduce the number of user I/O pins needed.
+
+Related violations: <none>
+
+

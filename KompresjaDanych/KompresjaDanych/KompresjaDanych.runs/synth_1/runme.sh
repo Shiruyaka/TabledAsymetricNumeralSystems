@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log Encoder.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Encoder.tcl
+EAStep vivado -log Compressor.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Compressor.tcl

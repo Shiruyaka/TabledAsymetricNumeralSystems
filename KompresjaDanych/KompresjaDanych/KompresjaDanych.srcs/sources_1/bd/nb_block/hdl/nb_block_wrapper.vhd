@@ -1,7 +1,7 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
---Date        : Mon Aug 07 11:12:04 2017
+--Date        : Wed Aug 09 10:45:33 2017
 --Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target nb_block_wrapper.bd
 --Design      : nb_block_wrapper
@@ -11,7 +11,6 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-
 entity nb_block_wrapper is
   port (
     BRAM_PORTB_addr : in STD_LOGIC_VECTOR ( 31 downto 0 );
