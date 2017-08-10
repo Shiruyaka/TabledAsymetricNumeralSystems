@@ -3,68 +3,77 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="Encoder_Test_behav.wdb" id="1">
+      <db_ref path="encoder_tb_behav.wdb" id="1">
          <top_modules>
-            <top_module name="Encoder_Test" />
+            <top_module name="encoder_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="585000001fs"></ZoomEndTime>
-      <Cursor1Time time="420000000fs"></Cursor1Time>
+      <ZoomEndTime time="77604806fs"></ZoomEndTime>
+      <Cursor1Time time="500000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="178"></NameColumnWidth>
-      <ValueColumnWidth column_width="86"></ValueColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
-   <wvobject fp_name="/Encoder_Test/Init" type="logic">
-      <obj_property name="ElementShortName">Init</obj_property>
-      <obj_property name="ObjectShortName">Init</obj_property>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/encoder_tb/comp/middle/gclk" type="logic">
+      <obj_property name="ElementShortName">gclk</obj_property>
+      <obj_property name="ObjectShortName">gclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Start" type="logic">
-      <obj_property name="ElementShortName">Start</obj_property>
-      <obj_property name="ObjectShortName">Start</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/enc/x" type="array">
+      <obj_property name="ElementShortName">x[15:0]</obj_property>
+      <obj_property name="ObjectShortName">x[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Clk" type="logic">
-      <obj_property name="ElementShortName">Clk</obj_property>
-      <obj_property name="ObjectShortName">Clk</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/enc/nbBits" type="array">
+      <obj_property name="ElementShortName">nbBits[7:0]</obj_property>
+      <obj_property name="ObjectShortName">nbBits[7:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/New_Symbol" type="logic">
-      <obj_property name="ElementShortName">New_Symbol</obj_property>
-      <obj_property name="ObjectShortName">New_Symbol</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/enc/buffor" type="array">
+      <obj_property name="ElementShortName">buffor[0:31]</obj_property>
+      <obj_property name="ObjectShortName">buffor[0:31]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Produced_Symbol" type="logic">
-      <obj_property name="ElementShortName">Produced_Symbol</obj_property>
-      <obj_property name="ObjectShortName">Produced_Symbol</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/middle/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/End_Data" type="logic">
-      <obj_property name="ElementShortName">End_Data</obj_property>
-      <obj_property name="ObjectShortName">End_Data</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/middle/state_for_encoder" type="array">
+      <obj_property name="ElementShortName">state_for_encoder[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state_for_encoder[15:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/R_Value" type="array">
-      <obj_property name="ElementShortName">R_Value[7:0]</obj_property>
-      <obj_property name="ObjectShortName">R_Value[7:0]</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/State_From_Ram" type="array">
+      <obj_property name="ElementShortName">State_From_Ram[31:0]</obj_property>
+      <obj_property name="ObjectShortName">State_From_Ram[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Data_Out" type="array">
-      <obj_property name="ElementShortName">Data_Out[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Data_Out[15:0]</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/Start_From_Ram" type="array">
+      <obj_property name="ElementShortName">Start_From_Ram[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Start_From_Ram[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Symbol" type="array">
-      <obj_property name="ElementShortName">Symbol[15:0]</obj_property>
-      <obj_property name="ObjectShortName">Symbol[15:0]</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/Nb_From_Ram" type="array">
+      <obj_property name="ElementShortName">Nb_From_Ram[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Nb_From_Ram[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/Amount_Bytes" type="array">
-      <obj_property name="ElementShortName">Amount_Bytes[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Amount_Bytes[31:0]</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/New_Data" type="logic">
+      <obj_property name="ElementShortName">New_Data</obj_property>
+      <obj_property name="ObjectShortName">New_Data</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/test/s_aclk" type="logic">
-      <obj_property name="ElementShortName">s_aclk</obj_property>
-      <obj_property name="ObjectShortName">s_aclk</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/middle/current_state" type="other">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
    </wvobject>
-   <wvobject fp_name="/Encoder_Test/test/s_aresetn" type="logic">
-      <obj_property name="ElementShortName">s_aresetn</obj_property>
-      <obj_property name="ObjectShortName">s_aresetn</obj_property>
+   <wvobject fp_name="/encoder_tb/comp/middle/data_in_enable" type="logic">
+      <obj_property name="ElementShortName">data_in_enable</obj_property>
+      <obj_property name="ObjectShortName">data_in_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/state_for_encoder" type="array">
+      <obj_property name="ElementShortName">state_for_encoder[15:0]</obj_property>
+      <obj_property name="ObjectShortName">state_for_encoder[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/Data_In_Address" type="array">
+      <obj_property name="ElementShortName">Data_In_Address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Data_In_Address[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

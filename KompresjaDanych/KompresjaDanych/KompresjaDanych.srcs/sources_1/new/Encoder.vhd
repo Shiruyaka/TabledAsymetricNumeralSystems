@@ -236,7 +236,7 @@ begin
     end process;
     
     
-    encode: process(current_state, start)   
+    encode: process(current_state, start, new_symbol)   
         variable nb_bits_int : integer;
     begin
         next_state <= current_state;
