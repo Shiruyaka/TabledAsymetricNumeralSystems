@@ -11,14 +11,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="77604806fs"></ZoomEndTime>
-      <Cursor1Time time="500000000fs"></Cursor1Time>
+      <ZoomEndTime time="613820142fs"></ZoomEndTime>
+      <Cursor1Time time="840000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="178"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <NameColumnWidth column_width="161"></NameColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
+   <WVObjectSize size="20" />
    <wvobject fp_name="/encoder_tb/comp/middle/gclk" type="logic">
       <obj_property name="ElementShortName">gclk</obj_property>
       <obj_property name="ObjectShortName">gclk</obj_property>
@@ -75,5 +75,29 @@
       <obj_property name="ElementShortName">Data_In_Address[31:0]</obj_property>
       <obj_property name="ObjectShortName">Data_In_Address[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/enc/current_state" type="other">
+      <obj_property name="ElementShortName">current_state</obj_property>
+      <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/enc/start" type="logic">
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/data_in_address" type="array">
+      <obj_property name="ElementShortName">data_in_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/compute_nbBits" type="logic">
+      <obj_property name="ElementShortName">compute_nbBits</obj_property>
+      <obj_property name="ObjectShortName">compute_nbBits</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/get_nb_start" type="logic">
+      <obj_property name="ElementShortName">get_nb_start</obj_property>
+      <obj_property name="ObjectShortName">get_nb_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/enc/stream" type="array">
+      <obj_property name="ElementShortName">stream[15:0]</obj_property>
+      <obj_property name="ObjectShortName">stream[15:0]</obj_property>
    </wvobject>
 </wave_config>

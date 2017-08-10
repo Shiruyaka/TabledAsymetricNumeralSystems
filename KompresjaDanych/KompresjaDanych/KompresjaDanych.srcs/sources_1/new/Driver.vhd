@@ -44,7 +44,7 @@ end Driver;
 
 architecture Communicate of Driver is
 
-type state_type is (IDLE, GET_AMOUNT_BYTES, GET_rValue, GET_FIRST_SYMBOL, RUN_ENCODER, GET_NEW_DATA, WAITING, INITIALIZE_ENCODER);
+type state_type is (IDLE, GET_AMOUNT_BYTES, GET_rValue, GET_FIRST_SYMBOL, RUN_ENCODER, GET_NEW_DATA, WAITING, ALREADY_DONE, INITIALIZE_ENCODER, WAIT_FOR_NBBITS);
 
 signal 
     get_new_state, get_nb_start, compute_nbBits, set_new_state, init_state : STD_LOGIC := '0';
@@ -87,8 +87,8 @@ get_start_nb: process(gclk, get_nb_start)
 begin
     if(rising_edge(gclk)) then
          if(get_nb_start = '1') then
-            start_address <= x"4000_0000" + (data_in(31 downto 2) & (1 downto 0 => '0'));
-            nb_address <= x"4200_0000" + (data_in(31 downto 2) & (1 downto 0 => '0'));
+            start_address <= x"4000_0000" + (data_in(29 downto 0) & (1 downto 0 => '0'));
+            nb_address <= x"4200_0000" + (data_in(29 downto 0) & (1 downto 0 => '0'));
             start_nb_enable <= '1';
             
          else
@@ -104,7 +104,7 @@ begin
     if(rising_edge(gclk)) then
     
         if(compute_nbBits = '1') then 
-                 nb_bits := STD_LOGIC_VECTOR(unsigned(state_from_ram) + unsigned(start_from_ram) + unsigned(nb_from_ram));
+                 nb_bits := STD_LOGIC_VECTOR(unsigned(state_from_ram) + unsigned(nb_from_ram));
                  
                  case r_value_int is
                      when 2 => 
@@ -232,39 +232,59 @@ main_process: process(current_state, start)
            
                 counter := counter + 1;
                 init_encoder <= '0';
-                
-                start_encoder <= '1';
-                get_nb_start <= '1';
                 data_in_enable <= '0';
-                new_data <= '1';
+                get_nb_start <= '1';
+                start_encoder <= '1';
                 next_state <= INITIALIZE_ENCODER;
            
            when INITIALIZE_ENCODER =>
-                start_encoder <= '0';             
-                next_state <= RUN_ENCODER;
-                
-           when RUN_ENCODER =>
-                compute_nbBits <= '1';
+                           
                 data_in_enable <= '1';
                 data_in_address <= STD_LOGIC_VECTOR(to_unsigned(mem_point, 32));
-                
+                mem_point := mem_point + 4; 
                 counter := counter + 1;
-                mem_point := mem_point + 4;
                 
+                start_encoder <= '0';
+                get_nb_start <= '0';                                
+                next_state <= WAIT_FOR_NBBITS;
+                                
+           when WAIT_FOR_NBBITS =>
+           
+                data_in_enable <= '0';                
+                next_state <= ALREADY_DONE;
+           
+           when ALREADY_DONE =>
+                compute_nbBits <= '1';
+                next_state <= RUN_ENCODER;
+                                                          
+           when RUN_ENCODER =>
+                
+                new_data <= '1';
+                compute_nbBits <= '0';                   
                 next_state <= GET_NEW_DATA;
                 
            when GET_NEW_DATA =>
                 
-                compute_nbBits <= '0';
+                data_in_enable <= '1';
+                
+                data_in_address <= STD_LOGIC_VECTOR(to_unsigned(mem_point, 32));
+                counter := counter + 1;
+                mem_point := mem_point + 4;
+                         
+                start_encoder <= '0';
+                compute_nbBits <= '1';
                 new_data <= '0';
                 get_nb_start <= '1';
-                data_in_enable <= '0';
                 start_encoder <= '0';               
                 next_state <= WAITING;
                 
            when WAITING =>
+           
+                data_in_enable <= '0';
+                compute_nbBits <= '0';
                 get_nb_start <= '0';
                 new_data <= '1';
+                
                 if(counter = amount)then
                     next_state <= IDLE;
                 else

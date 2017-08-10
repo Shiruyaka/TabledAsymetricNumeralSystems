@@ -293,7 +293,7 @@ begin
             
             do_it <= '1'; 
             action <= "001";        
-            next_state <= IDLE;
+            next_state <= GET_SYMBOL;
                                                 
             
         when EMPTY_BUFF =>

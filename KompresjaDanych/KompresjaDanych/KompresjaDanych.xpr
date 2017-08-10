@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2016.4 (64-bit)              -->
+<!-- Product Version: Vivado v2016.3 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="17" Path="C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
+<Project Version="7" Minor="17" Path="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="70540a3212d3476bbdb162517936ac24"/>
@@ -31,7 +31,7 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/KompresjaDanych.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSANumComputeUnits" Val="16"/>
-    <Option Name="WTXSimLaunchSim" Val="586"/>
+    <Option Name="WTXSimLaunchSim" Val="610"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -132,20 +132,13 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hdl/Memory.hwdef"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hw_handoff/Memory_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hw_handoff/Memory.hwh"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="Memory_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="Memory.bmm"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hdl/Memory.vhd"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_auto_pc_0/Memory_auto_pc_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_start_mem_0/Memory_start_mem_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_nb_mem_0/Memory_nb_mem_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_encoding_table_mem_0/Memory_encoding_table_mem_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_data_out_mem_0/Memory_data_out_mem_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_data_in_mem_0/Memory_data_in_mem_0.xci"/>
-        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_nb_mem_0/Memory_nb_mem_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_xbar_0/Memory_xbar_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_axi_mem_intercon_0/Memory_axi_mem_intercon_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_axi_bram_ctrl_4_0/Memory_axi_bram_ctrl_4_0.xci"/>
@@ -153,6 +146,13 @@
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_axi_bram_ctrl_2_0/Memory_axi_bram_ctrl_2_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_axi_bram_ctrl_1_0/Memory_axi_bram_ctrl_1_0.xci"/>
         <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_axi_bram_ctrl_0_0/Memory_axi_bram_ctrl_0_0.xci"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hdl/Memory.hwdef"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hw_handoff/Memory_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hw_handoff/Memory.hwh"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="Memory_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="Memory.bmm"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="hdl/Memory.vhd"/>
+        <CompFileExtendedInfo CompFileName="Memory.bd" FileRelPathName="ip/Memory_auto_pc_0/Memory_auto_pc_0.xci"/>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Memory/hdl/Memory_wrapper.vhd">
         <FileInfo>
