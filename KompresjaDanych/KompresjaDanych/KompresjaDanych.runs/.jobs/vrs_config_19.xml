@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="Memory_axi_bram_ctrl_2_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_axi_bram_ctrl_2_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_axi_bram_ctrl_1_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_axi_bram_ctrl_1_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_axi_bram_ctrl_0_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_axi_bram_ctrl_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_axi_bram_ctrl_4_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_axi_bram_ctrl_4_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_axi_bram_ctrl_3_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_axi_bram_ctrl_3_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_nb_mem_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_nb_mem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_encoding_table_mem_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_encoding_table_mem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_data_out_mem_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_data_out_mem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_data_in_mem_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_data_in_mem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_xbar_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_xbar_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_auto_pc_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_start_mem_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_start_mem_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="Memory_processing_system7_0_0_synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="Memory_axi_bram_ctrl_2_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_1_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_0_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_4_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_3_0_synth_1"/>
+		<Parent Id="Memory_nb_mem_0_synth_1"/>
+		<Parent Id="Memory_encoding_table_mem_0_synth_1"/>
+		<Parent Id="Memory_data_out_mem_0_synth_1"/>
+		<Parent Id="Memory_data_in_mem_0_synth_1"/>
+		<Parent Id="Memory_xbar_0_synth_1"/>
+		<Parent Id="Memory_auto_pc_0_synth_1"/>
+		<Parent Id="Memory_start_mem_0_synth_1"/>
+		<Parent Id="Memory_processing_system7_0_0_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="route_design">
+		<Parent Id="synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_2_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_1_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_0_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_4_0_synth_1"/>
+		<Parent Id="Memory_axi_bram_ctrl_3_0_synth_1"/>
+		<Parent Id="Memory_nb_mem_0_synth_1"/>
+		<Parent Id="Memory_encoding_table_mem_0_synth_1"/>
+		<Parent Id="Memory_data_out_mem_0_synth_1"/>
+		<Parent Id="Memory_data_in_mem_0_synth_1"/>
+		<Parent Id="Memory_xbar_0_synth_1"/>
+		<Parent Id="Memory_auto_pc_0_synth_1"/>
+		<Parent Id="Memory_start_mem_0_synth_1"/>
+		<Parent Id="Memory_processing_system7_0_0_synth_1"/>
+	</Run>
+</Runs>
+

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-| Date         : Wed Aug 09 12:25:23 2017
+| Date         : Fri Aug 11 12:15:29 2017
 | Host         : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 | Command      : report_utilization -file Compressor_utilization_synth.rpt -pb Compressor_utilization_synth.pb
 | Design       : Compressor
@@ -30,13 +30,13 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  474 |     0 |     17600 |  2.69 |
-|   LUT as Logic          |  474 |     0 |     17600 |  2.69 |
+| Slice LUTs*             |  680 |     0 |     17600 |  3.86 |
+|   LUT as Logic          |  680 |     0 |     17600 |  3.86 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
-| Slice Registers         |  366 |     0 |     35200 |  1.04 |
-|   Register as Flip Flop |  202 |     0 |     35200 |  0.57 |
-|   Register as Latch     |  164 |     0 |     35200 |  0.47 |
-| F7 Muxes                |    0 |     0 |      8800 |  0.00 |
+| Slice Registers         |  464 |     0 |     35200 |  1.32 |
+|   Register as Flip Flop |  270 |     0 |     35200 |  0.77 |
+|   Register as Latch     |  194 |     0 |     35200 |  0.55 |
+| F7 Muxes                |    8 |     0 |      8800 |  0.09 |
 | F8 Muxes                |    0 |     0 |      4400 |  0.00 |
 +-------------------------+------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -55,9 +55,9 @@ Table of Contents
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
-| 164   |          Yes |           - |        Reset |
+| 194   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 202   |          Yes |       Reset |            - |
+| 270   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    2 |     0 |       100 |  2.00 |
+| Bonded IOB                  |    3 |     0 |       100 |  3.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
@@ -146,52 +146,42 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT1     |  235 |                 LUT |
-| FDRE     |  202 |        Flop & Latch |
-| LDCE     |  164 |        Flop & Latch |
-| LUT2     |  129 |                 LUT |
-| CARRY4   |   88 |          CarryLogic |
-| LUT6     |   76 |                 LUT |
-| LUT3     |   50 |                 LUT |
-| LUT5     |   21 |                 LUT |
-| LUT4     |   19 |                 LUT |
+| FDRE     |  270 |        Flop & Latch |
+| LUT1     |  238 |                 LUT |
+| LDCE     |  194 |        Flop & Latch |
+| LUT2     |  177 |                 LUT |
+| LUT6     |  176 |                 LUT |
+| LUT3     |  106 |                 LUT |
+| CARRY4   |   98 |          CarryLogic |
+| LUT5     |   43 |                 LUT |
+| LUT4     |   38 |                 LUT |
+| MUXF7    |    8 |               MuxFx |
+| IBUF     |    3 |                  IO |
 | BUFG     |    3 |               Clock |
-| IBUF     |    2 |                  IO |
 +----------+------+---------------------+
 
 
 8. Black Boxes
 --------------
 
-+---------------------------------------------+------+
-|                   Ref Name                  | Used |
-+---------------------------------------------+------+
-| start_block_rst_ps7_0_50M_0                 |    1 |
-| start_block_processing_system7_0_0          |    1 |
-| start_block_blk_mem_gen_0_0                 |    1 |
-| start_block_axi_bram_ctrl_0_0               |    1 |
-| start_block_auto_pc_0                       |    1 |
-| nb_block_rst_ps7_0_50M_0                    |    1 |
-| nb_block_processing_system7_0_0             |    1 |
-| nb_block_blk_mem_gen_0_0                    |    1 |
-| nb_block_axi_bram_ctrl_0_0                  |    1 |
-| nb_block_auto_pc_0                          |    1 |
-| encoding_table_block_rst_ps7_0_50M_0        |    1 |
-| encoding_table_block_processing_system7_0_0 |    1 |
-| encoding_table_block_blk_mem_gen_0_0        |    1 |
-| encoding_table_block_axi_bram_ctrl_0_0      |    1 |
-| encoding_table_block_auto_pc_0              |    1 |
-| data_out_block_rst_ps7_0_50M_0              |    1 |
-| data_out_block_processing_system7_0_0       |    1 |
-| data_out_block_blk_mem_gen_0_0              |    1 |
-| data_out_block_axi_bram_ctrl_0_0            |    1 |
-| data_out_block_auto_pc_0                    |    1 |
-| data_in_block_rst_ps7_0_50M_0               |    1 |
-| data_in_block_processing_system7_0_0        |    1 |
-| data_in_block_blk_mem_gen_0_0               |    1 |
-| data_in_block_axi_bram_ctrl_0_0             |    1 |
-| data_in_block_auto_pc_0                     |    1 |
-+---------------------------------------------+------+
++-------------------------------+------+
+|            Ref Name           | Used |
++-------------------------------+------+
+| Memory_xbar_0                 |    1 |
+| Memory_start_mem_0            |    1 |
+| Memory_rst_ps7_0_50M_0        |    1 |
+| Memory_processing_system7_0_0 |    1 |
+| Memory_nb_mem_0               |    1 |
+| Memory_encoding_table_mem_0   |    1 |
+| Memory_data_out_mem_0         |    1 |
+| Memory_data_in_mem_0          |    1 |
+| Memory_axi_bram_ctrl_4_0      |    1 |
+| Memory_axi_bram_ctrl_3_0      |    1 |
+| Memory_axi_bram_ctrl_2_0      |    1 |
+| Memory_axi_bram_ctrl_1_0      |    1 |
+| Memory_axi_bram_ctrl_0_0      |    1 |
+| Memory_auto_pc_0              |    1 |
++-------------------------------+------+
 
 
 9. Instantiated Netlists

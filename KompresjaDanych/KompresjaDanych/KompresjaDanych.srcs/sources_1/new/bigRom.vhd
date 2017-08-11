@@ -82,9 +82,9 @@ begin
 		if(rising_edge(NB_BRAM_clk) and NB_BRAM_en = '1') then
 			
 			case NB_BRAM_addr is
-				when x"4200_0000" => NB_BRAM_dout <= "00000000000000000000000001001000";
-				when x"4200_0004" => NB_BRAM_dout <= "00000000000000000000000000010000";
-				when x"4200_0008" => NB_BRAM_dout <= "00000000000000000000000000101100";
+				when x"0000_0000" => NB_BRAM_dout <= "00000000000000000000000001001000";
+				when x"0000_0004" => NB_BRAM_dout <= "00000000000000000000000000010000";
+				when x"0000_0008" => NB_BRAM_dout <= "00000000000000000000000000101100";
 				when others => NB_BRAM_dout <= x"00000000"; 
 			end case;
 			
@@ -99,9 +99,9 @@ begin
 		if(rising_edge(START_BRAM_clk) and START_BRAM_en = '1') then
 		
 			case START_BRAM_addr is                      
-				when x"4000_0000" => START_BRAM_dout <= "11111111111111111111111111111101";
-				when x"4000_0004" => START_BRAM_dout <= "11111111111111111111111111111011";
-				when x"4000_0008" => START_BRAM_dout <= "00000000000000000000000000000110";
+				when x"0000_0000" => START_BRAM_dout <= "11111111111111111111111111111101";
+				when x"0000_0004" => START_BRAM_dout <= "11111111111111111111111111111011";
+				when x"0000_0008" => START_BRAM_dout <= "00000000000000000000000000000110";
 				when others => START_BRAM_dout <= x"00000000"; 
 			end case;
 		

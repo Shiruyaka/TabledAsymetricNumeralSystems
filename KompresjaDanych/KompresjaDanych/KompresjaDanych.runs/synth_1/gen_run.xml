@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502274119">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502446338">
   <File Type="RDS-PROPCONSTRS" Name="Compressor_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="Compressor.tcl"/>
   <File Type="RDS-RDS" Name="Compressor.vds"/>
@@ -64,36 +64,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/start_block/hdl/start_block_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/nb_block/hdl/nb_block_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/encoding_table_block/hdl/encoding_table_block_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/data_in_block/hdl/data_in_block_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/bd/data_out_block/hdl/data_out_block_wrapper.vhd">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/new/Compressor.vhd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -112,6 +82,31 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/Memory/Memory.bd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/bd/Memory/hdl/Memory_wrapper.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Compressor_tester.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bigRom.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="Compressor"/>
@@ -119,7 +114,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/ZYBO_master.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/ZYBO_master.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -127,18 +129,4 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="start_block_blk_mem_gen_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="data_out_block_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_block_axi_bram_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="encoding_table_block_axi_bram_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_block_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="encoding_table_block_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_memblock"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_block_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="start_block_rst_ps7_0_50M_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="data_out_block_axi_bram_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="data_in_block_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="data_in_block_axi_bram_ctrl_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="nb_block_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="nb_block_axi_bram_ctrl_0_0"/>
 </GenRun>

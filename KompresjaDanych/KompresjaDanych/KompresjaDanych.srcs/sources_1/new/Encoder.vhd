@@ -259,8 +259,8 @@ begin
          
         if(new_symbol = '1')then
         
-            state := x;
-            nb_bits_int := to_integer(unsigned(nbBits));
+            --state := x;
+            --nb_bits_int := to_integer(unsigned(nbBits));
             next_state <= ENCODING;
             
         elsif(go_to_emmpty = '1') then
@@ -277,19 +277,19 @@ begin
               
             case nb_bits_int is
                 when 1 =>
-                    encoded_symbol <= (6 downto 0 => '0') & state(0 downto 0);
+                    encoded_symbol <= (6 downto 0 => '0') & x(0 downto 0);
                 when 2 =>
-                    encoded_symbol <= (5 downto 0 => '0') & state(1 downto 0);
+                    encoded_symbol <= (5 downto 0 => '0') & x(1 downto 0);
                 when 3 =>
-                    encoded_symbol <= (4 downto 0 => '0') & state(2 downto 0);
+                    encoded_symbol <= (4 downto 0 => '0') & x(2 downto 0);
                 when 4 =>
-                    encoded_symbol <= (3 downto 0 => '0') & state(3 downto 0);
+                    encoded_symbol <= (3 downto 0 => '0') & x(3 downto 0);
                 when 5 =>
-                    encoded_symbol <= (2 downto 0 => '0') & state(4 downto 0);
+                    encoded_symbol <= (2 downto 0 => '0') & x(4 downto 0);
                 when 6 =>
-                    encoded_symbol <= (1 downto 0 => '0') & state(5 downto 0);
+                    encoded_symbol <= (1 downto 0 => '0') & x(5 downto 0);
                 when 7 =>
-                    encoded_symbol <= (0 downto 0 => '0') & state(6 downto 0);
+                    encoded_symbol <= (0 downto 0 => '0') & x(6 downto 0);
                 when others => encoded_symbol <= x"00";    
             end case;
             

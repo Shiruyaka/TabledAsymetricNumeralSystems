@@ -10,15 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6605000fs"></ZoomStartTime>
-      <ZoomEndTime time="114763900fs"></ZoomEndTime>
-      <Cursor1Time time="8584000fs"></Cursor1Time>
+      <ZoomStartTime time="8593200fs"></ZoomStartTime>
+      <ZoomEndTime time="403593201fs"></ZoomEndTime>
+      <Cursor1Time time="60000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="89"></ValueColumnWidth>
+      <ValueColumnWidth column_width="105"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="21" />
+   <WVObjectSize size="23" />
    <wvobject fp_name="/encoder_tb/comp/middle/gclk" type="logic">
       <obj_property name="ElementShortName">gclk</obj_property>
       <obj_property name="ObjectShortName">gclk</obj_property>
@@ -70,6 +70,14 @@
    <wvobject fp_name="/encoder_tb/comp/enc/current_state" type="other">
       <obj_property name="ElementShortName">current_state</obj_property>
       <obj_property name="ObjectShortName">current_state</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/nb_address" type="array">
+      <obj_property name="ElementShortName">nb_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">nb_address[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/encoder_tb/comp/middle/start_address" type="array">
+      <obj_property name="ElementShortName">start_address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">start_address[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/encoder_tb/comp/enc/stream" type="array">
       <obj_property name="ElementShortName">stream[15:0]</obj_property>

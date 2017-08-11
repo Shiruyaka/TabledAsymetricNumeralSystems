@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
---Date        : Wed Aug 09 21:37:59 2017
---Host        : DESKTOP-5KNUINE running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
+--Date        : Fri Aug 11 11:15:13 2017
+--Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target Memory_wrapper.bd
 --Design      : Memory_wrapper
 --Purpose     : IP block netlist

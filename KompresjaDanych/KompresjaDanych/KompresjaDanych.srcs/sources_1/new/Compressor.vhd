@@ -13,7 +13,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Compressor is
 Port ( 
-            gclk : in STD_LOGIC;
+            clk : in STD_LOGIC;
             init : in STD_LOGIC;
             start : in STD_LOGIC;        
             
@@ -172,36 +172,37 @@ component Memory_wrapper is
 end component;
 
     signal
-        Start_Encoder, Data_Produced, New_Symbol, Roms_Enable, New_Data, Bram_Reset,
-        EncodingRam_Enable, Start_Driver, Init_Middleware, Init_Encoder, Start_Nb_Enable, Data_In_Enable, Out_Enable: STD_LOGIC := '0';
-        
-    signal
-        Data_In, Data_out, State_For_Encoder : STD_LOGIC_VECTOR(15 downto 0);
+    Start_Encoder, Data_Produced, New_Symbol, Roms_Enable, New_Data, Bram_Reset,
+    EncodingRam_Enable, Start_Driver, Init_Middleware, Init_Encoder, Start_Nb_Enable, 
+    Data_In_Enable, Out_Enable, State_Enable: STD_LOGIC := '0';
     
-    signal
-        Amount_Bytes, Start_Nb_Address, State_Address, Symbol, Data_In_Address, 
-        Data_Out_Address, Start_Address, Nb_Address, Nb_From_Ram,
-        Start_In, Nb_In, Encoding_In, Start_From_Ram, State_From_Ram,
-        Data_Out_To_Save  : STD_LOGIC_VECTOR(31 downto 0);
+signal
+    Data_In, Data_out, State_For_Encoder : STD_LOGIC_VECTOR(15 downto 0) := x"0000";
+
+signal
+    Amount_Bytes, Start_Nb_Address, State_Address, Symbol, Data_In_Address, 
+    Data_Out_Address, Start_Address, Nb_Address, Nb_From_Ram,
+    Start_In, Nb_In, Encoding_In, Start_From_Ram, State_From_Ram,
+    Data_Out_To_Save  : STD_LOGIC_VECTOR(31 downto 0 ) := x"00000000";
+
+signal
+    NbBits : STD_LOGIC_VECTOR(7 downto 0) := x"00";
     
-    signal
-        NbBits : STD_LOGIC_VECTOR(7 downto 0);
-        
-    signal
-        Write_Enable : STD_LOGIC_VECTOR(3 downto 0);
-        
-    type 
-        state_type is (IDLE, GO_DRIVER, WAITING);
+signal
+    Write_Enable : STD_LOGIC_VECTOR(3 downto 0);
     
-    signal 
-        current_state, next_state : state_type;
+type 
+    state_type is (IDLE, GO_DRIVER, WAITING);
+
+signal 
+    current_state, next_state : state_type;
 
 begin
 
 
 enc: Encoder
  Port map(
-        clk => gclk,
+        clk => clk,
         init => Init_Encoder,
         start => Start_Encoder,
         
@@ -215,43 +216,43 @@ enc: Encoder
 
 middle: Driver
  Port map(
-        gclk => gclk,
-        start => Start_Driver,
-        init => Init_Middleware,
-        init_encoder => Init_Encoder,
-        
-        start_nb_enable => Start_Nb_Enable,
-        amount_bytes => Amount_Bytes,
-        data_in_enable => Data_In_Enable,
-        start_encoder => Start_Encoder,
-        start_address => Start_Address,
-        nb_address => Nb_Address,
-        nb_from_ram => Nb_From_Ram,
-        state_address => State_Address,
-        start_from_ram => Start_From_Ram,
-        state_from_ram => State_From_Ram,
-        
-        new_data => New_Data,      
-        data_in => Symbol,
-        data_in_address => Data_In_Address,
-        
-        data_produced => Data_Produced,
-        data_out_from_encoder => Data_Out,
-        data_out_to_save => Data_Out_To_Save,
-        data_out_address => Data_Out_Address,
-        
-        state_for_encoder => State_For_Encoder,
-        nbBits_for_encoder => NbBits,
-        reset_ram => Bram_Reset,
-        out_enable => Out_Enable,
-        write_enable => Write_Enable
+     gclk => clk,
+     start => Start_Driver,
+     init => Init_Middleware,
+     init_encoder => Init_Encoder,
+     
+     start_nb_enable => Start_Nb_Enable,
+     amount_bytes => Amount_Bytes,
+     data_in_enable => Data_In_Enable,
+     start_encoder => Start_Encoder,
+     start_address => Start_Address,
+     nb_address => Nb_Address,
+     nb_from_ram => Nb_From_Ram,
+     state_address => State_Address,
+     start_from_ram => Start_From_Ram,
+     state_from_ram => State_From_Ram,
+     state_enable => State_Enable,
+     new_data => New_Data,      
+     data_in => Symbol,
+     data_in_address => Data_In_Address,
+     
+     data_produced => Data_Produced,
+     data_out_from_encoder => Data_Out,
+     data_out_to_save => Data_Out_To_Save,
+     data_out_address => Data_Out_Address,
+     
+     state_for_encoder => State_For_Encoder,
+     nbBits_for_encoder => NbBits,
+     reset_ram => Bram_Reset,
+     out_enable => Out_Enable,
+     write_enable => Write_Enable
     );
 
 memory: Memory_wrapper
 Port map(  
 
     DATA_IN_BRAM_addr => Data_In_Address,
-    DATA_IN_BRAM_clk => gclk,
+    DATA_IN_BRAM_clk => clk,
     DATA_IN_BRAM_din => x"00000000",
     DATA_IN_BRAM_dout => Symbol,
     DATA_IN_BRAM_en => Data_In_Enable,
@@ -259,7 +260,7 @@ Port map(
     DATA_IN_BRAM_we => x"0",
     
     DATA_OUT_BRAM_addr => Data_Out_Address,
-    DATA_OUT_BRAM_clk => gclk,
+    DATA_OUT_BRAM_clk => clk,
     DATA_OUT_BRAM_din  => Data_Out_To_Save,
     --DATA_OUT_BRAM_dout : out STD_LOGIC_VECTOR ( 31 downto 0 );
     DATA_OUT_BRAM_en  => Out_Enable,
@@ -267,7 +268,7 @@ Port map(
     DATA_OUT_BRAM_we => Write_Enable,
  
     NB_BRAM_addr => Nb_Address,
-    NB_BRAM_clk => gclk,
+    NB_BRAM_clk => clk,
     NB_BRAM_din => Nb_In,
     NB_BRAM_dout => Nb_From_Ram,
     NB_BRAM_en => Start_Nb_Enable,
@@ -275,7 +276,7 @@ Port map(
     NB_BRAM_we => x"0",
       
     START_BRAM_addr  => Start_Address,
-    START_BRAM_clk  => gclk,
+    START_BRAM_clk  => clk,
     START_BRAM_din => Start_In,
     START_BRAM_dout => Start_From_Ram,
     START_BRAM_en=> Start_Nb_Enable,
@@ -283,10 +284,10 @@ Port map(
     START_BRAM_we => x"0",
 
     ENCODING_TABLE_BRAM_addr => State_Address,
-    ENCODING_TABLE_BRAM_clk => gclk,
+    ENCODING_TABLE_BRAM_clk => clk,
     ENCODING_TABLE_BRAM_din => Encoding_In,
     ENCODING_TABLE_BRAM_dout => State_From_Ram,
-    ENCODING_TABLE_BRAM_en => EncodingRam_Enable,
+    ENCODING_TABLE_BRAM_en => State_Enable,
     ENCODING_TABLE_BRAM_rst => Bram_Reset,
     ENCODING_TABLE_BRAM_we => x"0",
 
@@ -316,43 +317,43 @@ Port map(
 
 
 
-state_machine: process(gclk)
-    begin
-     if(rising_edge(gclk)) then
-        if(init = '1')then
-            current_state <= IDLE;
-        else
-            current_state <= next_state;
+state_machine: process(clk)
+      begin
+       if(rising_edge(clk)) then
+          if(init = '1')then
+              current_state <= IDLE;
+          else
+              current_state <= next_state;
+          end if;
         end if;
-      end if;
-    end process;
-
-main_process: process(gclk, current_state, start)
-begin
-    next_state <= current_state;
-    
-    case current_state is
-        when IDLE =>
-        
-            Init_Middleware <= '1';
-            
-            if(start = '1')then
-               next_state <= GO_DRIVER;
-            end if;
-        
-        when GO_DRIVER =>
-            
-            Init_Middleware <= '0';
-            Start_Driver <= '1';
-            next_state <= WAITING;
-            
-       when WAITING =>
-            
-            Start_Driver <= '1';
-            next_state <= WAITING;
-            
-    end case;
-    
-end process; 
-
-end compress;
+      end process;
+  
+  main_process: process(clk, current_state, start)
+  begin
+      next_state <= current_state;
+      
+      case current_state is
+         when IDLE =>
+       
+           Init_Middleware <= '1';
+           
+           if(start = '1')then
+              next_state <= GO_DRIVER;
+           end if;
+         
+          when GO_DRIVER =>
+              
+              Init_Middleware <= '0';
+              Start_Driver <= '1';
+              next_state <= WAITING;
+              
+         when WAITING =>
+              
+              Start_Driver <= '0';
+              next_state <= WAITING;
+              
+      end case;
+      
+  end process; 
+  
+  end compress;

@@ -1,8 +1,8 @@
 --Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2016.4 (win64) Build 1756540 Mon Jan 23 19:11:23 MST 2017
---Date        : Wed Aug 09 21:37:58 2017
---Host        : DESKTOP-5KNUINE running 64-bit major release  (build 9200)
+--Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
+--Date        : Fri Aug 11 11:15:12 2017
+--Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target Memory.bd
 --Design      : Memory
 --Purpose     : IP block netlist
@@ -3123,6 +3123,20 @@ entity Memory is
 end Memory;
 
 architecture STRUCTURE of Memory is
+  component Memory_rst_ps7_0_50M_0 is
+  port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component Memory_rst_ps7_0_50M_0;
   component Memory_axi_bram_ctrl_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -3501,20 +3515,6 @@ architecture STRUCTURE of Memory is
     PS_PORB : inout STD_LOGIC
   );
   end component Memory_processing_system7_0_0;
-  component Memory_rst_ps7_0_50M_0 is
-  port (
-    slowest_sync_clk : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    dcm_locked : in STD_LOGIC;
-    mb_reset : out STD_LOGIC;
-    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component Memory_rst_ps7_0_50M_0;
   component Memory_start_mem_0 is
   port (
     clka : in STD_LOGIC;
