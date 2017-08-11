@@ -27,7 +27,6 @@ signal current_state, next_state : state_type;
 
 signal do_it, go_to_emmpty: std_logic;
 signal buffor: std_logic_vector(0 to 31):= x"00000000";
-signal state_to_encode : std_logic_vector(15 downto 0);
 signal encoded_symbol, end_state: std_logic_vector(0 to 7) := x"00";
 signal action: std_logic_vector(0 to 2) := "000";
 signal buffor_fill, bits, disjointed_bytes: integer := 0;
@@ -238,6 +237,7 @@ begin
     
     encode: process(current_state, start, new_symbol)   
         variable nb_bits_int : integer;
+        variable state: STD_LOGIC_VECTOR(15 downto 0):= x"0000";
     begin
         next_state <= current_state;
         
@@ -259,8 +259,8 @@ begin
          
         if(new_symbol = '1')then
         
+            state := x;
             nb_bits_int := to_integer(unsigned(nbBits));
-            state_to_encode <= x;
             next_state <= ENCODING;
             
         elsif(go_to_emmpty = '1') then
@@ -271,23 +271,25 @@ begin
 
         when ENCODING =>
             
+            nb_bits_int := to_integer(unsigned(nbBits));
+            
             bits <= nb_bits_int; 
               
             case nb_bits_int is
                 when 1 =>
-                    encoded_symbol <= (6 downto 0 => '0') & x(0 downto 0);
+                    encoded_symbol <= (6 downto 0 => '0') & state(0 downto 0);
                 when 2 =>
-                    encoded_symbol <= (5 downto 0 => '0') & x(1 downto 0);
+                    encoded_symbol <= (5 downto 0 => '0') & state(1 downto 0);
                 when 3 =>
-                    encoded_symbol <= (4 downto 0 => '0') & x(2 downto 0);
+                    encoded_symbol <= (4 downto 0 => '0') & state(2 downto 0);
                 when 4 =>
-                    encoded_symbol <= (3 downto 0 => '0') & x(3 downto 0);
+                    encoded_symbol <= (3 downto 0 => '0') & state(3 downto 0);
                 when 5 =>
-                    encoded_symbol <= (2 downto 0 => '0') & x(4 downto 0);
+                    encoded_symbol <= (2 downto 0 => '0') & state(4 downto 0);
                 when 6 =>
-                    encoded_symbol <= (1 downto 0 => '0') & x(5 downto 0);
+                    encoded_symbol <= (1 downto 0 => '0') & state(5 downto 0);
                 when 7 =>
-                    encoded_symbol <= (0 downto 0 => '0') & x(6 downto 0);
+                    encoded_symbol <= (0 downto 0 => '0') & state(6 downto 0);
                 when others => encoded_symbol <= x"00";    
             end case;
             

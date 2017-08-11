@@ -1,28 +1,28 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Serializator.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity serializator
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbRom.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity nbRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/startRom.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity startRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Decoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Decoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Decoder
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbBitsRomDecoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/nbBitsRomDecoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity nbBitsRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/newXRomDecoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/newXRomDecoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity newXRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/symbolRomDecoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/symbolRomDecoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity symbolRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/encodingTableRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/encodingTableRom.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity encodingTableRom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Compressor.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Compressor.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Compressor
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Driver.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Driver.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Driver
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Encoder.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Encoder
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/bd/Memory/ip/Memory_rst_ps7_0_50M_0/sim/Memory_rst_ps7_0_50M_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/bd/Memory/ip/Memory_rst_ps7_0_50M_0/sim/Memory_rst_ps7_0_50M_0.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Memory_rst_ps7_0_50M_0
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/bd/Memory/hdl/Memory.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.ip_user_files/bd/Memory/hdl/Memory.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity m00_couplers_imp_1LI2P7K
 INFO: [VRFC 10-307] analyzing entity m01_couplers_imp_R08GXD
 INFO: [VRFC 10-307] analyzing entity m02_couplers_imp_K5CKEB
@@ -31,19 +31,19 @@ INFO: [VRFC 10-307] analyzing entity m04_couplers_imp_7I6OBR
 INFO: [VRFC 10-307] analyzing entity s00_couplers_imp_1X07ICX
 INFO: [VRFC 10-307] analyzing entity Memory_axi_mem_intercon_0
 INFO: [VRFC 10-307] analyzing entity Memory
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/hdl/Memory_wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/hdl/Memory_wrapper.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Memory_wrapper
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Compressor_tester.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/Compressor_tester.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Compressor_tester
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/bigRom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/new/bigRom.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Big_Rom
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/reading_and_writing_to_file.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/reading_and_writing_to_file.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity reading_and_writing_to_file
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Buffor_Test.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Buffor_Test
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Encoder_Test.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Encoder_Test
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Decoder_Test.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/Decoder_Test.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Decoder_Test
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/encoder_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/tomas/OneDrive/Dokumenty/GitHub/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sim_1/new/encoder_tb.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity encoder_tb
