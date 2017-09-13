@@ -1,11 +1,11 @@
-// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-// Date        : Wed Aug 09 10:52:32 2017
+// Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+// Date        : Tue Aug 22 18:33:08 2017
 // Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
-// Command     : write_verilog -force -mode synth_stub -rename_top Memory_axi_bram_ctrl_1_0 -prefix
-//               Memory_axi_bram_ctrl_1_0_ data_out_block_axi_bram_ctrl_0_0_stub.v
-// Design      : data_out_block_axi_bram_ctrl_0_0
+// Command     : write_verilog -force -mode synth_stub
+//               D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_1_0/Memory_axi_bram_ctrl_1_0_stub.v
+// Design      : Memory_axi_bram_ctrl_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z010clg400-1
 // --------------------------------------------------------------------------------
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* x_core_info = "axi_bram_ctrl,Vivado 2016.3" *)
+(* x_core_info = "axi_bram_ctrl,Vivado 2017.2" *)
 module Memory_axi_bram_ctrl_1_0(s_axi_aclk, s_axi_aresetn, s_axi_awid, 
   s_axi_awaddr, s_axi_awlen, s_axi_awsize, s_axi_awburst, s_axi_awlock, s_axi_awcache, 
   s_axi_awprot, s_axi_awvalid, s_axi_awready, s_axi_wdata, s_axi_wstrb, s_axi_wlast, 

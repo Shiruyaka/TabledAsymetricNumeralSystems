@@ -1,11 +1,11 @@
--- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Wed Aug 09 10:53:00 2017
+-- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+-- Date        : Tue Aug 22 18:36:08 2017
 -- Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
--- Command     : write_vhdl -force -mode funcsim -rename_top Memory_auto_pc_0 -prefix
---               Memory_auto_pc_0_ encoding_table_block_auto_pc_0_sim_netlist.vhdl
--- Design      : encoding_table_block_auto_pc_0
+-- Command     : write_vhdl -force -mode funcsim
+--               d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_auto_pc_0/Memory_auto_pc_0_sim_netlist.vhdl
+-- Design      : Memory_auto_pc_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
 -- Device      : xc7z010clg400-1
@@ -14,7 +14,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
-entity Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter is
+entity Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -110,60 +110,62 @@ entity Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter is
     m_axi_rready : out STD_LOGIC
   );
   attribute C_AXI_ADDR_WIDTH : integer;
-  attribute C_AXI_ADDR_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 32;
+  attribute C_AXI_ADDR_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 32;
   attribute C_AXI_ARUSER_WIDTH : integer;
-  attribute C_AXI_ARUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_ARUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_AWUSER_WIDTH : integer;
-  attribute C_AXI_AWUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_AWUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_BUSER_WIDTH : integer;
-  attribute C_AXI_BUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_BUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_DATA_WIDTH : integer;
-  attribute C_AXI_DATA_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 32;
+  attribute C_AXI_DATA_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 32;
   attribute C_AXI_ID_WIDTH : integer;
-  attribute C_AXI_ID_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 12;
+  attribute C_AXI_ID_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 12;
   attribute C_AXI_RUSER_WIDTH : integer;
-  attribute C_AXI_RUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_RUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_SUPPORTS_READ : integer;
-  attribute C_AXI_SUPPORTS_READ of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_SUPPORTS_READ of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_SUPPORTS_USER_SIGNALS : integer;
-  attribute C_AXI_SUPPORTS_USER_SIGNALS of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 0;
+  attribute C_AXI_SUPPORTS_USER_SIGNALS of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 0;
   attribute C_AXI_SUPPORTS_WRITE : integer;
-  attribute C_AXI_SUPPORTS_WRITE of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_SUPPORTS_WRITE of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_AXI_WUSER_WIDTH : integer;
-  attribute C_AXI_WUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_AXI_WUSER_WIDTH of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_FAMILY : string;
-  attribute C_FAMILY of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "zynq";
+  attribute C_FAMILY of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "zynq";
   attribute C_IGNORE_ID : integer;
-  attribute C_IGNORE_ID of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 0;
+  attribute C_IGNORE_ID of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 0;
   attribute C_M_AXI_PROTOCOL : integer;
-  attribute C_M_AXI_PROTOCOL of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 0;
+  attribute C_M_AXI_PROTOCOL of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 0;
   attribute C_S_AXI_PROTOCOL : integer;
-  attribute C_S_AXI_PROTOCOL of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute C_S_AXI_PROTOCOL of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute C_TRANSLATION_MODE : integer;
-  attribute C_TRANSLATION_MODE of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 2;
+  attribute C_TRANSLATION_MODE of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 2;
   attribute DowngradeIPIdentifiedWarnings : string;
-  attribute DowngradeIPIdentifiedWarnings of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "yes";
+  attribute DowngradeIPIdentifiedWarnings of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "axi_protocol_converter_v2_1_13_axi_protocol_converter";
   attribute P_AXI3 : integer;
-  attribute P_AXI3 of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute P_AXI3 of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute P_AXI4 : integer;
-  attribute P_AXI4 of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 0;
+  attribute P_AXI4 of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 0;
   attribute P_AXILITE : integer;
-  attribute P_AXILITE of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 2;
+  attribute P_AXILITE of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 2;
   attribute P_AXILITE_SIZE : string;
-  attribute P_AXILITE_SIZE of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "3'b010";
+  attribute P_AXILITE_SIZE of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "3'b010";
   attribute P_CONVERSION : integer;
-  attribute P_CONVERSION of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 2;
+  attribute P_CONVERSION of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 2;
   attribute P_DECERR : string;
-  attribute P_DECERR of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "2'b11";
+  attribute P_DECERR of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "2'b11";
   attribute P_INCR : string;
-  attribute P_INCR of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "2'b01";
+  attribute P_INCR of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "2'b01";
   attribute P_PROTECTION : integer;
-  attribute P_PROTECTION of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is 1;
+  attribute P_PROTECTION of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is 1;
   attribute P_SLVERR : string;
-  attribute P_SLVERR of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter : entity is "2'b10";
-end Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter;
+  attribute P_SLVERR of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter : entity is "2'b10";
+end Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter;
 
-architecture STRUCTURE of Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter is
+architecture STRUCTURE of Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter is
   signal \<const0>\ : STD_LOGIC;
   signal \^m_axi_arready\ : STD_LOGIC;
   signal \^m_axi_awready\ : STD_LOGIC;
@@ -414,11 +416,11 @@ entity Memory_auto_pc_0 is
   attribute NotValidForBitStream : boolean;
   attribute NotValidForBitStream of Memory_auto_pc_0 : entity is true;
   attribute CHECK_LICENSE_TYPE : string;
-  attribute CHECK_LICENSE_TYPE of Memory_auto_pc_0 : entity is "encoding_table_block_auto_pc_0,axi_protocol_converter_v2_1_10_axi_protocol_converter,{}";
+  attribute CHECK_LICENSE_TYPE of Memory_auto_pc_0 : entity is "Memory_auto_pc_0,axi_protocol_converter_v2_1_13_axi_protocol_converter,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of Memory_auto_pc_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of Memory_auto_pc_0 : entity is "axi_protocol_converter_v2_1_10_axi_protocol_converter,Vivado 2016.3";
+  attribute X_CORE_INFO of Memory_auto_pc_0 : entity is "axi_protocol_converter_v2_1_13_axi_protocol_converter,Vivado 2017.2";
 end Memory_auto_pc_0;
 
 architecture STRUCTURE of Memory_auto_pc_0 is
@@ -480,7 +482,7 @@ architecture STRUCTURE of Memory_auto_pc_0 is
   attribute P_SLVERR : string;
   attribute P_SLVERR of inst : label is "2'b10";
 begin
-inst: entity work.Memory_auto_pc_0_axi_protocol_converter_v2_1_10_axi_protocol_converter
+inst: entity work.Memory_auto_pc_0_axi_protocol_converter_v2_1_13_axi_protocol_converter
      port map (
       aclk => aclk,
       aresetn => aresetn,

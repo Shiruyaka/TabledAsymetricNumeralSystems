@@ -1,18 +1,18 @@
-// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
-// Date        : Sun Aug 06 19:23:19 2017
+// Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+// Date        : Tue Aug 22 18:32:39 2017
 // Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 // Command     : write_verilog -force -mode funcsim -rename_top Memory_start_mem_0 -prefix
-//               Memory_start_mem_0_ start_block_blk_mem_gen_0_0_sim_netlist.v
-// Design      : start_block_blk_mem_gen_0_0
+//               Memory_start_mem_0_ Memory_start_mem_0_sim_netlist.v
+// Design      : Memory_start_mem_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
 // Device      : xc7z010clg400-1
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "start_block_blk_mem_gen_0_0,blk_mem_gen_v8_3_4,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_3_4,Vivado 2016.3" *) 
+(* CHECK_LICENSE_TYPE = "Memory_start_mem_0,blk_mem_gen_v8_3_6,{}" *) (* downgradeipidentifiedwarnings = "yes" *) (* x_core_info = "blk_mem_gen_v8_3_6,Vivado 2017.2" *) 
 (* NotValidForBitStream *)
 module Memory_start_mem_0
    (clka,
@@ -152,7 +152,7 @@ module Memory_start_mem_0
   (* C_WRITE_WIDTH_B = "32" *) 
   (* C_XDEVICEFAMILY = "zynq" *) 
   (* downgradeipidentifiedwarnings = "yes" *) 
-  Memory_start_mem_0_blk_mem_gen_v8_3_4 U0
+  Memory_start_mem_0_blk_mem_gen_v8_3_6 U0
        (.addra(addra),
         .addrb(addrb),
         .clka(clka),
@@ -479,7 +479,6 @@ module Memory_start_mem_0_blk_mem_gen_prim_wrapper
   wire [7:0]\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_ECCPARITY_UNCONNECTED ;
   wire [8:0]\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_RDADDRECC_UNCONNECTED ;
 
-  (* CLOCK_DOMAINS = "INDEPENDENT" *) 
   (* bmm_info_memory_device = "[15:0][0:2047]" *) 
   (* box_type = "PRIMITIVE" *) 
   RAMB36E1 #(
@@ -753,7 +752,6 @@ module Memory_start_mem_0_blk_mem_gen_prim_wrapper__parameterized0
   wire [7:0]\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_ECCPARITY_UNCONNECTED ;
   wire [8:0]\NLW_DEVICE_7SERIES.WITH_BMM_INFO.TRUE_DP.SIMPLE_PRIM36.TDP_SP36_NO_ECC_ATTR.ram_RDADDRECC_UNCONNECTED ;
 
-  (* CLOCK_DOMAINS = "INDEPENDENT" *) 
   (* bmm_info_memory_device = "[31:16][0:2047]" *) 
   (* box_type = "PRIMITIVE" *) 
   RAMB36E1 #(
@@ -1054,7 +1052,7 @@ endmodule
 (* C_WRITE_DEPTH_A = "2048" *) (* C_WRITE_DEPTH_B = "2048" *) (* C_WRITE_MODE_A = "WRITE_FIRST" *) 
 (* C_WRITE_MODE_B = "WRITE_FIRST" *) (* C_WRITE_WIDTH_A = "32" *) (* C_WRITE_WIDTH_B = "32" *) 
 (* C_XDEVICEFAMILY = "zynq" *) (* downgradeipidentifiedwarnings = "yes" *) 
-module Memory_start_mem_0_blk_mem_gen_v8_3_4
+module Memory_start_mem_0_blk_mem_gen_v8_3_6
    (clka,
     rsta,
     ena,
@@ -1320,7 +1318,7 @@ module Memory_start_mem_0_blk_mem_gen_v8_3_4
   assign sbiterr = \<const0> ;
   GND GND
        (.G(\<const0> ));
-  Memory_start_mem_0_blk_mem_gen_v8_3_4_synth inst_blk_mem_gen
+  Memory_start_mem_0_blk_mem_gen_v8_3_6_synth inst_blk_mem_gen
        (.addra(addra[12:2]),
         .addrb(addrb[12:2]),
         .clka(clka),
@@ -1337,7 +1335,7 @@ module Memory_start_mem_0_blk_mem_gen_v8_3_4
         .web(web));
 endmodule
 
-module Memory_start_mem_0_blk_mem_gen_v8_3_4_synth
+module Memory_start_mem_0_blk_mem_gen_v8_3_6_synth
    (douta,
     doutb,
     clka,
@@ -1448,8 +1446,8 @@ module glbl ();
     reg JTAG_USER_TDO3_GLBL = 1'bz;
     reg JTAG_USER_TDO4_GLBL = 1'bz;
 
-    assign (weak1, weak0) GSR = GSR_int;
-    assign (weak1, weak0) GTS = GTS_int;
+    assign (strong1, weak0) GSR = GSR_int;
+    assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
 
     initial begin

@@ -42,13 +42,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
   set_property webtalk.parent_dir D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.cache/wt [current_project]
@@ -57,45 +56,16 @@ set rc [catch {
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/synth_1/Compressor.dcp
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_0_0/Memory_axi_bram_ctrl_0_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_0_0/Memory_axi_bram_ctrl_0_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_1_0/Memory_axi_bram_ctrl_1_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_1_0/Memory_axi_bram_ctrl_1_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_2_0/Memory_axi_bram_ctrl_2_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_2_0/Memory_axi_bram_ctrl_2_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_3_0/Memory_axi_bram_ctrl_3_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_3_0/Memory_axi_bram_ctrl_3_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_4_0/Memory_axi_bram_ctrl_4_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_4_0/Memory_axi_bram_ctrl_4_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_in_mem_0/Memory_data_in_mem_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_in_mem_0/Memory_data_in_mem_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_out_mem_0/Memory_data_out_mem_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_out_mem_0/Memory_data_out_mem_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_encoding_table_mem_0/Memory_encoding_table_mem_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_encoding_table_mem_0/Memory_encoding_table_mem_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_nb_mem_0/Memory_nb_mem_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_nb_mem_0/Memory_nb_mem_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_start_mem_0/Memory_start_mem_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_start_mem_0/Memory_start_mem_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_xbar_0/Memory_xbar_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_xbar_0/Memory_xbar_0.dcp]
-  add_files -quiet d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_auto_pc_0/Memory_auto_pc_0.dcp
-  set_property netlist_only true [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_auto_pc_0/Memory_auto_pc_0.dcp]
-  add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/Memory.bmm
-  set_property SCOPED_TO_REF Memory [get_files -all D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/Memory.bmm]
-  read_xdc -ref Memory_processing_system7_0_0 -cells inst d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.xdc
-  set_property processing_order EARLY [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.xdc]
-  read_xdc -prop_thru_buffers -ref Memory_rst_ps7_0_50M_0 -cells U0 d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0_board.xdc
-  set_property processing_order EARLY [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0_board.xdc]
-  read_xdc -ref Memory_rst_ps7_0_50M_0 -cells U0 d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.xdc
-  set_property processing_order EARLY [get_files d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.xdc]
+  set_msg_config -source 4 -id {BD 41-1661} -suppress
+  set_param project.isImplRun true
+  add_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/Memory.bd
+  set_property is_locked true [get_files D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/Memory.bd]
+  set_param project.isImplRun false
   read_xdc D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc
+  set_param project.isImplRun true
   link_design -top Compressor -part xc7z010clg400-1
-  write_hwdef -file Compressor.hwdef
+  set_param project.isImplRun false
+  write_hwdef -force -file Compressor.hwdef
   close_msg_db -file init_design.pb
 } RESULT]
 if {$rc} {
@@ -112,7 +82,7 @@ set rc [catch {
   create_msg_db opt_design.pb
   opt_design 
   write_checkpoint -force Compressor_opt.dcp
-  report_drc -file Compressor_drc_opted.rpt
+  catch { report_drc -file Compressor_drc_opted.rpt }
   close_msg_db -file opt_design.pb
 } RESULT]
 if {$rc} {
@@ -130,9 +100,9 @@ set rc [catch {
   implement_debug_core 
   place_design 
   write_checkpoint -force Compressor_placed.dcp
-  report_io -file Compressor_io_placed.rpt
-  report_utilization -file Compressor_utilization_placed.rpt -pb Compressor_utilization_placed.pb
-  report_control_sets -verbose -file Compressor_control_sets_placed.rpt
+  catch { report_io -file Compressor_io_placed.rpt }
+  catch { report_utilization -file Compressor_utilization_placed.rpt -pb Compressor_utilization_placed.pb }
+  catch { report_control_sets -verbose -file Compressor_control_sets_placed.rpt }
   close_msg_db -file place_design.pb
 } RESULT]
 if {$rc} {
@@ -149,12 +119,12 @@ set rc [catch {
   create_msg_db route_design.pb
   route_design 
   write_checkpoint -force Compressor_routed.dcp
-  report_drc -file Compressor_drc_routed.rpt -pb Compressor_drc_routed.pb -rpx Compressor_drc_routed.rpx
-  report_methodology -file Compressor_methodology_drc_routed.rpt -rpx Compressor_methodology_drc_routed.rpx
-  report_timing_summary -warn_on_violation -max_paths 10 -file Compressor_timing_summary_routed.rpt -rpx Compressor_timing_summary_routed.rpx
-  report_power -file Compressor_power_routed.rpt -pb Compressor_power_summary_routed.pb -rpx Compressor_power_routed.rpx
-  report_route_status -file Compressor_route_status.rpt -pb Compressor_route_status.pb
-  report_clock_utilization -file Compressor_clock_utilization_routed.rpt
+  catch { report_drc -file Compressor_drc_routed.rpt -pb Compressor_drc_routed.pb -rpx Compressor_drc_routed.rpx }
+  catch { report_methodology -file Compressor_methodology_drc_routed.rpt -rpx Compressor_methodology_drc_routed.rpx }
+  catch { report_power -file Compressor_power_routed.rpt -pb Compressor_power_summary_routed.pb -rpx Compressor_power_routed.rpx }
+  catch { report_route_status -file Compressor_route_status.rpt -pb Compressor_route_status.pb }
+  catch { report_clock_utilization -file Compressor_clock_utilization_routed.rpt }
+  catch { report_timing_summary -warn_on_violation -max_paths 10 -file Compressor_timing_summary_routed.rpt -rpx Compressor_timing_summary_routed.rpx }
   close_msg_db -file route_design.pb
 } RESULT]
 if {$rc} {

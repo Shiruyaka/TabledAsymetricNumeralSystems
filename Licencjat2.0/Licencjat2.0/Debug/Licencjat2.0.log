@@ -1,7 +1,7 @@
 ﻿  Main.cpp
-c:\users\tomas\onedrive\dokumenty\github\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\tomas\onedrive\dokumenty\github\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(126): warning C4101: 'sym': unreferenced local variable
-c:\users\tomas\onedrive\dokumenty\github\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(194): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\tomas\onedrive\dokumenty\github\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(237): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Licencjat2.0.vcxproj -> C:\Users\tomas\OneDrive\Dokumenty\GitHub\TabledAsymetricNumeralSystems\Licencjat2.0\Debug\Licencjat2.0.exe
-  Licencjat2.0.vcxproj -> C:\Users\tomas\OneDrive\Dokumenty\GitHub\TabledAsymetricNumeralSystems\Licencjat2.0\Debug\Licencjat2.0.pdb (Partial PDB)
+d:\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(126): warning C4101: 'sym': unreferenced local variable
+d:\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(205): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+d:\tabledasymetricnumeralsystems\licencjat2.0\licencjat2.0\main.cpp(253): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Licencjat2.0.vcxproj -> D:\TabledAsymetricNumeralSystems\Licencjat2.0\Debug\Licencjat2.0.exe
+  Licencjat2.0.vcxproj -> D:\TabledAsymetricNumeralSystems\Licencjat2.0\Debug\Licencjat2.0.pdb (Partial PDB)

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Aug 22 18:32:49 2017
+# Process ID: 16108
+# Current directory: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_start_mem_0_synth_1
+# Command line: vivado.exe -log Memory_start_mem_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Memory_start_mem_0.tcl
+# Log file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_start_mem_0_synth_1/Memory_start_mem_0.vds
+# Journal file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/Memory_start_mem_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source Memory_start_mem_0.tcl -notrace

@@ -1,7 +1,7 @@
--- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Fri Aug 11 10:26:46 2017
+-- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+-- Date        : Tue Aug 22 18:32:03 2017
 -- Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 -- Command     : write_vhdl -force -mode funcsim -rename_top Memory_processing_system7_0_0 -prefix
 --               Memory_processing_system7_0_0_ Memory_processing_system7_0_0_sim_netlist.vhdl
@@ -3394,7 +3394,7 @@ entity Memory_processing_system7_0_0 is
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of Memory_processing_system7_0_0 : entity is "yes";
   attribute X_CORE_INFO : string;
-  attribute X_CORE_INFO of Memory_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2016.3";
+  attribute X_CORE_INFO of Memory_processing_system7_0_0 : entity is "processing_system7_v5_5_processing_system7,Vivado 2017.2";
 end Memory_processing_system7_0_0;
 
 architecture STRUCTURE of Memory_processing_system7_0_0 is

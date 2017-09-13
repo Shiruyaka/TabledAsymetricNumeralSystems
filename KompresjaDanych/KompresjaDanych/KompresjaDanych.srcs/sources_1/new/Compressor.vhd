@@ -65,7 +65,7 @@ end component;
 
 component Driver
 Port ( 
-        gclk : in STD_LOGIC;
+        clk : in STD_LOGIC;
         init : in STD_LOGIC;
         start : in STD_LOGIC;
         reset_ram : OUT STD_LOGIC;
@@ -216,7 +216,7 @@ enc: Encoder
 
 middle: Driver
  Port map(
-     gclk => clk,
+     clk => clk,
      start => Start_Driver,
      init => Init_Middleware,
      init_encoder => Init_Encoder,

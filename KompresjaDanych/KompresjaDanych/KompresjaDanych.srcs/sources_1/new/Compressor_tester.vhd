@@ -1,7 +1,7 @@
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
+use STD.textio.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -55,7 +55,7 @@ Port (
         new_symbol : in STD_LOGIC;
         
         produce_symbol : out STD_LOGIC;
-        
+        End_Data : out STD_LOGIC;
         amount_bytes : in STD_LOGIC_VECTOR(31 downto 0);
         nbBits : in STD_LOGIC_VECTOR(7 downto 0); 
         stream : out STD_LOGIC_VECTOR(15 downto 0);
@@ -65,7 +65,7 @@ end component;
 
 component Driver
 Port ( 
-        gclk : in STD_LOGIC;
+        clk : in STD_LOGIC;
         init : in STD_LOGIC;
         start : in STD_LOGIC;
         reset_ram : OUT STD_LOGIC;
@@ -174,7 +174,7 @@ end component;
     signal
         Start_Encoder, Data_Produced, New_Symbol, Roms_Enable, New_Data, Bram_Reset,
         EncodingRam_Enable, Start_Driver, Init_Middleware, Init_Encoder, Start_Nb_Enable, 
-        Data_In_Enable, Out_Enable, State_Enable: STD_LOGIC := '0';
+        Data_In_Enable, Out_Enable, End_Data, State_Enable: STD_LOGIC := '0';
         
     signal
         Data_In, Data_out, State_For_Encoder : STD_LOGIC_VECTOR(15 downto 0) := x"0000";
@@ -205,7 +205,7 @@ enc: Encoder
         clk => gclk,
         init => Init_Encoder,
         start => Start_Encoder,
-        
+        End_Data => End_Data,
         x => State_For_Encoder,
         nbBits => NbBits,
         stream => Data_out,
@@ -216,7 +216,7 @@ enc: Encoder
 
 middle: Driver
  Port map(
-        gclk => gclk,
+        clk => gclk,
         start => Start_Driver,
         init => Init_Middleware,
         init_encoder => Init_Encoder,
@@ -314,6 +314,40 @@ Port map(
     FIXED_IO_ps_porb => FIXED_IO_ps_porb,
     FIXED_IO_ps_srstb => FIXED_IO_ps_srstb 
   );
+
+
+write_encoded_data: process
+
+file write_file: text open write_mode is "C:/Users/Ola/Desktop/compression_tests/encode_out_test.txt";
+variable line_to_file : line;
+variable line_str: string(1 to 16);
+variable line_content: string(1 to 16);
+variable i : integer := 0;
+
+begin
+    wait until rising_edge(gclk);
+    
+        if(Data_Produced = '1') then      
+            for i in 0 to 15 loop
+                
+                if(Data_Out(i)= '1') then
+                    line_content(16 - i) := '1';
+                else
+                    line_content(16 - i) := '0';
+                end if;
+              
+            end loop;  
+            
+            write(line_to_file, string'(line_content)); 
+            writeline(write_file, line_to_file);            
+        end if;
+        
+        
+        if(End_Data = '1') then     
+           file_close(write_file);
+        end if;
+    
+end process;
 
 
 

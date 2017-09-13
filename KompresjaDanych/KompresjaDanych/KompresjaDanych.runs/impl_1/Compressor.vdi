@@ -1,15 +1,19 @@
 #-----------------------------------------------------------
-# Vivado v2016.3 (64-bit)
-# SW Build 1682563 on Mon Oct 10 19:07:27 MDT 2016
-# IP Build 1681267 on Mon Oct 10 21:28:31 MDT 2016
-# Start of session at: Fri Aug 11 12:17:02 2017
-# Process ID: 5360
+# Vivado v2017.2 (64-bit)
+# SW Build 1909853 on Thu Jun 15 18:39:09 MDT 2017
+# IP Build 1909766 on Thu Jun 15 19:58:00 MDT 2017
+# Start of session at: Tue Aug 22 19:47:37 2017
+# Process ID: 25328
 # Current directory: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1
 # Command line: vivado.exe -log Compressor.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Compressor.tcl -notrace
 # Log file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor.vdi
 # Journal file: D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1\vivado.jou
 #-----------------------------------------------------------
 source Compressor.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2017.2/data/ip'.
+add_files: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 271.691 ; gain = 36.766
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
 INFO: [Project 1-454] Reading design checkpoint 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_0_0/Memory_axi_bram_ctrl_0_0.dcp' for cell 'memory/Memory_i/axi_bram_ctrl_0'
@@ -26,9 +30,9 @@ INFO: [Project 1-454] Reading design checkpoint 'd:/TabledAsymetricNumeralSystem
 INFO: [Project 1-454] Reading design checkpoint 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_start_mem_0/Memory_start_mem_0.dcp' for cell 'memory/Memory_i/start_mem'
 INFO: [Project 1-454] Reading design checkpoint 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_xbar_0/Memory_xbar_0.dcp' for cell 'memory/Memory_i/axi_mem_intercon/xbar'
 INFO: [Project 1-454] Reading design checkpoint 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_auto_pc_0/Memory_auto_pc_0.dcp' for cell 'memory/Memory_i/axi_mem_intercon/s00_couplers/auto_pc'
-INFO: [Netlist 29-17] Analyzing 138 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 149 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-INFO: [Project 1-479] Netlist was created with Vivado 2016.3
+INFO: [Project 1-479] Netlist was created with Vivado 2017.2
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 Parsing XDC File [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.xdc] for cell 'memory/Memory_i/processing_system7_0/inst'
@@ -38,363 +42,269 @@ Finished Parsing XDC File [d:/TabledAsymetricNumeralSystems/KompresjaDanych/Komp
 Parsing XDC File [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.xdc] for cell 'memory/Memory_i/rst_ps7_0_50M/U0'
 Finished Parsing XDC File [d:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.xdc] for cell 'memory/Memory_i/rst_ps7_0_50M/U0'
 Parsing XDC File [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc]
-WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:13]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:13]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:14]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:14]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:15]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:15]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:16]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:16]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:20]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:20]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:21]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:21]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:22]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:22]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'btn[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:23]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:23]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:27]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:27]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:28]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:28]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:29]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:29]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:30]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:30]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_bclk'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:34]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:34]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_mclk'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:35]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:35]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_muten'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:36]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:36]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_pbdat'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:37]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:37]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_pblrc'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:38]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:38]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_recdat'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:39]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:39]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_reclrc'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:40]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:40]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_scl'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:44]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:44]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ac_sda'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:45]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:45]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eth_int_b'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:49]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:49]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'eth_rst_b'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:50]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:50]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_clk_n'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:54]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:54]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_clk_p'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:55]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:55]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_n[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:56]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:56]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_p[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:57]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:57]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_n[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:58]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:58]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_p[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:59]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:59]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_n[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:60]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:60]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_d_p[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:61]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:61]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_cec'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:62]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:62]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_hpd'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:63]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:63]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_out_en'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:64]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:64]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_scl'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:65]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:65]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'hdmi_sda'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:66]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:66]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_p[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:70]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:70]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_p[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:71]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:71]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_p[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:72]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:72]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_p[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:73]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:73]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_n[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:74]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:74]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_n[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:75]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:75]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_n[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:76]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:76]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'ja_n[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:77]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:77]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_p[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:81]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:81]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_n[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:82]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:82]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_p[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:83]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:83]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_n[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:84]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:84]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_p[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:85]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:85]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_n[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:86]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:86]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_p[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:87]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:87]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jb_n[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:88]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:88]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_p[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:92]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:92]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_n[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:93]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:93]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_p[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:94]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:94]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_n[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:95]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:95]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_p[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:96]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:96]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_n[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:97]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:97]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_p[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:98]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:98]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jc_n[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:99]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:99]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_p[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:103]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:103]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_n[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:104]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:104]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_p[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:105]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:105]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_n[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:106]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:106]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_p[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:107]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:107]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_n[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:108]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:108]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_p[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:109]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:109]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'jd_n[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:110]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:110]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:114]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:114]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:115]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:115]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:116]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:116]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:117]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:117]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[4]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:118]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:118]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[5]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:119]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:119]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[6]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:120]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:120]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'je[7]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:121]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:121]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'otg_oc'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:125]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:125]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_r[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:129]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:129]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_r[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:130]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:130]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_r[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:131]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:131]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_r[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:132]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:132]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_r[4]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:133]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:133]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:134]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:134]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:135]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:135]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:136]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:136]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:137]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:137]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[4]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:138]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:138]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_g[5]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:139]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:139]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_b[0]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:140]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:140]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_b[1]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:141]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:141]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_b[2]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:142]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:142]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_b[3]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:143]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:143]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_b[4]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:144]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:144]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_hs'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:145]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:145]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'vga_vs'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:146]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:146]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[0]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:40]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins {middle/FSM_onehot_current_state_reg[0]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:40]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:41]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:41]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:42]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:42]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[3]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:43]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins {middle/FSM_onehot_current_state_reg[3]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:43]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[4]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:44]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-objects [get_pins {middle/FSM_onehot_current_state_reg[4]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:44]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:45]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:45]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:46]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:46]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:47]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:47]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:48]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:48]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:49]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:49]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:50]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:50]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:51]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:51]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:52]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:52]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:53]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:53]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:54]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:54]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:55]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:55]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:56]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:56]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:57]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:57]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:58]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:58]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:59]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:59]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:60]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:60]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:61]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:61]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:62]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:62]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:63]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:63]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:64]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:64]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:65]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:65]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:66]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:66]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:67]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:67]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:68]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:68]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:69]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:69]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:70]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:70]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:71]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:71]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:72]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:72]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:73]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:73]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:74]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:74]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:75]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:75]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[1]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:76]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[1]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:76]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+INFO: [Timing 38-35] Done setting XDC timing constraints. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:77]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:77]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:78]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:79]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:80]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:81]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:82]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:83]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:84]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:85]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:86]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:87]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:88]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:89]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:90]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:91]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:92]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:93]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:94]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:95]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:96]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:97]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:98]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:99]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:100]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:101]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:102]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:103]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:104]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:105]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:106]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:107]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:108]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:109]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:110]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:111]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:112]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:113]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:114]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:115]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:116]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:117]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:118]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:119]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:120]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:121]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:122]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:123]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:124]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:125]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:126]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:127]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:128]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:129]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:130]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:131]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[2]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:132]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:133]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:134]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:135]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:136]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:137]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:138]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:139]
+CRITICAL WARNING: [Constraints 18-853] create_generated_clock: master clock 'middle/FSM_onehot_current_state_reg_n_1_[4]' not found. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:140]
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:141]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:141]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:142]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:142]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:143]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:143]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:144]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:144]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:145]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:145]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:146]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:146]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:147]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:147]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
+WARNING: [Vivado 12-508] No pins matched 'middle/FSM_onehot_current_state_reg[2]/Q'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:148]
+CRITICAL WARNING: [Vivado 12-4739] create_generated_clock:No valid object(s) found for '-source [get_pins {middle/FSM_onehot_current_state_reg[2]/Q}]'. [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc:148]
+Resolution: Check if the specified object(s) exists in the current design. If it does, ensure that the correct design hierarchy was specified for the object. If you are working with clocks, make sure create_clock was used to create the clock object before it is referenced.
 Finished Parsing XDC File [D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/constrs_1/new/ZYBO_master.xdc]
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_0_0/Memory_axi_bram_ctrl_0_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_1_0/Memory_axi_bram_ctrl_1_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_2_0/Memory_axi_bram_ctrl_2_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_3_0/Memory_axi_bram_ctrl_3_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_axi_bram_ctrl_4_0/Memory_axi_bram_ctrl_4_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_in_mem_0/Memory_data_in_mem_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_out_mem_0/Memory_data_out_mem_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_encoding_table_mem_0/Memory_encoding_table_mem_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_nb_mem_0/Memory_nb_mem_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_processing_system7_0_0/Memory_processing_system7_0_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_rst_ps7_0_50M_0/Memory_rst_ps7_0_50M_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_start_mem_0/Memory_start_mem_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_xbar_0/Memory_xbar_0.dcp'
-INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp 'd:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_auto_pc_0/Memory_auto_pc_0.dcp'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 Generating merged BMM file for the design top 'Compressor'...
-CRITICAL WARNING: [Memdata 28-122] data2mem failed with a parsing error. Check the bmm file or the bmm_info_* properties on the BRAM components. The design BRAM components initialization strings have not been updated.
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-link_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:41 . Memory (MB): peak = 513.953 ; gain = 301.668
+link_design: Time (s): cpu = 00:01:16 ; elapsed = 00:01:24 . Memory (MB): peak = 1095.168 ; gain = 823.477
 Command: opt_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
 Running DRC as a precondition to command opt_design
 
 Starting DRC Task
+Command: report_drc (run_mandatory_drcs) for: opt_checks
 INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc (run_mandatory_drcs) completed successfully
 INFO: [Project 1-461] DRC finished with 0 Errors
 INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
 
-Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 516.598 ; gain = 2.645
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1095.168 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Starting Logic Optimization Task
-Implement Debug Cores | Checksum: 65bbde83
 
 Phase 1 Retarget
 INFO: [Opt 31-138] Pushed 5 inverter(s) to 10 load pin(s).
 INFO: [Opt 31-49] Retargeted 0 cell(s).
-Phase 1 Retarget | Checksum: bda4774a
+Phase 1 Retarget | Checksum: 1504648f0
 
-Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1012.750 ; gain = 0.000
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1105.727 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 5 cells and removed 234 cells
 
 Phase 2 Constant propagation
-INFO: [Opt 31-138] Pushed 7 inverter(s) to 32 load pin(s).
-INFO: [Opt 31-10] Eliminated 151 cells.
-Phase 2 Constant propagation | Checksum: df0fbfdb
+INFO: [Opt 31-138] Pushed 5 inverter(s) to 30 load pin(s).
+Phase 2 Constant propagation | Checksum: 1476bfddd
 
-Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1012.750 ; gain = 0.000
+Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 1105.727 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 69 cells and removed 146 cells
 
 Phase 3 Sweep
-INFO: [Opt 31-12] Eliminated 684 unconnected nets.
-INFO: [Opt 31-11] Eliminated 374 unconnected cells.
-Phase 3 Sweep | Checksum: 1672b00f7
+Phase 3 Sweep | Checksum: 16336538a
 
-Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1012.750 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.727 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 339 cells
 
 Phase 4 BUFG optimization
-INFO: [Opt 31-12] Eliminated 0 unconnected nets.
-INFO: [Opt 31-11] Eliminated 0 unconnected cells.
-Phase 4 BUFG optimization | Checksum: 148a61c38
+Phase 4 BUFG optimization | Checksum: 16336538a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.750 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.727 ; gain = 0.000
+INFO: [Opt 31-389] Phase BUFG optimization created 0 cells and removed 0 cells
+
+Phase 5 Shift Register Optimization
+Phase 5 Shift Register Optimization | Checksum: 16336538a
+
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.727 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
 
 Starting Connectivity Check Task
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.083 . Memory (MB): peak = 1012.750 ; gain = 0.000
-Ending Logic Optimization Task | Checksum: 148a61c38
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1105.727 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 16336538a
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1012.750 ; gain = 0.000
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1105.727 ; gain = 0.000
 
 Starting Power Optimization Task
 INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
@@ -410,36 +320,40 @@ Starting PowerOpt Patch Enables Task
 INFO: [Pwropt 34-162] WRITE_MODE attribute of 2 BRAM(s) out of a total of 10 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
 INFO: [Pwropt 34-201] Structural ODC has moved 3 WE to EN ports
 Number of BRAM Ports augmented: 0 newly gated: 3 Total Ports: 20
-Ending PowerOpt Patch Enables Task | Checksum: 1972a6727
+Ending PowerOpt Patch Enables Task | Checksum: 1b8fe9047
 
-Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Ending Power Optimization Task | Checksum: 1972a6727
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.122 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Ending Power Optimization Task | Checksum: 1b8fe9047
 
-Time (s): cpu = 00:00:09 ; elapsed = 00:00:05 . Memory (MB): peak = 1152.281 ; gain = 139.531
-INFO: [Common 17-83] Releasing license: Implementation
-55 Infos, 95 Warnings, 96 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 1212.703 ; gain = 106.977
+44 Infos, 45 Warnings, 109 Critical Warnings and 0 Errors encountered.
 opt_design completed successfully
-opt_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:10 . Memory (MB): peak = 1152.281 ; gain = 638.328
+opt_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 1212.703 ; gain = 117.535
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.155 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.481 . Memory (MB): peak = 1212.703 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_opt.dcp' has been generated.
+Command: report_drc -file Compressor_drc_opted.rpt
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_drc_opted.rpt.
-report_drc: Time (s): cpu = 00:00:14 ; elapsed = 00:00:08 . Memory (MB): peak = 1152.281 ; gain = 0.000
+report_drc completed successfully
 INFO: [Chipscope 16-241] No debug cores found in the current design.
 Before running the implement_debug_core command, either use the Set Up Debug wizard (GUI mode)
 or use the create_debug_core and connect_debug_core Tcl commands to insert debug cores into the design.
 Command: place_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
+Command: report_drc (run_mandatory_drcs) for: incr_eco_checks
 INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc (run_mandatory_drcs) completed successfully
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 Running DRC as a precondition to command place_design
+Command: report_drc (run_mandatory_drcs) for: placer_checks
 INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc (run_mandatory_drcs) completed successfully
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
@@ -447,79 +361,94 @@ Starting Placer Task
 INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
 
 Phase 1 Placer Initialization
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1152.281 ; gain = 0.000
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: cb1c0234
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.066 . Memory (MB): peak = 1212.703 ; gain = 0.000
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
 INFO: [Timing 38-35] Done setting XDC timing constraints.
-Phase 1.1 IO Placement/ Clock Placement/ Build Placer Device | Checksum: fbd13b36
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 16c5197d7
 
-Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 1.2 Build Placer Netlist Model
-Phase 1.2 Build Placer Netlist Model | Checksum: 17308ff51
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 11aa029b4
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 1.3 Constrain Clocks/Macros
-Phase 1.3 Constrain Clocks/Macros | Checksum: 17308ff51
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 11aa029b4
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 1 Placer Initialization | Checksum: 17308ff51
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Phase 1 Placer Initialization | Checksum: 11aa029b4
 
-Time (s): cpu = 00:00:20 ; elapsed = 00:00:16 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:17 ; elapsed = 00:00:13 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 2 Global Placement
-Phase 2 Global Placement | Checksum: 2258550a2
+Phase 2 Global Placement | Checksum: 8ceac723
 
-Time (s): cpu = 00:00:36 ; elapsed = 00:00:26 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 3 Detail Placement
 
 Phase 3.1 Commit Multi Column Macros
-Phase 3.1 Commit Multi Column Macros | Checksum: 2258550a2
+Phase 3.1 Commit Multi Column Macros | Checksum: 8ceac723
 
-Time (s): cpu = 00:00:37 ; elapsed = 00:00:26 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:25 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 3.2 Commit Most Macros & LUTRAMs
-Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 1eefe17db
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 15f7b099d
 
-Time (s): cpu = 00:00:42 ; elapsed = 00:00:30 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:28 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 3.3 Area Swap Optimization
-Phase 3.3 Area Swap Optimization | Checksum: 1a4cc1f6a
+Phase 3.3 Area Swap Optimization | Checksum: 1f5e9edfc
 
-Time (s): cpu = 00:00:43 ; elapsed = 00:00:30 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:28 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 3.4 Pipeline Register Optimization
-Phase 3.4 Pipeline Register Optimization | Checksum: 1a4cc1f6a
+Phase 3.4 Pipeline Register Optimization | Checksum: 1f5e9edfc
 
-Time (s): cpu = 00:00:43 ; elapsed = 00:00:30 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:42 ; elapsed = 00:00:28 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 3.5 Timing Path Optimizer
-Phase 3.5 Timing Path Optimizer | Checksum: 24a05b480
+Phase 3.5 Timing Path Optimizer | Checksum: 1dd591224
 
-Time (s): cpu = 00:00:44 ; elapsed = 00:00:31 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:29 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 3.6 Small Shape Detail Placement
-Phase 3.6 Small Shape Detail Placement | Checksum: 266cb2b88
+Phase 3.6 Fast Optimization
+Phase 3.6 Fast Optimization | Checksum: 16ead3d3c
 
-Time (s): cpu = 00:00:53 ; elapsed = 00:00:40 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:44 ; elapsed = 00:00:30 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 3.7 Re-assign LUT pins
-Phase 3.7 Re-assign LUT pins | Checksum: 2635d5e3d
+Phase 3.7 Small Shape Detail Placement
+Phase 3.7 Small Shape Detail Placement | Checksum: ee25693b
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:41 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:38 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Phase 3.8 Pipeline Register Optimization
-Phase 3.8 Pipeline Register Optimization | Checksum: 2635d5e3d
+Phase 3.8 Re-assign LUT pins
+Phase 3.8 Re-assign LUT pins | Checksum: dac10786
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:41 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 3 Detail Placement | Checksum: 2635d5e3d
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:40 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
-Time (s): cpu = 00:00:54 ; elapsed = 00:00:41 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Phase 3.9 Pipeline Register Optimization
+Phase 3.9 Pipeline Register Optimization | Checksum: dac10786
+
+Time (s): cpu = 00:00:54 ; elapsed = 00:00:40 . Memory (MB): peak = 1212.703 ; gain = 0.000
+
+Phase 3.10 Fast Optimization
+Phase 3.10 Fast Optimization | Checksum: 1036f6119
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:42 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Phase 3 Detail Placement | Checksum: 1036f6119
+
+Time (s): cpu = 00:00:57 ; elapsed = 00:00:42 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 4 Post Placement Optimization and Clean-Up
 
@@ -527,172 +456,218 @@ Phase 4.1 Post Commit Optimization
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 
 Phase 4.1.1 Post Placement Optimization
-INFO: [Place 30-746] Post Placement Timing Summary WNS=0.515. For the most accurate timing information please run report_timing.
-Phase 4.1.1 Post Placement Optimization | Checksum: 10d86892f
+Post Placement Optimization Initialization | Checksum: 1d4a49478
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 4.1 Post Commit Optimization | Checksum: 10d86892f
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Place 46-41] BUFG insertion identified 0 candidate nets, 0 success, 0 skipped for placement/routing, 0 skipped for timing, 0 skipped for netlist change reason.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1d4a49478
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:47 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:01:06 ; elapsed = 00:00:48 . Memory (MB): peak = 1212.703 ; gain = 0.000
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-1.290. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1c6142623
+
+Time (s): cpu = 00:04:43 ; elapsed = 00:04:22 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Phase 4.1 Post Commit Optimization | Checksum: 1c6142623
+
+Time (s): cpu = 00:04:43 ; elapsed = 00:04:22 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 4.2 Post Placement Cleanup
-Phase 4.2 Post Placement Cleanup | Checksum: 10d86892f
+Phase 4.2 Post Placement Cleanup | Checksum: 1c6142623
 
-Time (s): cpu = 00:01:03 ; elapsed = 00:00:48 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:43 ; elapsed = 00:04:22 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 4.3 Placer Reporting
-Phase 4.3 Placer Reporting | Checksum: 10d86892f
+Phase 4.3 Placer Reporting | Checksum: 1c6142623
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:43 ; elapsed = 00:04:22 . Memory (MB): peak = 1212.703 ; gain = 0.000
 
 Phase 4.4 Final Placement Cleanup
-Phase 4.4 Final Placement Cleanup | Checksum: 13fd7f965
+Phase 4.4 Final Placement Cleanup | Checksum: 188c6a377
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 4 Post Placement Optimization and Clean-Up | Checksum: 13fd7f965
+Time (s): cpu = 00:04:43 ; elapsed = 00:04:23 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 188c6a377
 
-Time (s): cpu = 00:01:04 ; elapsed = 00:00:48 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Ending Placer Task | Checksum: c8a755de
+Time (s): cpu = 00:04:44 ; elapsed = 00:04:23 . Memory (MB): peak = 1212.703 ; gain = 0.000
+Ending Placer Task | Checksum: b19e8473
 
-Time (s): cpu = 00:01:05 ; elapsed = 00:00:49 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Common 17-83] Releasing license: Implementation
-73 Infos, 95 Warnings, 96 Critical Warnings and 0 Errors encountered.
+Time (s): cpu = 00:04:44 ; elapsed = 00:04:23 . Memory (MB): peak = 1212.703 ; gain = 0.000
+63 Infos, 45 Warnings, 109 Critical Warnings and 0 Errors encountered.
 place_design completed successfully
-place_design: Time (s): cpu = 00:01:15 ; elapsed = 00:00:54 . Memory (MB): peak = 1152.281 ; gain = 0.000
+place_design: Time (s): cpu = 00:04:48 ; elapsed = 00:04:25 . Memory (MB): peak = 1212.703 ; gain = 0.000
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.884 . Memory (MB): peak = 1212.703 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_placed.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:10 ; elapsed = 00:00:05 . Memory (MB): peak = 1152.281 ; gain = 0.000
-report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.268 . Memory (MB): peak = 1152.281 ; gain = 0.000
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.248 . Memory (MB): peak = 1152.281 ; gain = 0.000
-report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1152.281 ; gain = 0.000
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.085 . Memory (MB): peak = 1212.703 ; gain = 0.000
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.093 . Memory (MB): peak = 1212.703 ; gain = 0.000
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1212.703 ; gain = 0.000
 Command: route_design
-Attempting to get a license for feature 'Implementation' and/or device 'xc7z010'
-INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010'
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z010-clg400'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z010-clg400'
 Running DRC as a precondition to command route_design
+Command: report_drc (run_mandatory_drcs) for: router_checks
 INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc (run_mandatory_drcs) completed successfully
 INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
 INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
 
 
 Starting Routing Task
 INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
-Checksum: PlaceDB: 8e44fbd8 ConstDB: 0 ShapeSum: 3a625a06 RouteDB: 0
+Checksum: PlaceDB: 3b0ded04 ConstDB: 0 ShapeSum: 7690976f RouteDB: 0
 
 Phase 1 Build RT Design
-Phase 1 Build RT Design | Checksum: f31b963b
+Phase 1 Build RT Design | Checksum: 81277e73
 
-Time (s): cpu = 00:00:58 ; elapsed = 00:00:54 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:18 ; elapsed = 00:00:17 . Memory (MB): peak = 1239.055 ; gain = 26.352
 
 Phase 2 Router Initialization
 
 Phase 2.1 Create Timer
-Phase 2.1 Create Timer | Checksum: f31b963b
+Phase 2.1 Create Timer | Checksum: 81277e73
 
-Time (s): cpu = 00:00:58 ; elapsed = 00:00:54 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1239.055 ; gain = 26.352
 
 Phase 2.2 Fix Topology Constraints
-Phase 2.2 Fix Topology Constraints | Checksum: f31b963b
+Phase 2.2 Fix Topology Constraints | Checksum: 81277e73
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:54 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1239.055 ; gain = 26.352
 
 Phase 2.3 Pre Route Cleanup
-Phase 2.3 Pre Route Cleanup | Checksum: f31b963b
+Phase 2.3 Pre Route Cleanup | Checksum: 81277e73
 
-Time (s): cpu = 00:00:59 ; elapsed = 00:00:55 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:17 . Memory (MB): peak = 1239.055 ; gain = 26.352
  Number of Nodes with overlaps = 0
 
 Phase 2.4 Update Timing
-Phase 2.4 Update Timing | Checksum: 26c1f5720
+Phase 2.4 Update Timing | Checksum: 14d3df3d6
 
-Time (s): cpu = 00:01:08 ; elapsed = 00:01:00 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.482  | TNS=0.000  | WHS=-0.358 | THS=-93.138|
+Time (s): cpu = 00:00:29 ; elapsed = 00:00:23 . Memory (MB): peak = 1239.055 ; gain = 26.352
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-1.283 | TNS=-18.152| WHS=-1.816 | THS=-109.743|
 
-Phase 2 Router Initialization | Checksum: 2064b5dbf
+Phase 2 Router Initialization | Checksum: 116e123b7
 
-Time (s): cpu = 00:01:13 ; elapsed = 00:01:04 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:00:45 ; elapsed = 00:00:31 . Memory (MB): peak = 1239.055 ; gain = 26.352
 
 Phase 3 Initial Routing
-Phase 3 Initial Routing | Checksum: 196c1d98f
+Phase 3 Initial Routing | Checksum: 1e99ef672
 
-Time (s): cpu = 00:01:19 ; elapsed = 00:01:07 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:42 . Memory (MB): peak = 1253.125 ; gain = 40.422
 
 Phase 4 Rip-up And Reroute
 
 Phase 4.1 Global Iteration 0
- Number of Nodes with overlaps = 636
- Number of Nodes with overlaps = 54
+ Number of Nodes with overlaps = 679
+ Number of Nodes with overlaps = 61
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 8
  Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 2
  Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.619 | TNS=-217.657| WHS=N/A    | THS=N/A    |
 
-Phase 4.1.1 Update Timing
-Phase 4.1.1 Update Timing | Checksum: c2ef8f1a
+Phase 4.1 Global Iteration 0 | Checksum: 1c396277e
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:12 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.435  | TNS=0.000  | WHS=N/A    | THS=N/A    |
-
-Phase 4.1 Global Iteration 0 | Checksum: 8cd57dd6
-
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:12 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:03:21 ; elapsed = 00:02:32 . Memory (MB): peak = 1298.906 ; gain = 86.203
 
 Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 58
+ Number of Nodes with overlaps = 24
  Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
  Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.612 | TNS=-195.719| WHS=N/A    | THS=N/A    |
 
-Phase 4.2.1 Update Timing
-Phase 4.2.1 Update Timing | Checksum: 1c31fe2e1
+Phase 4.2 Global Iteration 1 | Checksum: 8977ced6
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.435  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+Time (s): cpu = 00:03:25 ; elapsed = 00:02:35 . Memory (MB): peak = 1298.906 ; gain = 86.203
+Phase 4 Rip-up And Reroute | Checksum: 8977ced6
 
-Phase 4.2 Global Iteration 1 | Checksum: 1ba257e0d
-
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 4 Rip-up And Reroute | Checksum: 1ba257e0d
-
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:03:25 ; elapsed = 00:02:35 . Memory (MB): peak = 1298.906 ; gain = 86.203
 
 Phase 5 Delay and Skew Optimization
 
 Phase 5.1 Delay CleanUp
-Phase 5.1 Delay CleanUp | Checksum: 1ba257e0d
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1041ffa2a
+
+Time (s): cpu = 00:03:27 ; elapsed = 00:02:36 . Memory (MB): peak = 1298.906 ; gain = 86.203
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.612 | TNS=-195.667| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1dd2bf7aa
+
+Time (s): cpu = 00:03:28 ; elapsed = 00:02:37 . Memory (MB): peak = 1298.906 ; gain = 86.203
 
 Phase 5.2 Clock Skew Optimization
-Phase 5.2 Clock Skew Optimization | Checksum: 1ba257e0d
+Phase 5.2 Clock Skew Optimization | Checksum: 1dd2bf7aa
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 5 Delay and Skew Optimization | Checksum: 1ba257e0d
+Time (s): cpu = 00:03:28 ; elapsed = 00:02:37 . Memory (MB): peak = 1298.906 ; gain = 86.203
+Phase 5 Delay and Skew Optimization | Checksum: 1dd2bf7aa
 
-Time (s): cpu = 00:01:28 ; elapsed = 00:01:13 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:03:28 ; elapsed = 00:02:37 . Memory (MB): peak = 1298.906 ; gain = 86.203
 
 Phase 6 Post Hold Fix
 
 Phase 6.1 Hold Fix Iter
 
 Phase 6.1.1 Update Timing
-Phase 6.1.1 Update Timing | Checksum: 13c2b58cb
+Phase 6.1.1 Update Timing | Checksum: 23af40070
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.550  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+Time (s): cpu = 00:03:30 ; elapsed = 00:02:38 . Memory (MB): peak = 1298.906 ; gain = 86.203
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-2.595 | TNS=-194.079| WHS=-3.659 | THS=-14.927|
 
-Phase 6.1 Hold Fix Iter | Checksum: 180b5a3ef
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
-Phase 6 Post Hold Fix | Checksum: 180b5a3ef
+Phase 6.1.2 Lut RouteThru Assignment for hold
+Phase 6.1.2 Lut RouteThru Assignment for hold | Checksum: 15f85e670
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:54 ; elapsed = 00:03:57 . Memory (MB): peak = 1398.242 ; gain = 185.539
+Phase 6.1 Hold Fix Iter | Checksum: 15f85e670
+
+Time (s): cpu = 00:04:54 ; elapsed = 00:03:57 . Memory (MB): peak = 1398.242 ; gain = 185.539
+
+Phase 6.2 Additional Hold Fix
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-9.240 | TNS=-1401.989| WHS=0.015  | THS=0.000  |
+
+Phase 6.2 Additional Hold Fix | Checksum: 9df58c47
+
+Time (s): cpu = 00:04:58 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
+WARNING: [Route 35-468] The router encountered 14 pins that are both setup-critical and hold-critical and tried to fix hold violations at the expense of setup slack. Such pins are:
+	enc/action_reg[2]/D
+	enc/action_reg[1]/D
+	enc/action_reg[0]/D
+	enc/action_reg[0]_i_1/I0
+	enc/action_reg[2]_i_1/I3
+	enc/action_reg[2]_i_1/I0
+	enc/action_reg[0]_i_1/I1
+	enc/action_reg[1]_i_1/I1
+	enc/action_reg[2]_i_1/I1
+	enc/action_reg[0]_i_1/I2
+	.. and 4 more pins.
+
+Phase 6 Post Hold Fix | Checksum: 90ef5291
+
+Time (s): cpu = 00:04:58 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 
 Phase 7 Route finalize
 
 Router Utilization Summary
-  Global Vertical Routing Utilization    = 2.55574 %
-  Global Horizontal Routing Utilization  = 3.32238 %
+  Global Vertical Routing Utilization    = 2.85234 %
+  Global Horizontal Routing Utilization  = 3.81893 %
   Routable Net Status*
   *Does not include unroutable nets such as driverless and loadless.
   Run report_route_status for detailed report.
@@ -701,60 +676,68 @@ Router Utilization Summary
   Number of Partially Routed Nets     = 0
   Number of Node Overlaps             = 0
 
-Phase 7 Route finalize | Checksum: 1db0fadb1
+Congestion Report
+North Dir 1x1 Area, Max Cong = 47.7477%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 41.4414%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 52.9412%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 52.9412%, No Congested Regions.
+Phase 7 Route finalize | Checksum: 9b5e68ef
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:58 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 
 Phase 8 Verifying routed nets
 
  Verification completed successfully
-Phase 8 Verifying routed nets | Checksum: 1db0fadb1
+Phase 8 Verifying routed nets | Checksum: 9b5e68ef
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:58 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 
 Phase 9 Depositing Routes
-Phase 9 Depositing Routes | Checksum: 1a12a5e84
+Phase 9 Depositing Routes | Checksum: 7bf6a082
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:59 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 
 Phase 10 Post Router Timing
-INFO: [Route 35-57] Estimated Timing Summary | WNS=0.550  | TNS=0.000  | WHS=0.019  | THS=0.000  |
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-9.240 | TNS=-1401.989| WHS=0.015  | THS=0.000  |
 
-INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
-Phase 10 Post Router Timing | Checksum: 1a12a5e84
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 7bf6a082
 
-Time (s): cpu = 00:01:30 ; elapsed = 00:01:14 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:59 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 INFO: [Route 35-16] Router Completed Successfully
 
-Time (s): cpu = 00:01:31 ; elapsed = 00:01:15 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Time (s): cpu = 00:04:59 ; elapsed = 00:04:00 . Memory (MB): peak = 1398.242 ; gain = 185.539
 
 Routing Is Done.
-INFO: [Common 17-83] Releasing license: Implementation
-87 Infos, 95 Warnings, 96 Critical Warnings and 0 Errors encountered.
+77 Infos, 47 Warnings, 109 Critical Warnings and 0 Errors encountered.
 route_design completed successfully
-route_design: Time (s): cpu = 00:01:40 ; elapsed = 00:01:19 . Memory (MB): peak = 1152.281 ; gain = 0.000
+route_design: Time (s): cpu = 00:05:04 ; elapsed = 00:04:03 . Memory (MB): peak = 1398.242 ; gain = 185.539
 Writing placer database...
 Writing XDEF routing.
 Writing XDEF routing logical nets.
 Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1152.281 ; gain = 0.000
+Write XDEF Complete: Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1398.242 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_routed.dcp' has been generated.
+Command: report_drc -file Compressor_drc_routed.rpt -pb Compressor_drc_routed.pb -rpx Compressor_drc_routed.rpx
 INFO: [DRC 23-27] Running DRC with 2 threads
 INFO: [Coretcl 2-168] The results of DRC are in file D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_drc_routed.rpt.
-report_drc: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1152.281 ; gain = 0.000
+report_drc completed successfully
+Command: report_methodology -file Compressor_methodology_drc_routed.rpt -rpx Compressor_methodology_drc_routed.rpx
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [DRC 23-133] Running Methodology with 2 threads
 INFO: [Coretcl 2-1520] The results of Report Methodology are in file D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.runs/impl_1/Compressor_methodology_drc_routed.rpt.
-report_methodology: Time (s): cpu = 00:00:12 ; elapsed = 00:00:08 . Memory (MB): peak = 1152.281 ; gain = 0.000
-INFO: [Timing 38-35] Done setting XDC timing constraints.
-INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
-INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
-INFO: [Timing 38-35] Done setting XDC timing constraints.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:13 ; elapsed = 00:00:07 . Memory (MB): peak = 1398.242 ; gain = 0.000
 Command: report_power -file Compressor_power_routed.rpt -pb Compressor_power_summary_routed.pb -rpx Compressor_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
 Running Vector-less Activity Propagation...
 
 Finished Running Vector-less Activity Propagation
-97 Infos, 95 Warnings, 96 Critical Warnings and 0 Errors encountered.
+84 Infos, 47 Warnings, 109 Critical Warnings and 0 Errors encountered.
 report_power completed successfully
-report_power: Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1168.746 ; gain = 16.465
-INFO: [Common 17-206] Exiting Vivado at Fri Aug 11 12:22:08 2017...
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+report_timing_summary: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1398.242 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 22 19:58:41 2017...

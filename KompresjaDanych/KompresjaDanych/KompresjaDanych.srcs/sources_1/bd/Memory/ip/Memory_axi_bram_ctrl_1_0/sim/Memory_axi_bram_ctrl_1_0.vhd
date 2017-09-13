@@ -47,14 +47,14 @@
 -- DO NOT MODIFY THIS FILE.
 
 -- IP VLNV: xilinx.com:ip:axi_bram_ctrl:4.0
--- IP Revision: 9
+-- IP Revision: 11
 
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-LIBRARY axi_bram_ctrl_v4_0_9;
-USE axi_bram_ctrl_v4_0_9.axi_bram_ctrl;
+LIBRARY axi_bram_ctrl_v4_0_11;
+USE axi_bram_ctrl_v4_0_11.axi_bram_ctrl;
 
 ENTITY Memory_axi_bram_ctrl_1_0 IS
   PORT (

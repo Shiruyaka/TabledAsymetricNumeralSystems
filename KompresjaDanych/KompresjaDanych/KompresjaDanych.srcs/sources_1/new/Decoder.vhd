@@ -129,7 +129,7 @@ state_machine: process(CLK)
         length := 0;
         ready <= '0';
         produced_symbol <= '0';
-        sixteen := x"0010";
+        sixteen := "0000000000100000";
         
         if(start = '1') then
             end_decoded <= '0';

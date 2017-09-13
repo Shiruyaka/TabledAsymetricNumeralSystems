@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502446612">
-  <File Type="PWROPT-DRC" Name="Compressor_drc_pwropted.rpt"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="Compressor_methodology_drc_opted.rpt"/>
-  <File Type="INIT-TIMING" Name="Compressor_timing_summary_init.rpt"/>
+<GenRun Id="impl_1" LaunchPart="xc7z010clg400-1" LaunchTime="1503423851">
   <File Type="ROUTE-PWR-RPX" Name="Compressor_power_routed.rpx"/>
   <File Type="PA-TCL" Name="Compressor.tcl"/>
-  <File Type="OPT-HWDEF" Name="Compressor.hwdef"/>
+  <File Type="INIT-TIMING" Name="Compressor_timing_summary_init.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Compressor_methodology_drc_opted.rpt"/>
+  <File Type="PWROPT-DRC" Name="Compressor_drc_pwropted.rpt"/>
   <File Type="RDI-RDI" Name="Compressor.vdi"/>
   <File Type="OPT-DCP" Name="Compressor_opt.dcp"/>
+  <File Type="OPT-HWDEF" Name="Compressor.hwdef"/>
   <File Type="OPT-DRC" Name="Compressor_drc_opted.rpt"/>
   <File Type="OPT-TIMING" Name="Compressor_timing_summary_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="Compressor_pwropt.dcp"/>
@@ -31,14 +31,14 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="Compressor_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="Compressor_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="Compressor_drc_routed.pb"/>
-  <File Type="BG-BIN" Name="Compressor.bin"/>
   <File Type="ROUTE-DRC-RPX" Name="Compressor_drc_routed.rpx"/>
-  <File Type="BG-DRC" Name="Compressor.drc"/>
+  <File Type="BG-BIN" Name="Compressor.bin"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="Compressor_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-MSK" Name="Compressor.msk"/>
+  <File Type="BG-DRC" Name="Compressor.drc"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Compressor_methodology_drc_routed.rpx"/>
-  <File Type="BG-BGN" Name="Compressor.bgn"/>
+  <File Type="BITSTR-MSK" Name="Compressor.msk"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Compressor_methodology_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="Compressor.bgn"/>
   <File Type="ROUTE-PWR" Name="Compressor_power_routed.rpt"/>
   <File Type="ROUTE-PWR-SUM" Name="Compressor_power_summary_routed.pb"/>
   <File Type="ROUTE-STATUS" Name="Compressor_route_status.rpt"/>
@@ -189,4 +189,18 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_data_out_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_encoding_table_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_4_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_nb_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_data_in_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_rst_ps7_0_50M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_start_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_auto_pc_0"/>
 </GenRun>

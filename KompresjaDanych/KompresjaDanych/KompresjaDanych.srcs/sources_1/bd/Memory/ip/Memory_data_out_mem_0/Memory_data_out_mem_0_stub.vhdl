@@ -1,11 +1,11 @@
--- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
--- Date        : Sun Aug 06 19:23:19 2017
+-- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+-- Date        : Tue Aug 22 18:32:41 2017
 -- Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
--- Command     : write_vhdl -force -mode synth_stub -rename_top Memory_data_out_mem_0 -prefix
---               Memory_data_out_mem_0_ start_block_blk_mem_gen_0_0_stub.vhdl
--- Design      : start_block_blk_mem_gen_0_0
+-- Command     : write_vhdl -force -mode synth_stub
+--               D:/TabledAsymetricNumeralSystems/KompresjaDanych/KompresjaDanych/KompresjaDanych.srcs/sources_1/bd/Memory/ip/Memory_data_out_mem_0/Memory_data_out_mem_0_stub.vhdl
+-- Design      : Memory_data_out_mem_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1
 -- --------------------------------------------------------------------------------
@@ -38,6 +38,6 @@ attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
 attribute black_box_pad_pin of stub : architecture is "clka,rsta,ena,wea[3:0],addra[31:0],dina[31:0],douta[31:0],clkb,rstb,enb,web[3:0],addrb[31:0],dinb[31:0],doutb[31:0]";
 attribute x_core_info : string;
-attribute x_core_info of stub : architecture is "blk_mem_gen_v8_3_4,Vivado 2016.3";
+attribute x_core_info of stub : architecture is "blk_mem_gen_v8_3_6,Vivado 2017.2";
 begin
 end;

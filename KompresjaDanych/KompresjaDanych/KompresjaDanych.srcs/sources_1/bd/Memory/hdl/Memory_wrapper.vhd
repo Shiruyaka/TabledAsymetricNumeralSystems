@@ -1,7 +1,7 @@
---Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+--Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2016.3 (win64) Build 1682563 Mon Oct 10 19:07:27 MDT 2016
---Date        : Fri Aug 11 11:15:13 2017
+--Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+--Date        : Tue Aug 22 18:27:31 2017
 --Host        : Ola-Komputer running 64-bit Service Pack 1  (build 7601)
 --Command     : generate_target Memory_wrapper.bd
 --Design      : Memory_wrapper

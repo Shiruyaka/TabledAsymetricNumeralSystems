@@ -10,19 +10,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="8593200fs"></ZoomStartTime>
-      <ZoomEndTime time="403593201fs"></ZoomEndTime>
-      <Cursor1Time time="60000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="386500001fs"></ZoomEndTime>
+      <Cursor1Time time="119000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="161"></NameColumnWidth>
-      <ValueColumnWidth column_width="105"></ValueColumnWidth>
+      <ValueColumnWidth column_width="101"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="23" />
-   <wvobject fp_name="/encoder_tb/comp/middle/gclk" type="logic">
-      <obj_property name="ElementShortName">gclk</obj_property>
-      <obj_property name="ObjectShortName">gclk</obj_property>
-   </wvobject>
+   <WVObjectSize size="22" />
    <wvobject fp_name="/encoder_tb/comp/enc/nbBits" type="array">
       <obj_property name="ElementShortName">nbBits[7:0]</obj_property>
       <obj_property name="ObjectShortName">nbBits[7:0]</obj_property>
@@ -38,14 +34,17 @@
    <wvobject fp_name="/encoder_tb/comp/State_From_Ram" type="array">
       <obj_property name="ElementShortName">State_From_Ram[31:0]</obj_property>
       <obj_property name="ObjectShortName">State_From_Ram[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/encoder_tb/comp/Start_From_Ram" type="array">
       <obj_property name="ElementShortName">Start_From_Ram[31:0]</obj_property>
       <obj_property name="ObjectShortName">Start_From_Ram[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/encoder_tb/comp/Nb_From_Ram" type="array">
       <obj_property name="ElementShortName">Nb_From_Ram[31:0]</obj_property>
       <obj_property name="ObjectShortName">Nb_From_Ram[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/encoder_tb/comp/middle/current_state" type="other">
       <obj_property name="ElementShortName">current_state</obj_property>
@@ -58,6 +57,7 @@
    <wvobject fp_name="/encoder_tb/comp/middle/state_for_encoder" type="array">
       <obj_property name="ElementShortName">state_for_encoder[15:0]</obj_property>
       <obj_property name="ObjectShortName">state_for_encoder[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/encoder_tb/comp/middle/compute_nbBits" type="logic">
       <obj_property name="ElementShortName">compute_nbBits</obj_property>

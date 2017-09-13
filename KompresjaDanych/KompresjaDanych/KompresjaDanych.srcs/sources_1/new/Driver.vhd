@@ -6,7 +6,7 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Driver is
     Port ( 
-           gclk : in STD_LOGIC;
+           clk : in STD_LOGIC;
            init : in STD_LOGIC;
            start : in STD_LOGIC;
            reset_ram : out STD_LOGIC;
@@ -56,9 +56,9 @@ signal
     not_shifted_nb : STD_LOGIC_VECTOR(31 downto 0);
 begin
 
-state_machine: process(gclk)
+state_machine: process(clk)
     begin
-     if(rising_edge(gclk)) then
+     if(rising_edge(clk)) then
         if(init = '1')then
             current_state <= IDLE;
         else
@@ -67,10 +67,10 @@ state_machine: process(gclk)
       end if;
     end process;
 
-save_output: process(gclk, data_produced)
+save_output: process(clk, data_produced)
 variable mem_point: integer;
     begin
-        if(rising_edge(gclk))then
+        if(rising_edge(clk))then
             if(data_produced = '1') then
                 data_out_address <= x"0000_0000" + STD_LOGIC_VECTOR(to_unsigned(mem_point, 31));
                 mem_point := mem_point + 4;
@@ -85,9 +85,9 @@ variable mem_point: integer;
         end if;
     end process;
 
-get_start_nb: process(gclk, get_nb_start)
+get_start_nb: process(clk, get_nb_start)
 begin
-    if(rising_edge(gclk)) then
+    if(rising_edge(clk)) then
          if(get_nb_start = '1') then
             start_address <= x"0000_0000" + (data_in(29 downto 0) & (1 downto 0 => '0'));
             nb_address <= x"0000_0000" + (data_in(29 downto 0) & (1 downto 0 => '0'));
@@ -98,10 +98,10 @@ begin
     end if;
 end process;
 
-nbbits: process(gclk, state_from_ram, nb_from_ram, compute_nbBits)
+nbbits: process(clk, state_from_ram, nb_from_ram, compute_nbBits)
 variable nb_bits : STD_LOGIC_VECTOR(31 downto 0) := x"00000000";
 begin
-    if(rising_edge(gclk) and compute_nbBits = '1') then
+    if(rising_edge(clk) and compute_nbBits = '1') then
        nb_bits := STD_LOGIC_VECTOR(unsigned(state_from_ram) + unsigned(nb_from_ram));
            case r_value_int is
                when 2 => 
@@ -138,10 +138,10 @@ begin
     end if;
 end process;
 
-get_state: process(gclk, get_new_state, init_state)
+get_state: process(clk, get_new_state, init_state)
 variable computed_state : STD_LOGIC_VECTOR(31 downto 0);
 begin
-    if(rising_edge(gclk)) then
+    if(rising_edge(clk)) then
         if(get_new_state = '1' or init_state = '1') then
             case nb_bits_int is
                 when 1 => 
@@ -173,9 +173,9 @@ begin
 end process;
 
 state_for_encoder <= state_from_ram(15 downto 0);
---set_state: process(gclk, set_new_state)
+--set_state: process(clk, set_new_state)
 --begin
---    if(rising_edge(gclk)) then
+--    if(rising_edge(clk)) then
 --        if(set_new_state = '1') then
                      
 --        end if;

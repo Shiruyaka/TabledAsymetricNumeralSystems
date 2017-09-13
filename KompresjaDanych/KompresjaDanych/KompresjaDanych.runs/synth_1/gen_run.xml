@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1502446338">
-  <File Type="RDS-PROPCONSTRS" Name="Compressor_drc_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1503423850">
   <File Type="PA-TCL" Name="Compressor.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="Compressor_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="Compressor.vds"/>
   <File Type="RDS-UTIL" Name="Compressor_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="Compressor_utilization_synth.pb"/>
@@ -129,4 +129,18 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_data_out_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_encoding_table_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_3_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_axi_bram_ctrl_4_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_nb_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_data_in_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_rst_ps7_0_50M_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_start_mem_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="Memory_auto_pc_0"/>
 </GenRun>
